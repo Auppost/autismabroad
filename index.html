@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Autism Families Abroad — support for migrant families raising autistic children</title>
-<meta name="description" content="A non-profit foundation helping refugee and migrant families raising children with autism — diagnosis, legal help, directory and community. RU · UK · EN." />
+<title>Autism Families Abroad — понятный маршрут для семей в Эстонии</title>
+<meta name="description" content="Открытая база знаний для семей в Эстонии, которые подозревают у ребёнка аутизм, задержку развития, СДВГ или трудности речи. С чего начать, диагностика, инвалидность, садик и школа, документы." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%231F6F6B'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='white' font-family='Arial'%3E%E2%88%9E%3C/text%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Autism Families Abroad" />
-<meta property="og:description" content="Helping refugee and migrant families raising children with autism — diagnosis, legal help, directory and community." />
-<meta name="twitter:card" content="summary_large_image" />
+<meta property="og:title" content="Autism Families Abroad — понятный маршрут для семей" />
+<meta property="og:description" content="Сайт объясняет систему. Приложение Family Navigator строит персональный маршрут семьи." />
 <meta property="og:url" content="https://autismabroad.org/" />
 <link rel="canonical" href="https://autismabroad.org/" />
 <script src="https://cdn.tailwindcss.com"></script>
@@ -27,9 +26,14 @@ tailwind.config={theme:{extend:{colors:{
 <style>
   html{scroll-behavior:smooth}
   body{font-family:Inter,system-ui,sans-serif}
-  [x-cloak]{display:none}
-  .amount.sel{background:#EF6F53;color:#fff;border-color:#EF6F53}
-  .freq.sel{background:#fff;color:#1F6F6B;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .article h3{font-size:1.2rem;font-weight:700;margin-top:1.6rem;color:#16302E}
+  .article p{margin-top:.7rem;line-height:1.75;color:#374b49}
+  .article ul{margin-top:.7rem;padding-left:1.2rem;list-style:disc}
+  .article ol{margin-top:.7rem;padding-left:1.3rem;list-style:decimal}
+  .article li{margin-top:.45rem;line-height:1.65;color:#374b49}
+  .article strong{color:#16302E}
+  .article a{color:#1F6F6B;font-weight:600}
+  .article .lead{font-size:1.08rem;color:#374b49}
 </style>
 </head>
 <body class="bg-white text-ink">
@@ -42,230 +46,439 @@ tailwind.config={theme:{extend:{colors:{
       Autism Families Abroad
     </a>
     <nav class="hidden items-center gap-7 text-[15px] font-medium lg:flex">
-      <a href="#programs" data-i18n="nav_programs">What we do</a>
-      <a href="#directory" data-i18n="nav_directory">Directory</a>
-      <a href="#help" data-i18n="nav_help">Get help</a>
-      <a href="#story" data-i18n="nav_involved">Get involved</a>
-      <a href="#donate" data-i18n="nav_about">Transparency</a>
+      <a href="#guide" class="hover:text-teal-700">Справочник</a>
+      <a href="#app" class="hover:text-teal-700">Приложение</a>
+      <a href="#involved" class="hover:text-teal-700">Участвовать</a>
     </nav>
     <div class="flex items-center gap-3">
-      <!-- language -->
-      <div class="relative">
-        <button id="langBtn" class="flex items-center gap-1.5 rounded-full border border-teal-200 px-3 py-1.5 text-sm font-medium text-teal-700 hover:bg-teal-50">
-          <span>🌐</span><span id="langCur">EN</span><span class="text-xs">▾</span>
-        </button>
-        <div id="langMenu" class="absolute right-0 z-50 mt-2 hidden w-40 overflow-hidden rounded-2xl border border-teal-100 bg-white py-1 shadow-lg">
-          <button class="langOpt flex w-full items-center justify-between px-4 py-2 text-sm hover:bg-teal-50" data-lang="ru">Русский</button>
-          <button class="langOpt flex w-full items-center justify-between px-4 py-2 text-sm hover:bg-teal-50" data-lang="uk">Українська</button>
-          <button class="langOpt flex w-full items-center justify-between px-4 py-2 text-sm hover:bg-teal-50" data-lang="en">English</button>
-        </div>
-      </div>
-      <a href="#help" class="hidden rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600 sm:inline-block" data-i18n="nav_help">Get help</a>
-      <button id="menuBtn" class="lg:hidden" aria-label="Menu">
+      <span class="hidden rounded-full bg-teal-50 px-3 py-1.5 text-xs font-medium text-teal-600 sm:inline-block">RU · UK · EN — скоро</span>
+      <a href="#help" class="hidden rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600 sm:inline-block">Получить помощь</a>
+      <button id="menuBtn" class="lg:hidden" aria-label="Меню">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302E" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
   <div id="mobileNav" class="hidden border-t border-teal-100 bg-white px-5 py-3 lg:hidden">
-    <a href="#programs" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50" data-i18n="nav_programs">What we do</a>
-    <a href="#directory" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50" data-i18n="nav_directory">Directory</a>
-    <a href="#help" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50" data-i18n="nav_help">Get help</a>
-    <a href="#story" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50" data-i18n="nav_involved">Get involved</a>
-    <a href="#help" class="mt-2 block rounded-full bg-coral-500 px-5 py-2.5 text-center font-semibold text-white" data-i18n="nav_help">Get help</a>
+    <a href="#guide" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50">Справочник</a>
+    <a href="#app" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50">Приложение</a>
+    <a href="#involved" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50">Участвовать</a>
+    <a href="#help" class="mt-2 block rounded-full bg-coral-500 px-5 py-2.5 text-center font-semibold text-white">Получить помощь</a>
   </div>
 </header>
 
 <a id="top"></a>
 
-<!-- ============ HERO ============ -->
-<section class="bg-teal-50">
-  <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:py-20">
-    <div>
-      <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="hero_badge">Worldwide&nbsp; ·&nbsp; RU · UK · EN</span>
-      <h1 class="mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl" data-i18n="hero_h1">No family should face autism alone in a new country.</h1>
-      <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted" data-i18n="hero_sub">Autism Families Abroad helps refugee and migrant families find diagnosis, legal help, and a community that understands — wherever life takes them.</p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#help" class="rounded-full bg-coral-500 px-7 py-3.5 font-semibold text-white hover:bg-coral-600" data-i18n="btn_gethelp">Get help</a>
-        <a href="#programs" class="rounded-full border-[1.5px] border-teal-600 px-7 py-3.5 font-semibold text-teal-700 hover:bg-teal-100" data-i18n="btn_learn">Learn more</a>
-      </div>
-      <div class="mt-6 flex items-center gap-2 text-sm font-medium text-muted"><span class="h-2 w-2 rounded-full bg-teal-600"></span><span data-i18n="hero_trust">Free, confidential help for families.</span></div>
-    </div>
-    <div class="relative mx-auto h-[440px] w-full max-w-[516px]">
-      <div class="absolute inset-0 overflow-hidden rounded-[30px] bg-gradient-to-br from-teal-600 to-teal-700">
-        <span class="absolute left-[120px] top-[70px] text-[230px] font-extrabold leading-none text-white/15">∞</span>
-      </div>
-      <div class="absolute -left-4 top-14 rounded-2xl bg-white p-4 shadow-xl sm:-left-6">
-        <div class="text-[20px] font-extrabold text-teal-700" data-i18n="hero_c1n">Free</div><div class="text-xs font-medium text-muted" data-i18n="hero_card1">confidential help</div>
-      </div>
-      <div class="absolute right-2 bottom-8 rounded-2xl bg-white p-4 shadow-xl">
-        <div class="text-[20px] font-extrabold text-teal-700" data-i18n="hero_c2n">RU · UK · EN</div><div class="text-xs font-medium text-muted" data-i18n="hero_card2">your language</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============ HOME VIEW ============ -->
+<main id="view-home">
 
-<!-- ============ STATS ============ -->
-<section class="py-11">
-  <div class="mx-auto max-w-6xl px-5 sm:px-8">
-    <div class="grid grid-cols-2 gap-6 rounded-3xl bg-teal-700 px-8 py-9 text-white sm:px-12 md:flex md:items-center md:justify-between">
-      <div><div class="text-[28px] font-extrabold sm:text-[34px]" data-i18n="stat1n">Free</div><div class="text-sm font-medium text-teal-200" data-i18n="stat1">Always free for families</div></div>
-      <div><div class="text-[28px] font-extrabold sm:text-[34px]" data-i18n="stat2n">3</div><div class="text-sm font-medium text-teal-200" data-i18n="stat2">Languages: RU · UK · EN</div></div>
-      <div><div class="text-[28px] font-extrabold sm:text-[34px]" data-i18n="stat3n">100%</div><div class="text-sm font-medium text-teal-200" data-i18n="stat3">Transparent funding</div></div>
-      <div><div class="text-[28px] font-extrabold sm:text-[34px]" data-i18n="stat4n">Worldwide</div><div class="text-sm font-medium text-teal-200" data-i18n="stat4">Any country, any city</div></div>
+  <!-- HERO -->
+  <section class="bg-teal-50">
+    <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 lg:py-24">
+      <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700">Новая инициатива · семьи с детьми с аутизмом за рубежом</span>
+      <h1 class="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">Наконец-то понятно, куда двигаться.</h1>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">Открытая база знаний для семей в Эстонии, которые подозревают у ребёнка аутизм, задержку развития, СДВГ или трудности с речью — и не знают, с чего начать. Спокойно, по шагам, на понятном языке.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#situations" class="rounded-full bg-coral-500 px-7 py-3.5 font-semibold text-white hover:bg-coral-600">Что происходит сейчас?</a>
+        <a href="#guide" class="rounded-full border-[1.5px] border-teal-600 px-7 py-3.5 font-semibold text-teal-700 hover:bg-teal-100">Открыть справочник</a>
+      </div>
+      <div class="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-muted"><span class="h-2 w-2 rounded-full bg-teal-600"></span>Бесплатно · конфиденциально · на русском</div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ PROGRAMS ============ -->
-<section id="programs" class="scroll-mt-20 bg-teal-50 py-20">
-  <div class="mx-auto max-w-6xl px-5 sm:px-8">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="prog_kicker">What we do</span>
-      <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="prog_title">Practical help at every step</h2>
-      <p class="mt-3 text-lg text-muted" data-i18n="prog_sub">We're at the start of this journey: for now we mostly share our own experience and guidance — and we keep adding new services step by step.</p>
+  <!-- MANIFESTO -->
+  <section class="bg-teal-700 py-14 text-white">
+    <div class="mx-auto max-w-3xl px-5 text-center sm:px-8">
+      <p class="text-2xl font-bold leading-snug sm:text-[30px]">Мы не просто собираем информацию.<br class="hidden sm:block" /> Мы превращаем хаос в понятный маршрут.</p>
     </div>
-    <div class="mt-11 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <div class="rounded-3xl bg-white p-7"><span class="grid h-12 w-12 place-items-center rounded-full bg-teal-100"><span class="h-[18px] w-[18px] rounded-full bg-teal-600"></span></span><h3 class="mt-5 text-lg font-semibold" data-i18n="p1t">Navigation &amp; diagnosis</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="p1d">Step-by-step guidance through an unfamiliar healthcare and benefits system.</p></div>
-      <div class="rounded-3xl bg-white p-7"><span class="grid h-12 w-12 place-items-center rounded-full bg-teal-100"><span class="h-[18px] w-[18px] rounded-full bg-teal-600"></span></span><h3 class="mt-5 text-lg font-semibold" data-i18n="p2t">Legal help</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="p2d">Connect with vetted lawyers on residence, disability status and benefits.</p></div>
-      <div class="rounded-3xl bg-white p-7"><span class="grid h-12 w-12 place-items-center rounded-full bg-teal-100"><span class="h-[18px] w-[18px] rounded-full bg-teal-600"></span></span><h3 class="mt-5 text-lg font-semibold" data-i18n="p3t">City directory</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="p3d">Clinics, NGOs, therapists and benefits — searchable by country and city.</p></div>
-      <div class="rounded-3xl bg-white p-7"><span class="grid h-12 w-12 place-items-center rounded-full bg-teal-100"><span class="h-[18px] w-[18px] rounded-full bg-teal-600"></span></span><h3 class="mt-5 text-lg font-semibold" data-i18n="p4t">Community</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="p4d">A multilingual network of parents who have walked the same path.</p></div>
+  </section>
+
+  <!-- BLOCK 1: SITUATIONS -->
+  <section id="situations" class="scroll-mt-20 py-20">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold sm:text-4xl">Что происходит сейчас?</h2>
+        <p class="mt-3 text-lg text-muted">Выберите ситуацию, которая ближе всего к вашей. Мы постепенно собираем понятные маршруты для каждой из них.</p>
+      </div>
+      <div id="situationsGrid" class="mt-11 grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
     </div>
-    <p class="mx-auto mt-8 max-w-2xl text-center text-sm text-muted" data-i18n="prog_note">New services are added regularly as the project grows.</p>
-  </div>
-</section>
+  </section>
 
-<!-- ============ DIRECTORY ============ -->
-<section id="directory" class="scroll-mt-20 py-20">
-  <div class="mx-auto max-w-6xl px-5 text-center sm:px-8">
-    <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="dir_soon">Directory — coming soon</span>
-    <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="dir_title">A directory for your city</h2>
-    <p class="mx-auto mt-3 max-w-2xl text-lg text-muted" data-i18n="dir_sub">We're building a verified directory of clinics, NGOs, lawyers and benefits — city by city. Know a trusted resource, or are you a specialist who can help? Tell us and we'll add it.</p>
-    <a href="mailto:hello@autismabroad.org" class="mt-7 inline-block rounded-full bg-coral-500 px-8 py-4 font-semibold text-white hover:bg-coral-600" data-i18n="dir_cta">Suggest a resource</a>
-  </div>
-</section>
+  <!-- BLOCK 2: SPRAVOCHNIK -->
+  <section id="guide" class="scroll-mt-20 bg-teal-50 py-20">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700">Справочник</span>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Справочник для семей в Эстонии</h2>
+        <p class="mt-3 text-lg text-muted">Понятные материалы о первых шагах, диагностике, документах, очередях, поддержке, садике, школе и услугах.</p>
+      </div>
+      <div id="guideGrid" class="mt-11 grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+    </div>
+  </section>
 
-<!-- ============ DONATE / TRANSPARENCY ============ -->
-<section id="donate" class="scroll-mt-20 bg-teal-700 py-20 text-white">
-  <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
-    <div>
-      <span class="inline-block rounded-full bg-[#15524E] px-3.5 py-2 text-sm font-medium text-teal-200" data-i18n="support_badge">Donations — coming soon</span>
-      <h2 class="mt-5 text-3xl font-extrabold leading-tight sm:text-[34px]" data-i18n="donate_title">We're building this the right way</h2>
-      <p class="mt-5 max-w-xl text-[17px] leading-relaxed text-teal-200" data-i18n="donate_sub">We're setting up fully transparent donations through Open Collective, where every expense is public. Until then, the best way to help is to share our work and tell families who need us.</p>
-      <div class="mt-7 flex flex-wrap gap-4">
-        <a href="#help" class="rounded-full bg-coral-500 px-7 py-3.5 font-semibold text-white hover:bg-coral-600" data-i18n="btn_gethelp">Get help</a>
-        <a href="mailto:hello@autismabroad.org" class="rounded-full border-[1.5px] border-teal-400/60 px-7 py-3.5 font-semibold text-white" data-i18n="btn_volunteer">Volunteer / Partner</a>
+  <!-- BLOCK 3: APP -->
+  <section id="app" class="scroll-mt-20 py-20">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+        <div>
+          <span class="inline-block rounded-full bg-coral-500 px-3 py-1 text-xs font-semibold text-white">Скоро</span>
+          <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Что будет делать приложение</h2>
+          <p class="mt-4 text-lg leading-relaxed text-muted">Сайт помогает разобраться в системе. Приложение <strong class="text-ink">Family Navigator</strong> будет строить персональный маршрут семьи: показывать следующий шаг, напоминать о сроках, учитывать очередь, хранить статус задач и сообщать, если изменились правила или услуги.</p>
+          <a href="mailto:hello@autismabroad.org?subject=Хочу узнать о запуске приложения" class="mt-6 inline-block rounded-full bg-teal-700 px-7 py-3.5 font-semibold text-white hover:bg-teal-800">Узнать о запуске</a>
+        </div>
+        <ul class="grid gap-3 rounded-3xl border border-teal-100 bg-teal-50 p-7 text-[15px] text-muted sm:grid-cols-2">
+          <li class="flex gap-2"><span class="text-teal-600">•</span> персональный маршрут семьи</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> следующий шаг</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> календарь и дедлайны</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> напоминания</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> государственный, смешанный, частный путь</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> обновления при изменении правил</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> подготовка к визиту к специалисту</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> «Что делать, пока вы ждёте»</li>
+          <li class="flex gap-2 sm:col-span-2"><span class="text-teal-600">•</span> статус: что сделано, что осталось, где семья сейчас</li>
+        </ul>
       </div>
     </div>
-    <div class="rounded-3xl bg-white p-7 text-ink">
-      <h3 class="text-lg font-semibold" data-i18n="money_title">Our funding plan</h3>
-      <p class="mt-1 text-sm text-muted" data-i18n="money_sub">How donations will be allocated once we launch.</p>
-      <div class="mt-5 space-y-5">
-        <div><div class="flex justify-between text-sm"><span class="font-medium" data-i18n="money_b1">Direct family support &amp; case work</span><span class="font-semibold text-teal-700">62%</span></div><div class="mt-1.5 h-2 rounded-full bg-teal-100"><div class="h-2 rounded-full bg-teal-600" style="width:62%"></div></div></div>
-        <div><div class="flex justify-between text-sm"><span class="font-medium" data-i18n="money_b2">Legal &amp; translation services</span><span class="font-semibold text-teal-700">24%</span></div><div class="mt-1.5 h-2 rounded-full bg-teal-100"><div class="h-2 rounded-full bg-teal-600" style="width:24%"></div></div></div>
-        <div><div class="flex justify-between text-sm"><span class="font-medium" data-i18n="money_b3">Operations &amp; platform fees</span><span class="font-semibold text-teal-700">14%</span></div><div class="mt-1.5 h-2 rounded-full bg-teal-100"><div class="h-2 rounded-full bg-teal-600" style="width:14%"></div></div></div>
+  </section>
+
+  <!-- BLOCK 4: IMPORTANT -->
+  <section id="important" class="scroll-mt-20 pb-8">
+    <div class="mx-auto max-w-3xl px-5 sm:px-8">
+      <div class="rounded-3xl border border-teal-100 bg-teal-50 p-8 text-center">
+        <h2 class="text-xl font-bold">Важно</h2>
+        <p class="mx-auto mt-3 max-w-xl leading-relaxed text-muted">Мы не ставим диагнозы, не назначаем лечение и не заменяем врача, юриста или социального работника. Мы помогаем семье ориентироваться в системе, понимать возможные шаги и готовиться к обращениям к специалистам.</p>
       </div>
-      <p class="mt-6 text-sm text-muted" data-i18n="money_note">Budgets will be public via Open Collective.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ GET HELP ============ -->
-<section id="help" class="scroll-mt-20 py-20">
-  <div class="mx-auto max-w-4xl px-5 text-center sm:px-8">
-    <h2 class="text-3xl font-bold sm:text-4xl" data-i18n="help_title">Need help? Send us a request</h2>
-    <p class="mx-auto mt-3 max-w-xl text-lg text-muted" data-i18n="help_sub">Tell us about your situation and how to reach you. We'll get back to you with concrete next steps.</p>
-    <a href="mailto:hello@autismabroad.org?subject=Help%20request" class="mt-7 inline-block rounded-full bg-coral-500 px-8 py-4 font-semibold text-white hover:bg-coral-600" data-i18n="help_btn">Request help</a>
-  </div>
-</section>
+  <!-- INVOLVED -->
+  <section id="involved" class="scroll-mt-20 py-16">
+    <div class="mx-auto max-w-4xl px-5 sm:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700">Мы только начинаем</span>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Помогите нам это построить</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted">Проект начал родитель, прошедший переезд с ребёнком с аутизмом. Мы ищем людей и организации, чтобы дополнять справочник и запустить приложение.</p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold">Партнёрские организации</h3><p class="mt-2 text-[15px] leading-relaxed text-muted">НКО, клиники и фонды, готовые вместе помогать семьям.</p></div>
+        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold">Специалисты</h3><p class="mt-2 text-[15px] leading-relaxed text-muted">Врачи, юристы, психологи и переводчики, готовые проверять и дополнять материалы.</p></div>
+        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold">Волонтёры</h3><p class="mt-2 text-[15px] leading-relaxed text-muted">Координаторы, переводчики и родители, готовые поделиться опытом.</p></div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="mailto:hello@autismabroad.org?subject=Хочу участвовать" class="inline-block rounded-full bg-teal-700 px-8 py-4 font-semibold text-white hover:bg-teal-800">Стать партнёром или волонтёром</a>
+      </div>
+    </div>
+  </section>
 
-<!-- ============ STORY ============ -->
-<section id="story" class="scroll-mt-20 bg-teal-50 py-20">
-  <div class="mx-auto max-w-4xl px-5 sm:px-8">
-    <div class="mx-auto max-w-2xl text-center">
-      <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="inv_kicker">We're just getting started</span>
-      <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="inv_title">Help us build this</h2>
-      <p class="mt-4 text-lg leading-relaxed text-muted" data-i18n="inv_note">This project was started by a parent who went through the move abroad with an autistic child. We're at the very beginning — and we're looking for people and organizations to build it with.</p>
+  <!-- HELP -->
+  <section id="help" class="scroll-mt-20 bg-teal-50 py-20">
+    <div class="mx-auto max-w-3xl px-5 text-center sm:px-8">
+      <h2 class="text-3xl font-bold sm:text-4xl">Нужна помощь именно вам?</h2>
+      <p class="mx-auto mt-3 max-w-xl text-lg text-muted">Напишите нам о своей ситуации — коротко, как есть. Мы ответим и подскажем, с чего начать.</p>
+      <a href="mailto:hello@autismabroad.org?subject=Запрос на помощь" class="mt-7 inline-block rounded-full bg-coral-500 px-8 py-4 font-semibold text-white hover:bg-coral-600">Написать нам</a>
     </div>
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
-      <div class="rounded-3xl bg-white p-7"><h3 class="text-lg font-semibold" data-i18n="inv_1t">Partner organizations</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="inv_1d">NGOs, clinics and foundations who want to reach families together.</p></div>
-      <div class="rounded-3xl bg-white p-7"><h3 class="text-lg font-semibold" data-i18n="inv_2t">Specialists</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="inv_2d">Doctors, lawyers, therapists and translators willing to help families.</p></div>
-      <div class="rounded-3xl bg-white p-7"><h3 class="text-lg font-semibold" data-i18n="inv_3t">Volunteers</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="inv_3d">Coordinators, translators and parents ready to share their experience.</p></div>
+  </section>
+</main>
+
+<!-- ============ ARTICLE VIEW ============ -->
+<main id="view-article" class="hidden">
+  <div class="mx-auto max-w-3xl px-5 py-12 sm:px-8">
+    <a href="#guide" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800">← Назад в справочник</a>
+    <h1 id="articleTitle" class="mt-6 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl"></h1>
+    <div id="articleMeta" class="mt-6 grid gap-3 rounded-2xl bg-teal-50 p-5 sm:grid-cols-2">
+      <div><div class="text-xs font-semibold uppercase tracking-wide text-teal-600">Кому поможет</div><div id="articleWho" class="mt-1 text-[15px] text-ink"></div></div>
+      <div><div class="text-xs font-semibold uppercase tracking-wide text-teal-600">Закрывает вопрос</div><div id="articleQuestion" class="mt-1 text-[15px] text-ink"></div></div>
     </div>
-    <div class="mt-8 text-center">
-      <a href="mailto:hello@autismabroad.org" class="inline-block rounded-full bg-teal-700 px-8 py-4 font-semibold text-white hover:bg-teal-800" data-i18n="inv_cta">Become a partner or volunteer</a>
+    <div class="mt-4 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900">
+      <span>ⓘ</span><span>Информация носит справочный характер и не заменяет консультацию врача, юриста или социального работника. Проверяйте актуальные условия на официальных сайтах.</span>
+    </div>
+    <article id="articleBody" class="article mt-6"></article>
+    <div class="mt-10 rounded-2xl border border-teal-100 bg-teal-50 p-6">
+      <div class="text-sm font-semibold text-teal-700">Следующий шаг</div>
+      <div id="articleNext" class="mt-1 text-[15px] text-muted"></div>
+    </div>
+    <div class="mt-8">
+      <a href="#guide" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800">← Ко всем темам справочника</a>
     </div>
   </div>
-</section>
+</main>
 
 <!-- ============ FOOTER ============ -->
-<footer class="bg-ink py-14 text-white">
-  <div class="mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-2 sm:px-8 lg:grid-cols-4">
-    <div class="lg:pr-8">
+<footer class="bg-ink py-12 text-white">
+  <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center sm:px-8">
+    <div>
       <div class="flex items-center gap-2.5 text-lg font-bold"><span class="grid h-8 w-8 place-items-center rounded-full bg-teal-700 text-white">∞</span>Autism Families Abroad</div>
-      <p class="mt-4 text-[15px] leading-relaxed text-teal-300/80" data-i18n="foot_tagline">Supporting migrant and refugee families raising autistic children.</p>
-      <span class="mt-4 inline-block rounded-full bg-[#244B48] px-3.5 py-1.5 text-xs font-medium text-teal-200" data-i18n="foot_oc">Open Collective · 100% transparent</span>
+      <p class="mt-3 max-w-sm text-[15px] leading-relaxed text-teal-300/80">Помогаем семьям, воспитывающим детей с аутизмом, разобраться в системе — и пройти свой маршрут.</p>
     </div>
-    <div><h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-teal-300" data-i18n="foot_h1">Foundation</h4><ul class="mt-4 space-y-2.5 text-sm text-teal-100/80"><li><a href="#donate" data-i18n="foot_l_about">About us</a></li><li><a href="#donate" data-i18n="foot_l_transp">Transparency</a></li><li><a href="#help" data-i18n="foot_l_contact">Contact</a></li></ul></div>
-    <div><h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-teal-300" data-i18n="foot_h2">Programs</h4><ul class="mt-4 space-y-2.5 text-sm text-teal-100/80"><li><a href="#programs" data-i18n="p1t">Diagnosis</a></li><li><a href="#programs" data-i18n="p2t">Legal help</a></li><li><a href="#directory" data-i18n="p3t">City directory</a></li><li><a href="#programs" data-i18n="p4t">Community</a></li></ul></div>
-    <div><h4 class="text-xs font-semibold uppercase tracking-[0.12em] text-teal-300" data-i18n="foot_h3">Get involved</h4><ul class="mt-4 space-y-2.5 text-sm text-teal-100/80"><li><a href="#donate" data-i18n="support_soon">Support (soon)</a></li><li><a href="mailto:hello@autismabroad.org" data-i18n="foot_l_volunteer">Volunteer</a></li><li><a href="#story" data-i18n="foot_l_partner">Partners</a></li></ul></div>
+    <div class="text-[15px] text-teal-100/80">
+      <a href="mailto:hello@autismabroad.org" class="hover:text-white">hello@autismabroad.org</a>
+      <p class="mt-3 text-[13px] text-teal-300/70">© 2026 Autism Families Abroad · некоммерческая инициатива</p>
+    </div>
   </div>
-  <div class="mx-auto mt-10 max-w-6xl border-t border-white/10 px-5 pt-6 text-[13px] text-teal-300/70 sm:px-8">© 2026 Autism Families Abroad · <span data-i18n="foot_copy">A non-profit initiative</span></div>
 </footer>
 
 <script>
-const I18N={
-  en:{doc_title:"Autism Families Abroad — support for migrant families raising autistic children",nav_programs:"What we do",nav_directory:"Directory",nav_help:"Get help",nav_stories:"Stories",nav_about:"Transparency",
-    btn_donate:"Donate",hero_badge:"New non-profit initiative · RU · UK · EN",hero_h1:"No family should face autism alone in a new country.",hero_sub:"Autism Families Abroad helps refugee and migrant families find diagnosis, legal help, and a community that understands — wherever life takes them.",btn_gethelp:"Get help",btn_learn:"Learn more",hero_trust:"Free, confidential help for families.",hero_c1n:"Free",hero_card1:"confidential help",hero_c2n:"RU · UK · EN",hero_card2:"your language",
-    stat1n:"Free",stat1:"Always free for families",stat2n:"3",stat2:"Languages: RU · UK · EN",stat3n:"100%",stat3:"Transparent funding",stat4n:"Parent-led",stat4:"Started by a family who's been there",
-    prog_kicker:"What we do",prog_title:"Practical help at every step",prog_sub:"We're at the start of this journey: for now we mostly share our own experience and guidance — and we keep adding new services step by step.",prog_note:"New services are added regularly as the project grows.",
-    p1t:"Navigation & diagnosis",p1d:"Step-by-step guidance through an unfamiliar healthcare and benefits system.",p2t:"Legal help",p2d:"Connect with vetted lawyers on residence, disability status and benefits.",p3t:"City directory",p3d:"Clinics, NGOs, therapists and benefits — searchable by country and city.",p4t:"Community",p4d:"A multilingual network of parents who have walked the same path.",
-    dir_title:"A directory for your city",dir_sub:"We're building a verified directory of clinics, NGOs, lawyers and benefits — city by city. Know a trusted resource, or are you a specialist who can help? Tell us and we'll add it.",dir_soon:"Directory — coming soon",dir_cta:"Suggest a resource",
-    support_badge:"Donations — coming soon",donate_title:"We're building this the right way",donate_sub:"We're setting up fully transparent donations through Open Collective, where every expense is public. Until then, the best way to help is to share our work and tell families who need us.",btn_volunteer:"Volunteer / Partner",money_title:"Our funding plan",money_sub:"How donations will be allocated once we launch.",money_b1:"Direct family support & case work",money_b2:"Legal & translation services",money_b3:"Operations & platform fees",money_note:"Budgets will be public via Open Collective.",support_soon:"Support (soon)",
-    help_title:"Need help? Send us a request",help_sub:"Tell us about your situation and how to reach you. We'll get back to you with concrete next steps.",help_btn:"Request help",
-        foot_tagline:"Supporting migrant and refugee families raising autistic children.",foot_oc:"Transparent funding — coming soon",foot_h1:"Foundation",foot_h2:"Programs",foot_h3:"Get involved",foot_l_about:"About us",foot_l_transp:"Transparency",foot_l_contact:"Contact",foot_l_volunteer:"Volunteer",foot_l_partner:"Partners",foot_copy:"A non-profit initiative",nav_involved:"Get involved",inv_kicker:"We're just getting started",inv_title:"Help us build this",inv_note:"This project was started by a parent who went through the move abroad with an autistic child. We're at the very beginning — and we're looking for people and organizations to build it with.",inv_1t:"Partner organizations",inv_1d:"NGOs, clinics and foundations who want to reach families together.",inv_2t:"Specialists",inv_2d:"Doctors, lawyers, therapists and translators willing to help families.",inv_3t:"Volunteers",inv_3d:"Coordinators, translators and parents ready to share their experience.",inv_cta:"Become a partner or volunteer"},
-  ru:{doc_title:"Autism Families Abroad — помощь семьям мигрантов с детьми с аутизмом",nav_programs:"Что мы делаем",nav_directory:"Справочник",nav_help:"Получить помощь",nav_stories:"Истории",nav_about:"Прозрачность",
-    btn_donate:"Поддержать",hero_badge:"Новая некоммерческая инициатива · RU · UK · EN",hero_h1:"Ни одна семья не должна проходить путь с аутизмом в одиночку в чужой стране.",hero_sub:"Autism Families Abroad помогает семьям беженцев и мигрантов с диагностикой, юридической помощью и поиском сообщества — в какой бы стране вы ни оказались.",btn_gethelp:"Получить помощь",btn_learn:"Подробнее",hero_trust:"Бесплатная конфиденциальная помощь семьям.",hero_c1n:"Бесплатно",hero_card1:"конфиденциальная помощь",hero_c2n:"RU · UK · EN",hero_card2:"на вашем языке",
-    stat1n:"Бесплатно",stat1:"Всегда бесплатно для семей",stat2n:"3",stat2:"Языка: RU · UK · EN",stat3n:"100%",stat3:"Прозрачное финансирование",stat4n:"От родителей",stat4:"Создан семьёй, прошедшей это",
-    prog_kicker:"Что мы делаем",prog_title:"Практическая помощь на каждом шаге",prog_sub:"Мы в начале пути: пока мы в основном делимся собственным опытом и подсказками — и постоянно добавляем новые услуги.",prog_note:"Новые услуги добавляются по мере развития проекта.",
-    p1t:"Навигация и диагностика",p1d:"Пошаговая помощь в незнакомой системе здравоохранения и оформления статуса.",p2t:"Юридическая помощь",p2d:"Связь с проверенными юристами по ВНЖ, инвалидности и пособиям.",p3t:"Справочник по городам",p3d:"Клиники, НКО, специалисты и пособия — поиск по стране и городу.",p4t:"Сообщество",p4d:"Многоязычная сеть родителей, прошедших похожий путь.",
-    dir_title:"Справочник для вашего города",dir_sub:"Мы собираем проверенный справочник клиник, НКО, юристов и пособий — город за городом. Знаете надёжный ресурс или вы специалист и готовы помочь? Напишите — добавим.",dir_soon:"Справочник — скоро",dir_cta:"Предложить ресурс",
-    support_badge:"Донаты — скоро",donate_title:"Мы делаем это правильно",donate_sub:"Мы настраиваем полностью прозрачные пожертвования через Open Collective, где виден каждый расход. А пока лучший способ помочь — рассказать о нас и направить к нам семьи, которым нужна помощь.",btn_volunteer:"Волонтёрство / Партнёрство",money_title:"Наш план финансирования",money_sub:"Как будут распределяться пожертвования после запуска.",money_b1:"Прямая помощь семьям и кейс-менеджмент",money_b2:"Юридические услуги и перевод",money_b3:"Операционные расходы и комиссии",money_note:"Бюджет будет публичным через Open Collective.",support_soon:"Поддержать (скоро)",
-    help_title:"Нужна помощь? Оставьте заявку",help_sub:"Расскажите о своей ситуации и как с вами связаться. Мы вернёмся с конкретными следующими шагами.",help_btn:"Оставить заявку",
-        foot_tagline:"Поддержка семей мигрантов и беженцев, воспитывающих детей с аутизмом.",foot_oc:"Прозрачное финансирование — скоро",foot_h1:"Фонд",foot_h2:"Программы",foot_h3:"Участвовать",foot_l_about:"О нас",foot_l_transp:"Прозрачность",foot_l_contact:"Контакты",foot_l_volunteer:"Волонтёрство",foot_l_partner:"Партнёры",foot_copy:"Некоммерческая инициатива",nav_involved:"Участвовать",inv_kicker:"Мы только начинаем",inv_title:"Помогите нам это построить",inv_note:"Проект начал родитель, прошедший переезд с ребёнком с аутизмом. Мы в самом начале — и ищем людей и организации, чтобы строить это вместе.",inv_1t:"Партнёрские организации",inv_1d:"НКО, клиники и фонды, готовые вместе помогать семьям.",inv_2t:"Специалисты",inv_2d:"Врачи, юристы, терапевты и переводчики, готовые помогать семьям.",inv_3t:"Волонтёры",inv_3d:"Координаторы, переводчики и родители, готовые поделиться опытом.",inv_cta:"Стать партнёром или волонтёром"},
-  uk:{doc_title:"Autism Families Abroad — допомога родинам мігрантів з дітьми з аутизмом",nav_programs:"Що ми робимо",nav_directory:"Довідник",nav_help:"Отримати допомогу",nav_stories:"Історії",nav_about:"Прозорість",
-    btn_donate:"Підтримати",hero_badge:"Нова некомерційна ініціатива · RU · UK · EN",hero_h1:"Жодна родина не повинна проходити шлях з аутизмом наодинці в чужій країні.",hero_sub:"Autism Families Abroad допомагає родинам біженців і мігрантів із діагностикою, юридичною допомогою та пошуком спільноти — у якій би країні ви не опинилися.",btn_gethelp:"Отримати допомогу",btn_learn:"Докладніше",hero_trust:"Безкоштовна конфіденційна допомога родинам.",hero_c1n:"Безкоштовно",hero_card1:"конфіденційна допомога",hero_c2n:"RU · UK · EN",hero_card2:"вашою мовою",
-    stat1n:"Безкоштовно",stat1:"Завжди безкоштовно для родин",stat2n:"3",stat2:"Мови: RU · UK · EN",stat3n:"100%",stat3:"Прозоре фінансування",stat4n:"Від батьків",stat4:"Створений родиною, яка це пройшла",
-    prog_kicker:"Що ми робимо",prog_title:"Практична допомога на кожному кроці",prog_sub:"Ми на початку шляху: поки що ми переважно ділимося власним досвідом і підказками — і постійно додаємо нові послуги.",prog_note:"Нові послуги додаються в міру розвитку проєкту.",
-    p1t:"Навігація та діагностика",p1d:"Покрокова допомога в незнайомій системі охорони здоров'я та оформлення статусу.",p2t:"Юридична допомога",p2d:"Зв'язок із перевіреними юристами щодо ВНП, інвалідності та виплат.",p3t:"Довідник по містах",p3d:"Клініки, НУО, фахівці та виплати — пошук за країною та містом.",p4t:"Спільнота",p4d:"Багатомовна мережа батьків, які пройшли схожий шлях.",
-    dir_title:"Довідник для вашого міста",dir_sub:"Ми збираємо перевірений довідник клінік, НУО, юристів і виплат — місто за містом. Знаєте надійний ресурс або ви фахівець і готові допомогти? Напишіть — додамо.",dir_soon:"Довідник — скоро",dir_cta:"Запропонувати ресурс",
-    support_badge:"Донати — скоро",donate_title:"Ми робимо це правильно",donate_sub:"Ми налаштовуємо повністю прозорі пожертви через Open Collective, де видно кожну витрату. А поки найкращий спосіб допомогти — розповісти про нас і направити до нас родини, яким потрібна допомога.",btn_volunteer:"Волонтерство / Партнерство",money_title:"Наш план фінансування",money_sub:"Як розподілятимуться пожертви після запуску.",money_b1:"Пряма допомога родинам і кейс-менеджмент",money_b2:"Юридичні послуги та переклад",money_b3:"Операційні витрати та комісії",money_note:"Бюджет буде публічним через Open Collective.",support_soon:"Підтримати (скоро)",
-    help_title:"Потрібна допомога? Залиште заявку",help_sub:"Розкажіть про свою ситуацію і як з вами зв'язатися. Ми повернемося з конкретними наступними кроками.",help_btn:"Залишити заявку",
-        foot_tagline:"Підтримка родин мігрантів і біженців, які виховують дітей з аутизмом.",foot_oc:"Прозоре фінансування — скоро",foot_h1:"Фонд",foot_h2:"Програми",foot_h3:"Долучитися",foot_l_about:"Про нас",foot_l_transp:"Прозорість",foot_l_contact:"Контакти",foot_l_volunteer:"Волонтерство",foot_l_partner:"Партнери",foot_copy:"Некомерційна ініціатива",nav_involved:"Долучитися",inv_kicker:"Ми тільки починаємо",inv_title:"Допоможіть нам це побудувати",inv_note:"Проєкт започаткував батько, який пройшов переїзд з дитиною з аутизмом. Ми на самому початку — і шукаємо людей та організації, щоб будувати це разом.",inv_1t:"Партнерські організації",inv_1d:"НУО, клініки та фонди, готові разом допомагати родинам.",inv_2t:"Фахівці",inv_2d:"Лікарі, юристи, терапевти та перекладачі, готові допомагати родинам.",inv_3t:"Волонтери",inv_3d:"Координатори, перекладачі та батьки, готові поділитися досвідом.",inv_cta:"Стати партнером або волонтером"}
-};
-const LNAMES={ru:"RU",uk:"UK",en:"EN"};
-function applyLang(lang){
-  const d=I18N[lang]||I18N.en;
-  document.documentElement.lang=lang;
-  if(d.doc_title) document.title=d.doc_title;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k];});
-  document.querySelectorAll('[data-ph]').forEach(el=>{const k=el.getAttribute('data-ph'); if(d[k]!=null) el.setAttribute('placeholder',d[k]);});
-  document.getElementById('langCur').textContent=LNAMES[lang];
-  try{localStorage.setItem('afa_lang',lang);}catch(e){}
+// ============ HOMEPAGE CARDS ============
+const SITUATIONS=[
+ {title:"Есть подозрение, но диагноза нет",desc:"Вы замечаете задержку речи, сложности с поведением, сенсорные особенности или подозреваете аутизм, но не знаете, куда обращаться.",btn:"С чего начать",slug:"s-chego-nachat-v-estonii"},
+ {title:"Ждём очередь к специалисту",desc:"Вы уже записались, но приём через несколько месяцев. Разбираем, что можно подготовить и сделать уже сейчас.",btn:"Что делать пока ждёте",slug:"ochered-k-specialistu"},
+ {title:"Диагноз уже есть",desc:"Помогаем понять, какие шаги могут быть дальше: документы, поддержка, инвалидность, услуги, садик или школа.",btn:"Следующие шаги",slug:"diagnoz-uzhe-est"},
+ {title:"Хотим оформить инвалидность",desc:"Объясняем, где искать информацию, какие документы обычно нужны и какие вопросы стоит уточнить.",btn:"Разобраться",slug:"invalidnost-i-posobiya"},
+ {title:"Ищем садик или школу",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе.",btn:"Посмотреть маршрут",slug:"sadik-i-shkola"},
+ {title:"Только приехали в Эстонию",desc:"С чего начать семье мигрантов или беженцев, если ребёнок нуждается в поддержке.",btn:"Первый шаг",slug:"tolko-priehali-v-estoniyu"}
+];
+const GUIDE=[
+ {title:"С чего начать в Эстонии",desc:"Первый маршрут для родителей, которые видят трудности у ребёнка, но ещё не знают, куда обращаться.",slug:"s-chego-nachat-v-estonii"},
+ {title:"Как подготовиться к семейному врачу",desc:"Что записать заранее, какие наблюдения собрать и какие вопросы задать врачу.",slug:"podgotovka-k-semeinomu-vrachu"},
+ {title:"Что делать, если очередь длинная",desc:"Как не потерять время, пока семья ждёт приёма специалиста.",slug:"ochered-k-specialistu"},
+ {title:"Государственный, смешанный и частный путь",desc:"Какие варианты помощи могут быть у семьи и чем они отличаются.",slug:"gosudarstvennyy-smeshannyy-chastnyy-put"},
+ {title:"Диагностика и специалисты",desc:"Какие специалисты могут участвовать в оценке развития ребёнка и что важно уточнить.",slug:"diagnostika-i-specialisty"},
+ {title:"Инвалидность и пособия",desc:"Где искать информацию о правах, пособиях, услугах и документах.",slug:"invalidnost-i-posobiya"},
+ {title:"Садик и школа",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе.",slug:"sadik-i-shkola"},
+ {title:"Документы и чек-листы",desc:"Списки документов, вопросов и наблюдений, которые помогают подготовиться к обращениям.",slug:"dokumenty-i-cheklisty"},
+ {title:"Частые вопросы родителей",desc:"Короткие ответы на вопросы, с которыми семьи сталкиваются чаще всего.",slug:"faq"}
+];
+
+// ============ ARTICLES ============
+const ARTICLES=[
+ {slug:"s-chego-nachat-v-estonii",title:"С чего начать в Эстонии, если есть подозрение на аутизм или задержку развития",
+  who:"Родителям в Эстонии (включая мигрантов и беженцев), которые замечают особенности развития и не знают, куда идти.",
+  question:"«С чего начать, если я подозреваю аутизм или задержку развития?»",
+  next:"Дальше — тема «Как подготовиться к семейному врачу», чтобы получить максимум от первого приёма.",
+  body:`<p class="lead">Если вы замечаете, что ребёнок развивается иначе, самое тяжёлое часто не сам факт подозрения, а непонимание, куда идти и что делать. Эта страница поможет спокойно разложить первые шаги.</p>
+  <h3>Первый шаг</h3>
+  <p>Обычно путь начинается с обращения к <strong>семейному врачу (perekonnaarst)</strong> или к другому специалисту, который может помочь определить дальнейший маршрут и при необходимости дать направление (saatekiri). Если вопрос больше про развитие, речь и обучение, обратиться можно и в государственную службу консультирования <strong>Rajaleidja</strong> — часто ещё до постановки диагноза.</p>
+  <p class="text-sm text-muted">Точный порядок обращения стоит сверить с официальными источниками — см. блок «Факты, которые нужно подтвердить» внизу страницы.</p>
+  <h3>Что подготовить перед обращением</h3>
+  <ul><li>что именно вас беспокоит;</li><li>когда это началось;</li><li>как ребёнок говорит или не говорит;</li><li>как реагирует на людей;</li><li>как ведёт себя в садике и дома;</li><li>есть ли истерики, проблемы со сном, питанием, сенсорикой;</li><li>короткие видео поведения, если это уместно;</li><li>старые медицинские документы, если есть;</li><li>заметки от воспитателя или специалиста, если есть.</li></ul>
+  <h3>Если очередь длинная</h3>
+  <p>Ожидание специалиста не должно быть потерянным временем. Пока семья ждёт, можно готовить документы, вести дневник наблюдений, собирать вопросы к врачу, уточнять доступные услуги и искать поддержку. Подробнее — в теме <a href="#/spravochnik/ochered-k-specialistu">«Что делать, если очередь длинная»</a>.</p>
+  <h3>Три возможных пути</h3>
+  <div class="mt-3 grid gap-4 sm:grid-cols-3">
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Государственный</div><div class="mt-1 text-sm text-muted">Через государственную систему и направления.</div></div>
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Смешанный</div><div class="mt-1 text-sm text-muted">Часть шагов через государство, часть — через частных специалистов.</div></div>
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Частный</div><div class="mt-1 text-sm text-muted">В некоторых случаях быстрее, но требует бюджета.</div></div>
+  </div>
+  <p class="mt-3 text-sm"><strong>Важно:</strong> ни один путь не является всегда лучшим. Семья выбирает по своей ситуации. Подробное сравнение — в теме <a href="#/spravochnik/gosudarstvennyy-smeshannyy-chastnyy-put">«Государственный, смешанный и частный путь»</a>.</p>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-6">
+    <div class="text-sm font-semibold text-teal-700">Что Family Navigator будет делать дальше</div>
+    <ul class="mt-2 space-y-1.5 text-[15px] text-muted" style="list-style:none;padding-left:0">
+      <li>• поможет определить текущий этап;</li><li>• покажет следующий шаг;</li><li>• подскажет, что подготовить;</li><li>• объяснит, что делать, пока вы ждёте;</li><li>• напомнит о сроках;</li><li>• покажет, какие вопросы обсудить со специалистом.</li>
+    </ul>
+  </div>
+  <h3>Частые вопросы</h3>
+  <p><strong>Ребёнку нет диагноза. Можно ли уже обращаться за помощью?</strong><br/>Да. Многие виды поддержки — консультация семейного врача, обращение в Rajaleidja, занятия по развитию — доступны и без диагноза.</p>
+  <p><strong>Что делать, если семейный врач не видит проблемы?</strong><br/>Вы имеете право спокойно настаивать: попросить направление, второе мнение или обратиться к другому специалисту. Помогают конкретные примеры, дневник наблюдений и короткие видео.</p>
+  <p><strong>Можно ли идти к частному специалисту?</strong><br/>Да. Частный путь бывает быстрее. Заранее уточните, примет ли государственная система это заключение для льгот и поддержки.</p>
+  <p><strong>Что делать, если я плохо говорю по-эстонски?</strong><br/>Во многих местах можно общаться на русском или английском либо с переводчиком. Вы имеете право попросить, чтобы вам объяснили понятно.</p>
+  <p><strong>Какие документы лучше начать собирать заранее?</strong><br/>Личный код и данные ребёнка, медстраховку, все медицинские заключения и переводы, заметки воспитателя, дневник наблюдений. Список — в теме <a href="#/spravochnik/dokumenty-i-cheklisty">«Документы и чек-листы»</a>.</p>
+  <div class="mt-6 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900"><span>ⓘ</span><span>Эта информация не является медицинской или юридической консультацией. Мы не ставим диагнозы и не назначаем лечение. Мы помогаем семье ориентироваться и готовиться к общению со специалистами.</span></div>
+  <div class="mt-6 rounded-2xl border border-dashed border-teal-300 bg-white p-6">
+    <div class="text-sm font-semibold text-ink">Факты, которые нужно подтвердить официальными источниками</div>
+    <div class="mt-1 text-[13px] text-muted">Ниже — утверждения, к которым нужно добавить ссылки на официальные сайты Эстонии.</div>
+    <ul class="mt-3 space-y-2 text-[14px] text-muted">
+      <li>• Кто является «точкой входа» и как получить направление (saatekiri) — <strong>Tervisekassa</strong>, <strong>eesti.ee</strong>.</li>
+      <li>• Какие услуги доступны <strong>без диагноза</strong> и как работает Rajaleidja — <strong>Rajaleidja / Harno</strong>.</li>
+      <li>• Право на переводчика и язык обслуживания — <strong>Tervisekassa</strong> / конкретное учреждение.</li>
+      <li>• Оформление степени тяжести (puue) и пособий — <strong>Sotsiaalkindlustusamet</strong>.</li>
+      <li>• Реабилитационные услуги — <strong>Sotsiaalkindlustusamet</strong>.</li>
+      <li>• Очередь и выбор поставщика услуг — <strong>Tervisekassa</strong>.</li>
+      <li>• Признаёт ли государство частные заключения для льгот — уточнять у <strong>Sotsiaalkindlustusamet</strong>.</li>
+    </ul>
+  </div>`},
+
+ {slug:"tolko-priehali-v-estoniyu",title:"Только приехали в Эстонию: первые шаги",
+  who:"Семьям мигрантов и беженцев, которые только приехали и у которых ребёнок нуждается в поддержке.",
+  question:"«С чего начать в самом начале, сразу после переезда?»",
+  next:"Если вы замечаете особенности развития — переходите к теме «С чего начать в Эстонии».",
+  body:`<p class="lead">Если вы только приехали и не понимаете, с чего начать — это нормально. Давайте спокойно, по шагам.</p>
+  <h3>1. Документы и личный код</h3>
+  <p>Оформите статус проживания и <strong>личный код (isikukood)</strong> — без него почти ничего не работает: ни врач, ни садик, ни пособия. Регистрация места жительства делается в местном самоуправлении (KOV) вашего города.</p>
+  <h3>2. Семейный врач (perekonnaarst)</h3>
+  <p>В Эстонии семейный врач — «точка входа» во всю медицину, он выдаёт направления к специалистам. Прикрепитесь к нему как можно раньше.</p>
+  <h3>3. Медицинская страховка (Tervisekassa)</h3>
+  <p>Проверьте, есть ли у ребёнка страховка через Больничную кассу. Со страховкой государственная медицина бесплатна или почти бесплатна.</p>
+  <h3>4. Местное самоуправление (KOV)</h3>
+  <p>Регистрация по месту жительства открывает доступ к детскому саду и социальным услугам вашего города.</p>
+  <h3>5. Госуслуги онлайн — eesti.ee</h3>
+  <p>Портал <strong>eesti.ee</strong> — ваш личный кабинет: заявления, пособия, письма от государства.</p>
+  <h3>Мини-чеклист первых недель</h3>
+  <ul><li>получить личный код;</li><li>зарегистрировать место жительства в KOV;</li><li>прикрепиться к семейному врачу;</li><li>проверить страховку в Tervisekassa;</li><li>завести доступ к eesti.ee.</li></ul>`},
+
+ {slug:"podgotovka-k-semeinomu-vrachu",title:"Как подготовиться к семейному врачу",
+  who:"Тем, у кого скоро приём и кто боится «не так объяснить».",
+  question:"«Как за короткий приём получить направления и ответы?»",
+  next:"Если приём назначили нескоро — смотрите тему «Что делать, если очередь длинная».",
+  body:`<p class="lead">У врача мало времени, поэтому решает подготовка. Придите с готовым списком — и получите гораздо больше.</p>
+  <h3>Что взять с собой</h3>
+  <ul><li>список наблюдений с датами и примерами;</li><li>2–3 коротких видео поведения ребёнка;</li><li>прежние заключения и их переводы, если есть;</li><li>список лекарств и аллергий, если актуально.</li></ul>
+  <h3>Что чётко попросить</h3>
+  <ul><li><strong>направление (saatekiri)</strong> к нужному специалисту;</li><li>объяснить, какая очередь и есть ли варианты быстрее;</li><li>что можно делать уже сейчас, пока ждём.</li></ul>
+  <h3>Если трудно с языком</h3>
+  <p>Вы имеете право попросить, чтобы вам объяснили понятно. Можно прийти с человеком, который поможет с переводом, или заранее записать вопросы на бумаге.</p>
+  <h3>После приёма</h3>
+  <p>Сразу запишите: что назначено, к кому направление, какие сроки и что делать дальше.</p>`},
+
+ {slug:"ochered-k-specialistu",title:"Что делать, если очередь к специалисту очень длинная",
+  who:"Тем, кому дали направление, но приём через много месяцев.",
+  question:"«Что можно сделать сейчас, пока мы ждём?»",
+  next:"Сравнить варианты помогает тема «Государственный, смешанный и частный путь».",
+  body:`<p class="lead">Длинные очереди — это реальность системы, а не ваша вина. Но ждать «просто так» не обязательно.</p>
+  <h3>Что можно сделать</h3>
+  <ol><li><strong>Встаньте в очередь сразу</strong> — и параллельно ищите более ранний слот в других учреждениях.</li><li>Попросите семейного врача отметить <strong>срочность</strong>, если состояние того требует.</li><li>Запишитесь <strong>в несколько мест</strong> и берите первый освободившийся приём.</li><li>Рассмотрите <strong>частный или смешанный путь</strong> для отдельных шагов.</li></ol>
+  <h3>Не теряйте время ожидания</h3>
+  <p>Пока ждёте, поддержку можно начать уже сейчас:</p>
+  <ul><li>занятия с логопедом или специалистом по развитию;</li><li>бесплатная консультация в Rajaleidja;</li><li>место в саду с поддержкой;</li><li>простые домашние занятия, которые посоветует специалист;</li><li>вести дневник наблюдений и собирать вопросы к врачу.</li></ul>`},
+
+ {slug:"gosudarstvennyy-smeshannyy-chastnyy-put",title:"Государственный, смешанный и частный путь",
+  who:"Тем, кто путается, что бесплатно, что платно и что быстрее.",
+  question:"«Какой путь выбрать по времени и деньгам?»",
+  next:"Разобраться, кто участвует в диагностике, поможет тема «Диагностика и специалисты».",
+  body:`<p class="lead">Есть три пути. Часто самый разумный — сочетать их. Ни один путь не лучше «в целом» — всё зависит от вашей ситуации.</p>
+  <h3>Государственный путь</h3>
+  <p>Через семейного врача и Tervisekassa. <strong>Плюсы:</strong> бесплатно или недорого, заключения признаются для пособий и льгот. <strong>Минусы:</strong> дольше ждать.</p>
+  <h3>Частный путь</h3>
+  <p>Платные клиники и специалисты. <strong>Плюсы:</strong> быстрее, гибче по времени. <strong>Минусы:</strong> стоит денег; важно заранее уточнить, примет ли государство это заключение.</p>
+  <h3>Смешанный путь</h3>
+  <p>Самый практичный: часть шагов делаете частно, чтобы <strong>не терять время</strong>, а официальные статусы и льготы оформляете через государство.</p>
+  <h3>Главный совет</h3>
+  <p>Прежде чем платить за частное заключение, спросите: <strong>«Примете ли вы это заключение?»</strong> Это сэкономит деньги и нервы.</p>`},
+
+ {slug:"diagnostika-i-specialisty",title:"Диагностика и специалисты",
+  who:"Тем, кто не понимает, к кому и зачем идти.",
+  question:"«Кто участвует в оценке развития и что делает каждый специалист?»",
+  next:"Когда есть заключение — смотрите тему «Инвалидность и пособия».",
+  body:`<p class="lead">Оценка развития и диагностика аутизма — это работа команды, а не одного анализа. Вот кто может участвовать.</p>
+  <h3>Кто может быть в команде</h3>
+  <ul><li><strong>Детский психиатр</strong> — ключевой специалист для диагноза РАС.</li><li><strong>Детский невролог</strong> — оценивает неврологические причины.</li><li><strong>Клинический психолог</strong> — проводит тесты и наблюдение.</li><li><strong>Логопед</strong> — оценивает речь и коммуникацию.</li><li><strong>Эрготерапевт</strong> — моторика, сенсорика, повседневные навыки.</li><li><strong>Проверка слуха</strong> — чтобы исключить нарушения слуха.</li><li>иногда — <strong>генетик</strong>.</li></ul>
+  <h3>Как это обычно проходит</h3>
+  <p>Несколько встреч: наблюдение, разговор и опросники для родителей, тесты. Это может растянуться на несколько визитов — это нормально.</p>
+  <h3>Что важно уточнить</h3>
+  <p>Кто ведёт процесс, какие ещё специалисты нужны, когда ждать заключение и для чего оно понадобится (сад, школа, степень тяжести).</p>`},
+
+ {slug:"invalidnost-i-posobiya",title:"Инвалидность и пособия",
+  who:"Тем, у кого есть или ожидается диагноз.",
+  question:"«Как оформить статус и что положено семье?»",
+  next:"Про место и поддержку — тема «Садик и школа».",
+  body:`<p class="lead">В Эстонии для ребёнка оформляют не «инвалидность» в привычном смысле, а <strong>степень тяжести нарушения (puude raskusaste)</strong>. Этим занимается <strong>Sotsiaalkindlustusamet</strong> (Департамент социального страхования).</p>
+  <h3>Как оформить</h3>
+  <ol><li>Подать заявление (удобно через eesti.ee).</li><li>Лечащий врач заполняет медицинскую часть.</li><li>Эксперты оценивают документы и выносят решение о степени тяжести.</li></ol>
+  <h3>Что это может давать</h3>
+  <ul><li>детское пособие по степени тяжести;</li><li>право на реабилитационные услуги;</li><li>поддержку в саду и школе (например, помощник — tugiisik);</li><li>различные льготы.</li></ul>
+  <h3>Что уточнить</h3>
+  <p>Точные суммы, сроки и условия меняются — сверяйтесь на официальном сайте Sotsiaalkindlustusamet и на eesti.ee. Здесь мы объясняем логику, а не заменяем официальную консультацию.</p>`},
+
+ {slug:"sadik-i-shkola",title:"Садик и школа",
+  who:"Родителям, которым нужны сад/школа и сопровождение для ребёнка.",
+  question:"«Как получить место и поддержку в саду и школе?»",
+  next:"Чтобы ничего не потерять — тема «Документы и чек-листы».",
+  body:`<p class="lead">У ребёнка с особыми потребностями есть право на поддержку в образовании. Вот как её получить.</p>
+  <h3>Детский сад</h3>
+  <p>Место в саду даёт <strong>местное самоуправление (KOV)</strong> — вставайте в очередь заранее. Возможны специальная группа или <strong>сопровождающий (tugiisik)</strong>.</p>
+  <h3>Рекомендация о поддержке</h3>
+  <p>Условия поддержки часто определяет <strong>рекомендация консультационной команды Rajaleidja</strong> — официальный документ, на который опираются сад и школа.</p>
+  <h3>Школа</h3>
+  <p>Варианты: обычная школа с поддержкой, специальный класс или школа. Может составляться <strong>индивидуальный план обучения</strong>.</p>
+  <h3>Если отказывают в поддержке</h3>
+  <p>Вы имеете право просить письменный ответ и обращаться в KOV и Rajaleidja. Спокойно, письменно, со ссылкой на документы — это работает.</p>`},
+
+ {slug:"dokumenty-i-cheklisty",title:"Документы и чек-листы",
+  who:"Тем, кто тонет в документах и переписке.",
+  question:"«Какие документы нужны и как их не потерять?»",
+  next:"Короткие ответы на частые вопросы — в теме «Частые вопросы родителей».",
+  body:`<p class="lead">Одна папка спасает нервы. Заведите её сразу — бумажную и на телефоне или в облаке.</p>
+  <h3>Базовый набор «папки семьи»</h3>
+  <ul><li>документ ребёнка и личный код (isikukood);</li><li>подтверждение проживания;</li><li>данные о страховке (Tervisekassa);</li><li>все медицинские заключения и их переводы;</li><li>направления (saatekiri);</li><li>заключение о диагнозе;</li><li>решение о степени тяжести;</li><li>рекомендация Rajaleidja;</li><li>договоры и переписка с садом и школой.</li></ul>
+  <h3>Три простых правила</h3>
+  <ol><li><strong>Сканируйте всё</strong> сразу — фото на телефон тоже подойдёт.</li><li>Держите <strong>копии</strong> отдельно от оригиналов.</li><li>Ведите список «кто — что — когда»: дата обращения, к кому, результат.</li></ol>
+  <p>Этот список обращений — по сути и есть ваш маршрут. Именно его приложение Family Navigator потом соберёт за вас.</p>`},
+
+ {slug:"diagnoz-uzhe-est",title:"Диагноз уже есть — что дальше",
+  who:"Семьям, у которых уже есть заключение и которые не знают, какие шаги следующие.",
+  question:"«Диагноз есть — что делать дальше?»",
+  next:"Логичный следующий шаг — оформление поддержки: тема «Инвалидность и пособия».",
+  body:`<p class="lead">Диагноз — это не конец пути, а начало понятного маршрута. Он открывает доступ к поддержке. Вот направления, которые обычно идут дальше.</p>
+  <h3>1. Соберите документы в одну папку</h3>
+  <p>Заключение, медвыписки, переводы — всё в одном месте. Подробно — в теме <a href="#/spravochnik/dokumenty-i-cheklisty">«Документы и чек-листы»</a>.</p>
+  <h3>2. Оформление степени тяжести и пособий</h3>
+  <p>С диагнозом можно оформлять степень тяжести нарушения и связанные пособия и услуги. Как это устроено — в теме <a href="#/spravochnik/invalidnost-i-posobiya">«Инвалидность и пособия»</a>.</p>
+  <h3>3. Реабилитация и услуги</h3>
+  <p>Ребёнку могут быть доступны реабилитационные услуги и занятия со специалистами. Уточняйте перечень и условия у Sotsiaalkindlustusamet.</p>
+  <h3>4. Поддержка в саду и школе</h3>
+  <p>Диагноз и рекомендация Rajaleidja помогают получить сопровождение и подходящие условия. Подробно — в теме <a href="#/spravochnik/sadik-i-shkola">«Садик и школа»</a>.</p>
+  <h3>5. Поддержка для родителей</h3>
+  <p>Забота о себе — не роскошь. Ищите родительские группы, психологическую поддержку и сообщество семей с похожим опытом.</p>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-6"><div class="text-sm font-semibold text-teal-700">Что будет делать Family Navigator</div><p class="mt-2 text-[15px] text-muted">Подскажет, какие шаги уже сделаны, что осталось, напомнит о сроках и покажет следующий шаг именно для вашей ситуации.</p></div>`},
+
+ {slug:"faq",title:"Частые вопросы родителей",
+  who:"Всем, у кого есть короткие, но важные вопросы.",
+  question:"«Можно просто быстро ответить на главное?»",
+  next:"Не нашли ответа? Напишите нам — раздел «Получить помощь» на главной.",
+  body:`<h3>Нужен ли эстонский язык, чтобы получить помощь?</h3>
+  <p>Во многих местах можно общаться на русском или английском, но иногда нужен перевод. Вы имеете право попросить, чтобы вам объяснили понятно.</p>
+  <h3>Диагноз — это приговор?</h3>
+  <p>Нет. Диагноз — это ключ к поддержке, услугам и правам ребёнка. Он открывает двери, а не закрывает их.</p>
+  <h3>Признают ли частное заключение?</h3>
+  <p>Часто да — но не всегда. Всегда уточняйте заранее у государственного органа, примут ли конкретный документ.</p>
+  <h3>Сколько всё это стоит?</h3>
+  <p>Государственный путь по страховке в основном бесплатный. Частные приёмы — платные. Смешанный путь помогает экономить время без больших затрат.</p>
+  <h3>А если мы снова переезжаем в другую страну?</h3>
+  <p>Сохраняйте все документы и переводы. Диагноз и заключения — ваши; они помогут быстрее начать в новом месте.</p>
+  <h3>С чего начать прямо сегодня?</h3>
+  <p>Два простых действия: записаться к семейному врачу и завести одну папку для документов. Остальное — по шагам.</p>`}
+];
+
+// ============ RENDER HOMEPAGE CARDS ============
+(function(){
+  document.getElementById("situationsGrid").innerHTML=SITUATIONS.map(function(c){
+    return '<div class="flex flex-col rounded-3xl border border-teal-100 bg-white p-6">'
+      +'<h3 class="text-lg font-semibold leading-snug">'+c.title+'</h3>'
+      +'<p class="mt-2 flex-1 text-[15px] leading-relaxed text-muted">'+c.desc+'</p>'
+      +'<a href="#/spravochnik/'+c.slug+'" class="mt-4 inline-flex items-center gap-1.5 self-start rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600">'+c.btn+' →</a>'
+      +'</div>';
+  }).join("");
+  document.getElementById("guideGrid").innerHTML=GUIDE.map(function(c){
+    return '<div class="flex flex-col rounded-3xl border border-teal-100 bg-white p-6">'
+      +'<h3 class="text-lg font-semibold leading-snug">'+c.title+'</h3>'
+      +'<p class="mt-2 flex-1 text-[15px] leading-relaxed text-muted">'+c.desc+'</p>'
+      +'<a href="#/spravochnik/'+c.slug+'" class="mt-4 inline-block self-start rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-700">Открыть</a>'
+      +'</div>';
+  }).join("");
+})();
+
+// ============ ROUTER ============
+const home=document.getElementById("view-home");
+const artView=document.getElementById("view-article");
+function showArticle(a){
+  document.getElementById("articleTitle").textContent=a.title;
+  document.getElementById("articleWho").textContent=a.who;
+  document.getElementById("articleQuestion").textContent=a.question;
+  document.getElementById("articleBody").innerHTML=a.body;
+  document.getElementById("articleNext").textContent=a.next;
+  document.title=a.title+" · Autism Families Abroad";
+  home.classList.add("hidden");
+  artView.classList.remove("hidden");
+  window.scrollTo(0,0);
 }
-// language menu
-const langBtn=document.getElementById('langBtn'),langMenu=document.getElementById('langMenu');
-langBtn.addEventListener('click',e=>{e.stopPropagation();langMenu.classList.toggle('hidden');});
-document.addEventListener('click',()=>langMenu.classList.add('hidden'));
-document.querySelectorAll('.langOpt').forEach(b=>b.addEventListener('click',()=>{applyLang(b.dataset.lang);langMenu.classList.add('hidden');}));
-// mobile menu
-const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
-menuBtn.addEventListener('click',()=>mobileNav.classList.toggle('hidden'));
-mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.add('hidden')));
-// donations are not enabled yet — donation widget removed
-// init language
-let initLang='en';
-try{const s=localStorage.getItem('afa_lang'); if(s)initLang=s; else{const n=(navigator.language||'en').slice(0,2); if(I18N[n])initLang=n;}}catch(e){}
-applyLang(initLang);
+function showHome(){
+  artView.classList.add("hidden");
+  home.classList.remove("hidden");
+  document.title="Autism Families Abroad — понятный маршрут для семей в Эстонии";
+}
+function route(){
+  const m=(location.hash||"").match(/^#\/spravochnik\/(.+)$/);
+  if(m){
+    const a=ARTICLES.find(function(x){return x.slug===m[1];});
+    if(a){showArticle(a);return;}
+  }
+  showHome();
+}
+window.addEventListener("hashchange",route);
+route();
+
+// ============ MOBILE MENU ============
+const menuBtn=document.getElementById("menuBtn"),mobileNav=document.getElementById("mobileNav");
+menuBtn.addEventListener("click",function(){mobileNav.classList.toggle("hidden");});
+mobileNav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){mobileNav.classList.add("hidden");});});
 </script>
 </body>
 </html>
