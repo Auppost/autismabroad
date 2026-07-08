@@ -248,8 +248,9 @@ const ARTICLES=[
   <button onclick="var e=document.getElementById('first-step');if(e)e.scrollIntoView({behavior:'smooth'});" class="mt-5 rounded-full bg-coral-500 px-6 py-3 text-sm font-semibold text-white hover:bg-coral-600">Показать первый шаг</button>
 
   <h3 id="first-step">Первый шаг</h3>
-  <p>Обычно путь начинается с обращения к <strong>семейному врачу</strong> или другому медицинскому специалисту, чтобы обсудить ваши наблюдения и понять дальнейший маршрут.</p>
-  <p class="text-sm text-muted">ⓘ Нужно подтвердить официальным источником Эстонии.</p>
+  <p>Обычно путь начинается с обращения к <strong>семейному врачу (perekonnaarst)</strong>: он обсудит ваши наблюдения, может назначить обследования и при необходимости даёт <strong>направление (saatekiri)</strong> к специалисту. Направление по умолчанию действует 6 месяцев; врач также может заранее посоветоваться со специалистом онлайн (э-консультация).</p>
+  <p><strong>Важно:</strong> к некоторым специалистам в Эстонии можно записаться <strong>без направления</strong> — это <strong>психиатрия</strong> (в том числе детский психиатр), офтальмология, гинекология и дерматология. При подозрении на аутизм, СДВГ или задержку это часто важно: к детскому психиатру можно обратиться напрямую. <a href="https://tervisekassa.ee/en/primary-health-care" target="_blank" rel="noopener">Источник: Tervisekassa</a></p>
+  <p>Если вопрос больше про развитие, речь и обучение, можно бесплатно обратиться в <a href="https://rajaleidja.ee/" target="_blank" rel="noopener">Rajaleidja</a> — государственную службу консультирования, ещё до постановки диагноза.</p>
 
   <h3>Что подготовить перед обращением</h3>
   <ul><li>что именно вас беспокоит;</li><li>когда это началось;</li><li>как ребёнок говорит или не говорит;</li><li>как ребёнок общается с людьми;</li><li>как ведёт себя дома;</li><li>как ведёт себя в садике или школе;</li><li>есть ли сложности со сном;</li><li>есть ли сложности с питанием;</li><li>есть ли сенсорные реакции;</li><li>есть ли истерики или сильные реакции;</li><li>короткие видео поведения, если это уместно;</li><li>заметки воспитателя, логопеда или специалиста, если есть;</li><li>старые медицинские документы, если есть;</li><li>список вопросов врачу.</li></ul>
@@ -284,19 +285,17 @@ const ARTICLES=[
 
   <div class="mt-6 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900"><span>ⓘ</span><span>Мы не ставим диагнозы, не назначаем лечение и не заменяем врача, юриста или социального работника. Мы помогаем семье ориентироваться в системе, понимать возможные шаги и готовиться к обращениям к специалистам.</span></div>
 
-  <div class="mt-6 rounded-2xl border border-dashed border-teal-300 bg-white p-6">
-    <div class="text-sm font-semibold text-ink">Факты, которые нужно подтвердить источниками</div>
-    <div class="mt-1 text-[13px] text-muted">Ниже — утверждения, к которым нужно добавить официальные источники Эстонии.</div>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-6">
+    <div class="text-sm font-semibold text-ink">Официальные источники</div>
+    <div class="mt-1 text-[13px] text-muted">Проверенные ссылки на государственные сайты Эстонии. Актуальные суммы, сроки и условия всегда сверяйте на них.</div>
     <ul class="mt-3 space-y-2 text-[14px] text-muted">
-      <li>• Кто является «точкой входа» в систему и как получить направление (saatekiri) — <strong>Tervisekassa</strong>, <strong>eesti.ee</strong>.</li>
-      <li>• Какие шаги и услуги доступны <strong>без диагноза</strong>, как работает Rajaleidja — <strong>Rajaleidja / Harno</strong>.</li>
-      <li>• Право на переводчика и язык обслуживания в медучреждениях — <strong>Tervisekassa</strong> / конкретное учреждение.</li>
-      <li>• Какие муниципальные услуги доступны семье — сайт вашего <strong>местного самоуправления (KOV)</strong>.</li>
-      <li>• Оформление степени тяжести нарушения (puue) и пособий — <strong>Sotsiaalkindlustusamet</strong>.</li>
-      <li>• Реабилитационные услуги для ребёнка — <strong>Sotsiaalkindlustusamet</strong>.</li>
-      <li>• Как устроена очередь и выбор поставщика услуг — <strong>Tervisekassa</strong>.</li>
-      <li>• Признаёт ли государственная система частные заключения для льгот — уточнять у <strong>Sotsiaalkindlustusamet</strong> / профильного органа.</li>
+      <li>• Семейный врач, направления, э-консультация, специалисты без направления — <a href="https://tervisekassa.ee/en/primary-health-care" target="_blank" rel="noopener">Tervisekassa</a>, <a href="https://www.terviseportaal.ee/en/arstiabi/perearstiabi" target="_blank" rel="noopener">Terviseportaal</a></li>
+      <li>• Консультации по развитию и обучению, рекомендация для сада/школы — <a href="https://rajaleidja.ee/" target="_blank" rel="noopener">Rajaleidja</a></li>
+      <li>• Степень тяжести нарушения (puue) и пособия — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/determination-disabilities" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li>
+      <li>• Социальная реабилитация ребёнка — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/social-rehabilitation/social-rehabilitation-children" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li>
+      <li>• Госуслуги и заявления онлайн — <a href="https://www.eesti.ee/en" target="_blank" rel="noopener">eesti.ee</a></li>
     </ul>
+    <div class="mt-3 text-[12px] text-muted">Отдельно уточняйте у учреждения: право на переводчика/язык обслуживания и признаётся ли конкретное частное заключение для льгот — единого правила нет.</div>
   </div>`},
 
  {slug:"tolko-priehali-v-estoniyu",title:"Только приехали в Эстонию: первые шаги",
@@ -326,6 +325,7 @@ const ARTICLES=[
   <ul><li>список наблюдений с датами и примерами;</li><li>2–3 коротких видео поведения ребёнка;</li><li>прежние заключения и их переводы, если есть;</li><li>список лекарств и аллергий, если актуально.</li></ul>
   <h3>Что чётко попросить</h3>
   <ul><li><strong>направление (saatekiri)</strong> к нужному специалисту;</li><li>объяснить, какая очередь и есть ли варианты быстрее;</li><li>что можно делать уже сейчас, пока ждём.</li></ul>
+  <p class="text-sm text-muted">Полезно знать: к <strong>психиатру</strong> (в т. ч. детскому), офтальмологу, гинекологу и дерматологу можно записаться <strong>без направления</strong>. Обычное направление действует 6 месяцев. <a href="https://tervisekassa.ee/en/primary-health-care" target="_blank" rel="noopener">Источник: Tervisekassa</a></p>
   <h3>Если трудно с языком</h3>
   <p>Вы имеете право попросить, чтобы вам объяснили понятно. Можно прийти с человеком, который поможет с переводом, или заранее записать вопросы на бумаге.</p>
   <h3>После приёма</h3>
@@ -373,12 +373,15 @@ const ARTICLES=[
   question:"«Как оформить статус и что положено семье?»",
   next:"Про место и поддержку — тема «Садик и школа».",
   body:`<p class="lead">В Эстонии для ребёнка оформляют не «инвалидность» в привычном смысле, а <strong>степень тяжести нарушения (puude raskusaste)</strong>. Этим занимается <strong>Sotsiaalkindlustusamet</strong> (Департамент социального страхования).</p>
+  <h3>Три степени тяжести</h3>
+  <p>У детей выделяют три степени — <strong>средняя, тяжёлая и глубокая</strong> — в зависимости от того, насколько часто и постоянно ребёнку нужна помощь, направление или присмотр.</p>
   <h3>Как оформить</h3>
-  <ol><li>Подать заявление (удобно через eesti.ee).</li><li>Лечащий врач заполняет медицинскую часть.</li><li>Эксперты оценивают документы и выносят решение о степени тяжести.</li></ol>
+  <ol><li>Подать заявление в Sotsiaalkindlustusamet (удобно через eesti.ee, с цифровой подписью).</li><li>Лечащий врач заполняет медицинскую часть по данным о здоровье ребёнка.</li><li>Проводится экспертиза, которая определяет степень тяжести.</li></ol>
   <h3>Что это может давать</h3>
-  <ul><li>детское пособие по степени тяжести;</li><li>право на реабилитационные услуги;</li><li>поддержку в саду и школе (например, помощник — tugiisik);</li><li>различные льготы.</li></ul>
-  <h3>Что уточнить</h3>
-  <p>Точные суммы, сроки и условия меняются — сверяйтесь на официальном сайте Sotsiaalkindlustusamet и на eesti.ee. Здесь мы объясняем логику, а не заменяем официальную консультацию.</p>`},
+  <ul><li><strong>Пособие ребёнку с нарушением</strong> (puudega lapse toetus) — размер зависит от степени тяжести;</li><li><strong>Социальная реабилитация</strong> (sotsiaalne rehabilitatsioon) — занятия и услуги специалистов, с годовым лимитом;</li><li>поддержку в саду и школе (например, помощник — tugiisik);</li><li>другие льготы и услуги.</li></ul>
+  <h3>Официальные источники</h3>
+  <ul><li>Определение степени тяжести — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/determination-disabilities" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li><li>Пособие ребёнку с нарушением — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/benefits-disabled-people/allowance-disabled-child" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li><li>Социальная реабилитация ребёнка — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/social-rehabilitation/social-rehabilitation-children" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li></ul>
+  <p class="text-sm text-muted">Точные суммы пособий, лимиты и условия меняются — всегда сверяйтесь на сайте Sotsiaalkindlustusamet и на eesti.ee. Мы объясняем логику, а не заменяем официальную консультацию.</p>`},
 
  {slug:"sadik-i-shkola",title:"Садик и школа",
   who:"Родителям, которым нужны сад/школа и сопровождение для ребёнка.",
@@ -388,7 +391,7 @@ const ARTICLES=[
   <h3>Детский сад</h3>
   <p>Место в саду даёт <strong>местное самоуправление (KOV)</strong> — вставайте в очередь заранее. Возможны специальная группа или <strong>сопровождающий (tugiisik)</strong>.</p>
   <h3>Рекомендация о поддержке</h3>
-  <p>Условия поддержки часто определяет <strong>рекомендация консультационной команды Rajaleidja</strong> — официальный документ, на который опираются сад и школа.</p>
+  <p>Условия поддержки часто определяет <strong>рекомендация внешкольной консультационной команды Rajaleidja</strong> (kooliväline nõustamismeeskond) — в неё входят спецпедагоги, психологи, логопеды и социальные педагоги. Заявку на рекомендацию подают родители; на этот документ опираются сад и школа. <a href="https://rajaleidja.ee/kvm/" target="_blank" rel="noopener">Источник: Rajaleidja</a></p>
   <h3>Школа</h3>
   <p>Варианты: обычная школа с поддержкой, специальный класс или школа. Может составляться <strong>индивидуальный план обучения</strong>.</p>
   <h3>Если отказывают в поддержке</h3>
@@ -484,6 +487,12 @@ function route(){
     if(a){showArticle(a);return;}
   }
   showHome();
+  // scroll to a plain in-page section (e.g. #guide) after home is shown
+  var hash=(location.hash||"").replace(/^#/,"");
+  if(hash && hash.charAt(0)!=="/"){
+    var el=document.getElementById(hash);
+    if(el){el.scrollIntoView();} else {window.scrollTo(0,0);}
+  }
 }
 window.addEventListener("hashchange",route);
 route();
