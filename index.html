@@ -46,23 +46,27 @@ tailwind.config={theme:{extend:{colors:{
       Autism Families Abroad
     </a>
     <nav class="hidden items-center gap-7 text-[15px] font-medium lg:flex">
-      <a href="#guide" class="hover:text-teal-700">Справочник</a>
-      <a href="#app" class="hover:text-teal-700">Приложение</a>
-      <a href="#involved" class="hover:text-teal-700">Участвовать</a>
+      <a href="#guide" class="hover:text-teal-700" data-i18n="nav_guide">Справочник</a>
+      <a href="#app" class="hover:text-teal-700" data-i18n="nav_app">Приложение</a>
+      <a href="#involved" class="hover:text-teal-700" data-i18n="nav_involved">Участвовать</a>
     </nav>
     <div class="flex items-center gap-3">
-      <span class="hidden rounded-full bg-teal-50 px-3 py-1.5 text-xs font-medium text-teal-600 sm:inline-block">RU · UK · EN — скоро</span>
-      <a href="#help" class="hidden rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600 sm:inline-block">Получить помощь</a>
-      <button id="menuBtn" class="lg:hidden" aria-label="Меню">
+      <div class="flex overflow-hidden rounded-full border border-teal-200 text-xs font-semibold">
+        <button class="langBtn px-2.5 py-1.5" data-lang="ru">RU</button>
+        <button class="langBtn border-l border-teal-200 px-2.5 py-1.5" data-lang="uk">UK</button>
+        <button class="langBtn border-l border-teal-200 px-2.5 py-1.5" data-lang="en">EN</button>
+      </div>
+      <a href="#help" class="hidden rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600 sm:inline-block" data-i18n="btn_help">Получить помощь</a>
+      <button id="menuBtn" class="lg:hidden" aria-label="Menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#16302E" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
     </div>
   </div>
   <div id="mobileNav" class="hidden border-t border-teal-100 bg-white px-5 py-3 lg:hidden">
-    <a href="#guide" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50">Справочник</a>
-    <a href="#app" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50">Приложение</a>
-    <a href="#involved" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50">Участвовать</a>
-    <a href="#help" class="mt-2 block rounded-full bg-coral-500 px-5 py-2.5 text-center font-semibold text-white">Получить помощь</a>
+    <a href="#guide" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50" data-i18n="nav_guide">Справочник</a>
+    <a href="#app" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50" data-i18n="nav_app">Приложение</a>
+    <a href="#involved" class="block rounded-lg px-2 py-2 font-medium hover:bg-teal-50" data-i18n="nav_involved">Участвовать</a>
+    <a href="#help" class="mt-2 block rounded-full bg-coral-500 px-5 py-2.5 text-center font-semibold text-white" data-i18n="btn_help">Получить помощь</a>
   </div>
 </header>
 
@@ -74,21 +78,21 @@ tailwind.config={theme:{extend:{colors:{
   <!-- HERO -->
   <section class="bg-teal-50">
     <div class="mx-auto max-w-3xl px-5 py-16 text-center sm:px-8 lg:py-24">
-      <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700">Новая инициатива · семьи с детьми с аутизмом за рубежом</span>
-      <h1 class="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">Наконец-то понятно, куда двигаться.</h1>
-      <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">Открытая база знаний для семей в Эстонии, которые подозревают у ребёнка аутизм, задержку развития, СДВГ или трудности с речью — и не знают, с чего начать. Спокойно, по шагам, на понятном языке.</p>
+      <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="hero_badge">Новая инициатива · семьи с детьми с аутизмом за рубежом</span>
+      <h1 class="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl" data-i18n="hero_h1">Наконец-то понятно, куда двигаться.</h1>
+      <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted" data-i18n="hero_sub">Открытая база знаний для семей в Эстонии, которые подозревают у ребёнка аутизм, задержку развития, СДВГ или трудности с речью — и не знают, с чего начать. Спокойно, по шагам, на понятном языке.</p>
       <div class="mt-8 flex flex-wrap justify-center gap-4">
-        <a href="#situations" class="rounded-full bg-coral-500 px-7 py-3.5 font-semibold text-white hover:bg-coral-600">Что происходит сейчас?</a>
-        <a href="#guide" class="rounded-full border-[1.5px] border-teal-600 px-7 py-3.5 font-semibold text-teal-700 hover:bg-teal-100">Открыть справочник</a>
+        <a href="#situations" class="rounded-full bg-coral-500 px-7 py-3.5 font-semibold text-white hover:bg-coral-600" data-i18n="hero_btn1">Что происходит сейчас?</a>
+        <a href="#guide" class="rounded-full border-[1.5px] border-teal-600 px-7 py-3.5 font-semibold text-teal-700 hover:bg-teal-100" data-i18n="hero_btn2">Открыть справочник</a>
       </div>
-      <div class="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-muted"><span class="h-2 w-2 rounded-full bg-teal-600"></span>Бесплатно · конфиденциально · на русском</div>
+      <div class="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-muted"><span class="h-2 w-2 rounded-full bg-teal-600"></span><span data-i18n="hero_trust">Бесплатно · конфиденциально</span></div>
     </div>
   </section>
 
   <!-- MANIFESTO -->
   <section class="bg-teal-700 py-14 text-white">
     <div class="mx-auto max-w-3xl px-5 text-center sm:px-8">
-      <p class="text-2xl font-bold leading-snug sm:text-[30px]">Мы не просто собираем информацию.<br class="hidden sm:block" /> Мы превращаем хаос в понятный маршрут.</p>
+      <p class="text-2xl font-bold leading-snug sm:text-[30px]" data-i18n="manifesto">Мы не просто собираем информацию.<br class="hidden sm:block" /> Мы превращаем хаос в понятный маршрут.</p>
     </div>
   </section>
 
@@ -96,8 +100,8 @@ tailwind.config={theme:{extend:{colors:{
   <section id="situations" class="scroll-mt-20 py-20">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
       <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-3xl font-bold sm:text-4xl">Что происходит сейчас?</h2>
-        <p class="mt-3 text-lg text-muted">Выберите ситуацию, которая ближе всего к вашей. Мы постепенно собираем понятные маршруты для каждой из них.</p>
+        <h2 class="text-3xl font-bold sm:text-4xl" data-i18n="sit_h2">Что происходит сейчас?</h2>
+        <p class="mt-3 text-lg text-muted" data-i18n="sit_sub">Выберите ситуацию, которая ближе всего к вашей. Мы постепенно собираем понятные маршруты для каждой из них.</p>
       </div>
       <div id="situationsGrid" class="mt-11 grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
     </div>
@@ -107,9 +111,9 @@ tailwind.config={theme:{extend:{colors:{
   <section id="guide" class="scroll-mt-20 bg-teal-50 py-20">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
       <div class="mx-auto max-w-2xl text-center">
-        <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700">Справочник</span>
-        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Справочник для семей в Эстонии</h2>
-        <p class="mt-3 text-lg text-muted">Понятные материалы о первых шагах, диагностике, документах, очередях, поддержке, садике, школе и услугах.</p>
+        <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="guide_kicker">Справочник</span>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="guide_h2">Справочник для семей в Эстонии</h2>
+        <p class="mt-3 text-lg text-muted" data-i18n="guide_sub">Понятные материалы о первых шагах, диагностике, документах, очередях, поддержке, садике, школе и услугах.</p>
       </div>
       <div id="guideGrid" class="mt-11 grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
     </div>
@@ -120,21 +124,21 @@ tailwind.config={theme:{extend:{colors:{
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
       <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <span class="inline-block rounded-full bg-coral-500 px-3 py-1 text-xs font-semibold text-white">Скоро</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Что будет делать приложение</h2>
-          <p class="mt-4 text-lg leading-relaxed text-muted">Сайт помогает разобраться в системе. Приложение <strong class="text-ink">Family Navigator</strong> будет строить персональный маршрут семьи: показывать следующий шаг, напоминать о сроках, учитывать очередь, хранить статус задач и сообщать, если изменились правила или услуги.</p>
-          <a href="mailto:hello@autismabroad.org?subject=Хочу узнать о запуске приложения" class="mt-6 inline-block rounded-full bg-teal-700 px-7 py-3.5 font-semibold text-white hover:bg-teal-800">Узнать о запуске</a>
+          <span class="inline-block rounded-full bg-coral-500 px-3 py-1 text-xs font-semibold text-white" data-i18n="app_soon">Скоро</span>
+          <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="app_h2">Что будет делать приложение</h2>
+          <p class="mt-4 text-lg leading-relaxed text-muted" data-i18n="app_text">Сайт помогает разобраться в системе. Приложение <strong class="text-ink">Family Navigator</strong> будет строить персональный маршрут семьи: показывать следующий шаг, напоминать о сроках, учитывать очередь, хранить статус задач и сообщать, если изменились правила или услуги.</p>
+          <a href="mailto:hello@autismabroad.org?subject=Family Navigator" class="mt-6 inline-block rounded-full bg-teal-700 px-7 py-3.5 font-semibold text-white hover:bg-teal-800" data-i18n="app_btn">Узнать о запуске</a>
         </div>
         <ul class="grid gap-3 rounded-3xl border border-teal-100 bg-teal-50 p-7 text-[15px] text-muted sm:grid-cols-2">
-          <li class="flex gap-2"><span class="text-teal-600">•</span> персональный маршрут семьи</li>
-          <li class="flex gap-2"><span class="text-teal-600">•</span> следующий шаг</li>
-          <li class="flex gap-2"><span class="text-teal-600">•</span> календарь и дедлайны</li>
-          <li class="flex gap-2"><span class="text-teal-600">•</span> напоминания</li>
-          <li class="flex gap-2"><span class="text-teal-600">•</span> государственный, смешанный, частный путь</li>
-          <li class="flex gap-2"><span class="text-teal-600">•</span> обновления при изменении правил</li>
-          <li class="flex gap-2"><span class="text-teal-600">•</span> подготовка к визиту к специалисту</li>
-          <li class="flex gap-2"><span class="text-teal-600">•</span> «Что делать, пока вы ждёте»</li>
-          <li class="flex gap-2 sm:col-span-2"><span class="text-teal-600">•</span> статус: что сделано, что осталось, где семья сейчас</li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li1">персональный маршрут семьи</span></li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li2">следующий шаг</span></li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li3">календарь и дедлайны</span></li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li4">напоминания</span></li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li5">государственный, смешанный, частный путь</span></li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li6">обновления при изменении правил</span></li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li7">подготовка к визиту к специалисту</span></li>
+          <li class="flex gap-2"><span class="text-teal-600">•</span> <span data-i18n="app_li8">«Что делать, пока вы ждёте»</span></li>
+          <li class="flex gap-2 sm:col-span-2"><span class="text-teal-600">•</span> <span data-i18n="app_li9">статус: что сделано, что осталось, где семья сейчас</span></li>
         </ul>
       </div>
     </div>
@@ -144,8 +148,8 @@ tailwind.config={theme:{extend:{colors:{
   <section id="important" class="scroll-mt-20 pb-8">
     <div class="mx-auto max-w-3xl px-5 sm:px-8">
       <div class="rounded-3xl border border-teal-100 bg-teal-50 p-8 text-center">
-        <h2 class="text-xl font-bold">Важно</h2>
-        <p class="mx-auto mt-3 max-w-xl leading-relaxed text-muted">Мы не ставим диагнозы, не назначаем лечение и не заменяем врача, юриста или социального работника. Мы помогаем семье ориентироваться в системе, понимать возможные шаги и готовиться к обращениям к специалистам.</p>
+        <h2 class="text-xl font-bold" data-i18n="imp_h2">Важно</h2>
+        <p class="mx-auto mt-3 max-w-xl leading-relaxed text-muted" data-i18n="imp_text">Мы не ставим диагнозы, не назначаем лечение и не заменяем врача, юриста или социального работника. Мы помогаем семье ориентироваться в системе, понимать возможные шаги и готовиться к обращениям к специалистам.</p>
       </div>
     </div>
   </section>
@@ -154,17 +158,17 @@ tailwind.config={theme:{extend:{colors:{
   <section id="involved" class="scroll-mt-20 py-16">
     <div class="mx-auto max-w-4xl px-5 sm:px-8">
       <div class="mx-auto max-w-2xl text-center">
-        <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700">Мы только начинаем</span>
-        <h2 class="mt-4 text-3xl font-bold sm:text-4xl">Помогите нам это построить</h2>
-        <p class="mt-4 text-lg leading-relaxed text-muted">Проект начал родитель, прошедший переезд с ребёнком с аутизмом. Мы ищем людей и организации, чтобы дополнять справочник и запустить приложение.</p>
+        <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="inv_kicker">Мы только начинаем</span>
+        <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="inv_h2">Помогите нам это построить</h2>
+        <p class="mt-4 text-lg leading-relaxed text-muted" data-i18n="inv_text">Проект начал родитель, прошедший переезд с ребёнком с аутизмом. Мы ищем людей и организации, чтобы дополнять справочник и запустить приложение.</p>
       </div>
       <div class="mt-10 grid gap-6 md:grid-cols-3">
-        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold">Партнёрские организации</h3><p class="mt-2 text-[15px] leading-relaxed text-muted">НКО, клиники и фонды, готовые вместе помогать семьям.</p></div>
-        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold">Специалисты</h3><p class="mt-2 text-[15px] leading-relaxed text-muted">Врачи, юристы, психологи и переводчики, готовые проверять и дополнять материалы.</p></div>
-        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold">Волонтёры</h3><p class="mt-2 text-[15px] leading-relaxed text-muted">Координаторы, переводчики и родители, готовые поделиться опытом.</p></div>
+        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold" data-i18n="inv_c1t">Партнёрские организации</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="inv_c1d">НКО, клиники и фонды, готовые вместе помогать семьям.</p></div>
+        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold" data-i18n="inv_c2t">Специалисты</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="inv_c2d">Врачи, юристы, психологи и переводчики, готовые проверять и дополнять материалы.</p></div>
+        <div class="rounded-3xl bg-teal-50 p-7"><h3 class="text-lg font-semibold" data-i18n="inv_c3t">Волонтёры</h3><p class="mt-2 text-[15px] leading-relaxed text-muted" data-i18n="inv_c3d">Координаторы, переводчики и родители, готовые поделиться опытом.</p></div>
       </div>
       <div class="mt-8 text-center">
-        <a href="mailto:hello@autismabroad.org?subject=Хочу участвовать" class="inline-block rounded-full bg-teal-700 px-8 py-4 font-semibold text-white hover:bg-teal-800">Стать партнёром или волонтёром</a>
+        <a href="mailto:hello@autismabroad.org?subject=Partner / Volunteer" class="inline-block rounded-full bg-teal-700 px-8 py-4 font-semibold text-white hover:bg-teal-800" data-i18n="inv_btn">Стать партнёром или волонтёром</a>
       </div>
     </div>
   </section>
@@ -172,9 +176,9 @@ tailwind.config={theme:{extend:{colors:{
   <!-- HELP -->
   <section id="help" class="scroll-mt-20 bg-teal-50 py-20">
     <div class="mx-auto max-w-3xl px-5 text-center sm:px-8">
-      <h2 class="text-3xl font-bold sm:text-4xl">Нужна помощь именно вам?</h2>
-      <p class="mx-auto mt-3 max-w-xl text-lg text-muted">Напишите нам о своей ситуации — коротко, как есть. Мы ответим и подскажем, с чего начать.</p>
-      <a href="mailto:hello@autismabroad.org?subject=Запрос на помощь" class="mt-7 inline-block rounded-full bg-coral-500 px-8 py-4 font-semibold text-white hover:bg-coral-600">Написать нам</a>
+      <h2 class="text-3xl font-bold sm:text-4xl" data-i18n="help_h2">Нужна помощь именно вам?</h2>
+      <p class="mx-auto mt-3 max-w-xl text-lg text-muted" data-i18n="help_sub">Напишите нам о своей ситуации — коротко, как есть. Мы ответим и подскажем, с чего начать.</p>
+      <a href="mailto:hello@autismabroad.org?subject=Help request" class="mt-7 inline-block rounded-full bg-coral-500 px-8 py-4 font-semibold text-white hover:bg-coral-600" data-i18n="help_btn2">Написать нам</a>
     </div>
   </section>
 </main>
@@ -182,22 +186,23 @@ tailwind.config={theme:{extend:{colors:{
 <!-- ============ ARTICLE VIEW ============ -->
 <main id="view-article" class="hidden">
   <div class="mx-auto max-w-3xl px-5 py-12 sm:px-8">
-    <a href="#guide" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800">← Назад в справочник</a>
+    <a href="#guide" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800" data-i18n="art_back">← Назад в справочник</a>
     <h1 id="articleTitle" class="mt-6 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl"></h1>
+    <div id="translationNotice" class="mt-4 hidden rounded-xl border border-teal-200 bg-teal-50 p-4 text-[13px] text-teal-800"></div>
     <div id="articleMeta" class="mt-6 grid gap-3 rounded-2xl bg-teal-50 p-5 sm:grid-cols-2">
-      <div><div class="text-xs font-semibold uppercase tracking-wide text-teal-600">Кому поможет</div><div id="articleWho" class="mt-1 text-[15px] text-ink"></div></div>
-      <div><div class="text-xs font-semibold uppercase tracking-wide text-teal-600">Закрывает вопрос</div><div id="articleQuestion" class="mt-1 text-[15px] text-ink"></div></div>
+      <div><div class="text-xs font-semibold uppercase tracking-wide text-teal-600" data-i18n="art_who">Кому поможет</div><div id="articleWho" class="mt-1 text-[15px] text-ink"></div></div>
+      <div><div class="text-xs font-semibold uppercase tracking-wide text-teal-600" data-i18n="art_q">Закрывает вопрос</div><div id="articleQuestion" class="mt-1 text-[15px] text-ink"></div></div>
     </div>
     <div class="mt-4 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900">
-      <span>ⓘ</span><span>Информация носит справочный характер и не заменяет консультацию врача, юриста или социального работника. Проверяйте актуальные условия на официальных сайтах.</span>
+      <span>ⓘ</span><span data-i18n="art_discl">Информация носит справочный характер и не заменяет консультацию врача, юриста или социального работника. Проверяйте актуальные условия на официальных сайтах.</span>
     </div>
     <article id="articleBody" class="article mt-6"></article>
     <div class="mt-10 rounded-2xl border border-teal-100 bg-teal-50 p-6">
-      <div class="text-sm font-semibold text-teal-700">Следующий шаг</div>
+      <div class="text-sm font-semibold text-teal-700" data-i18n="art_next">Следующий шаг</div>
       <div id="articleNext" class="mt-1 text-[15px] text-muted"></div>
     </div>
     <div class="mt-8">
-      <a href="#guide" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800">← Ко всем темам справочника</a>
+      <a href="#guide" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800" data-i18n="art_back2">← Ко всем темам справочника</a>
     </div>
   </div>
 </main>
@@ -207,35 +212,122 @@ tailwind.config={theme:{extend:{colors:{
   <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center sm:px-8">
     <div>
       <div class="flex items-center gap-2.5 text-lg font-bold"><span class="grid h-8 w-8 place-items-center rounded-full bg-teal-700 text-white">∞</span>Autism Families Abroad</div>
-      <p class="mt-3 max-w-sm text-[15px] leading-relaxed text-teal-300/80">Помогаем семьям, воспитывающим детей с аутизмом, разобраться в системе — и пройти свой маршрут.</p>
+      <p class="mt-3 max-w-sm text-[15px] leading-relaxed text-teal-300/80" data-i18n="foot_tagline">Помогаем семьям, воспитывающим детей с аутизмом, разобраться в системе — и пройти свой маршрут.</p>
     </div>
     <div class="text-[15px] text-teal-100/80">
       <a href="mailto:hello@autismabroad.org" class="hover:text-white">hello@autismabroad.org</a>
-      <p class="mt-3 text-[13px] text-teal-300/70">© 2026 Autism Families Abroad · некоммерческая инициатива</p>
+      <p class="mt-3 text-[13px] text-teal-300/70">© 2026 Autism Families Abroad · <span data-i18n="foot_copy">некоммерческая инициатива</span></p>
     </div>
   </div>
 </footer>
 
 <script>
+// ============ I18N ============
+const UI={
+ru:{doc_title:"Autism Families Abroad — понятный маршрут для семей в Эстонии",nav_guide:"Справочник",nav_app:"Приложение",nav_involved:"Участвовать",btn_help:"Получить помощь",
+hero_badge:"Новая инициатива · семьи с детьми с аутизмом за рубежом",hero_h1:"Наконец-то понятно, куда двигаться.",hero_sub:"Открытая база знаний для семей в Эстонии, которые подозревают у ребёнка аутизм, задержку развития, СДВГ или трудности с речью — и не знают, с чего начать. Спокойно, по шагам, на понятном языке.",hero_btn1:"Что происходит сейчас?",hero_btn2:"Открыть справочник",hero_trust:"Бесплатно · конфиденциально",
+manifesto:"Мы не просто собираем информацию.<br class=\"hidden sm:block\" /> Мы превращаем хаос в понятный маршрут.",
+sit_h2:"Что происходит сейчас?",sit_sub:"Выберите ситуацию, которая ближе всего к вашей. Мы постепенно собираем понятные маршруты для каждой из них.",
+guide_kicker:"Справочник",guide_h2:"Справочник для семей в Эстонии",guide_sub:"Понятные материалы о первых шагах, диагностике, документах, очередях, поддержке, садике, школе и услугах.",btn_open:"Открыть",
+app_soon:"Скоро",app_h2:"Что будет делать приложение",app_text:"Сайт помогает разобраться в системе. Приложение <strong class=\"text-ink\">Family Navigator</strong> будет строить персональный маршрут семьи: показывать следующий шаг, напоминать о сроках, учитывать очередь, хранить статус задач и сообщать, если изменились правила или услуги.",app_btn:"Узнать о запуске",
+app_li1:"персональный маршрут семьи",app_li2:"следующий шаг",app_li3:"календарь и дедлайны",app_li4:"напоминания",app_li5:"государственный, смешанный, частный путь",app_li6:"обновления при изменении правил",app_li7:"подготовка к визиту к специалисту",app_li8:"«Что делать, пока вы ждёте»",app_li9:"статус: что сделано, что осталось, где семья сейчас",
+imp_h2:"Важно",imp_text:"Мы не ставим диагнозы, не назначаем лечение и не заменяем врача, юриста или социального работника. Мы помогаем семье ориентироваться в системе, понимать возможные шаги и готовиться к обращениям к специалистам.",
+inv_kicker:"Мы только начинаем",inv_h2:"Помогите нам это построить",inv_text:"Проект начал родитель, прошедший переезд с ребёнком с аутизмом. Мы ищем людей и организации, чтобы дополнять справочник и запустить приложение.",inv_c1t:"Партнёрские организации",inv_c1d:"НКО, клиники и фонды, готовые вместе помогать семьям.",inv_c2t:"Специалисты",inv_c2d:"Врачи, юристы, психологи и переводчики, готовые проверять и дополнять материалы.",inv_c3t:"Волонтёры",inv_c3d:"Координаторы, переводчики и родители, готовые поделиться опытом.",inv_btn:"Стать партнёром или волонтёром",
+help_h2:"Нужна помощь именно вам?",help_sub:"Напишите нам о своей ситуации — коротко, как есть. Мы ответим и подскажем, с чего начать.",help_btn2:"Написать нам",
+foot_tagline:"Помогаем семьям, воспитывающим детей с аутизмом, разобраться в системе — и пройти свой маршрут.",foot_copy:"некоммерческая инициатива",
+art_back:"← Назад в справочник",art_back2:"← Ко всем темам справочника",art_who:"Кому поможет",art_q:"Закрывает вопрос",art_next:"Следующий шаг",art_discl:"Информация носит справочный характер и не заменяет консультацию врача, юриста или социального работника. Проверяйте актуальные условия на официальных сайтах.",tr_notice:""},
+uk:{doc_title:"Autism Families Abroad — зрозумілий маршрут для родин в Естонії",nav_guide:"Довідник",nav_app:"Застосунок",nav_involved:"Долучитися",btn_help:"Отримати допомогу",
+hero_badge:"Нова ініціатива · родини з дітьми з аутизмом за кордоном",hero_h1:"Нарешті зрозуміло, куди рухатися.",hero_sub:"Відкрита база знань для родин в Естонії, які підозрюють у дитини аутизм, затримку розвитку, РДУГ або труднощі з мовленням — і не знають, з чого почати. Спокійно, крок за кроком, зрозумілою мовою.",hero_btn1:"Що відбувається зараз?",hero_btn2:"Відкрити довідник",hero_trust:"Безкоштовно · конфіденційно",
+manifesto:"Ми не просто збираємо інформацію.<br class=\"hidden sm:block\" /> Ми перетворюємо хаос на зрозумілий маршрут.",
+sit_h2:"Що відбувається зараз?",sit_sub:"Оберіть ситуацію, яка найближча до вашої. Ми поступово збираємо зрозумілі маршрути для кожної з них.",
+guide_kicker:"Довідник",guide_h2:"Довідник для родин в Естонії",guide_sub:"Зрозумілі матеріали про перші кроки, діагностику, документи, черги, підтримку, садок, школу та послуги.",btn_open:"Відкрити",
+app_soon:"Скоро",app_h2:"Що робитиме застосунок",app_text:"Сайт допомагає розібратися в системі. Застосунок <strong class=\"text-ink\">Family Navigator</strong> будуватиме персональний маршрут родини: показуватиме наступний крок, нагадуватиме про строки, враховуватиме чергу, зберігатиме статус завдань і повідомлятиме, якщо змінилися правила чи послуги.",app_btn:"Дізнатися про запуск",
+app_li1:"персональний маршрут родини",app_li2:"наступний крок",app_li3:"календар і дедлайни",app_li4:"нагадування",app_li5:"державний, змішаний, приватний шлях",app_li6:"оновлення при зміні правил",app_li7:"підготовка до візиту до фахівця",app_li8:"«Що робити, поки ви чекаєте»",app_li9:"статус: що зроблено, що залишилося, де родина зараз",
+imp_h2:"Важливо",imp_text:"Ми не ставимо діагнози, не призначаємо лікування і не замінюємо лікаря, юриста чи соціального працівника. Ми допомагаємо родині орієнтуватися в системі, розуміти можливі кроки та готуватися до звернень до фахівців.",
+inv_kicker:"Ми тільки починаємо",inv_h2:"Допоможіть нам це побудувати",inv_text:"Проєкт започаткував батько, який пройшов переїзд з дитиною з аутизмом. Ми шукаємо людей та організації, щоб доповнювати довідник і запустити застосунок.",inv_c1t:"Партнерські організації",inv_c1d:"НУО, клініки та фонди, готові разом допомагати родинам.",inv_c2t:"Фахівці",inv_c2d:"Лікарі, юристи, психологи та перекладачі, готові перевіряти й доповнювати матеріали.",inv_c3t:"Волонтери",inv_c3d:"Координатори, перекладачі та батьки, готові поділитися досвідом.",inv_btn:"Стати партнером або волонтером",
+help_h2:"Потрібна допомога саме вам?",help_sub:"Напишіть нам про свою ситуацію — коротко, як є. Ми відповімо і підкажемо, з чого почати.",help_btn2:"Написати нам",
+foot_tagline:"Допомагаємо родинам, які виховують дітей з аутизмом, розібратися в системі — і пройти свій маршрут.",foot_copy:"некомерційна ініціатива",
+art_back:"← Назад у довідник",art_back2:"← До всіх тем довідника",art_who:"Кому допоможе",art_q:"Закриває питання",art_next:"Наступний крок",art_discl:"Інформація має довідковий характер і не замінює консультацію лікаря, юриста чи соціального працівника. Перевіряйте актуальні умови на офіційних сайтах.",tr_notice:"Цю сторінку ще перекладають. Поки що текст російською — переклад з'явиться незабаром."},
+en:{doc_title:"Autism Families Abroad — a clear route for families in Estonia",nav_guide:"Guide",nav_app:"App",nav_involved:"Get involved",btn_help:"Get help",
+hero_badge:"New initiative · families raising autistic children abroad",hero_h1:"Finally, it's clear where to go.",hero_sub:"An open knowledge base for families in Estonia who suspect autism, a developmental delay, ADHD or speech difficulties in their child — and don't know where to start. Calm, step by step, in plain language.",hero_btn1:"What's happening now?",hero_btn2:"Open the guide",hero_trust:"Free · confidential",
+manifesto:"We don't just collect information.<br class=\"hidden sm:block\" /> We turn chaos into a clear route.",
+sit_h2:"What's happening now?",sit_sub:"Choose the situation closest to yours. We're gradually building clear routes for each of them.",
+guide_kicker:"Guide",guide_h2:"A guide for families in Estonia",guide_sub:"Plain-language materials on first steps, diagnostics, documents, waiting lists, support, kindergarten, school and services.",btn_open:"Open",
+app_soon:"Coming soon",app_h2:"What the app will do",app_text:"The website helps you understand the system. The <strong class=\"text-ink\">Family Navigator</strong> app will build your family's personal route: show the next step, remind you about deadlines, track waiting lists, keep task status and tell you when rules or services change.",app_btn:"Get launch updates",
+app_li1:"your family's personal route",app_li2:"the next step",app_li3:"calendar and deadlines",app_li4:"reminders",app_li5:"public, mixed and private paths",app_li6:"updates when rules change",app_li7:"preparing for a doctor's visit",app_li8:"\"What to do while you wait\"",app_li9:"status: what's done, what's left, where your family is now",
+imp_h2:"Important",imp_text:"We don't diagnose, prescribe treatment, or replace a doctor, lawyer or social worker. We help families navigate the system, understand possible steps and prepare for appointments with specialists.",
+inv_kicker:"We're just getting started",inv_h2:"Help us build this",inv_text:"The project was started by a parent who went through relocation with an autistic child. We're looking for people and organizations to grow the guide and launch the app.",inv_c1t:"Partner organizations",inv_c1d:"NGOs, clinics and foundations ready to help families together.",inv_c2t:"Specialists",inv_c2d:"Doctors, lawyers, psychologists and translators ready to review and improve the materials.",inv_c3t:"Volunteers",inv_c3d:"Coordinators, translators and parents ready to share their experience.",inv_btn:"Become a partner or volunteer",
+help_h2:"Do you need help?",help_sub:"Write to us about your situation — briefly, as it is. We'll reply and suggest where to start.",help_btn2:"Write to us",
+foot_tagline:"We help families raising autistic children understand the system — and walk their own route.",foot_copy:"a non-profit initiative",
+art_back:"← Back to the guide",art_back2:"← All guide topics",art_who:"Who it helps",art_q:"Question it answers",art_next:"Next step",art_discl:"This information is for reference only and does not replace advice from a doctor, lawyer or social worker. Always check current conditions on official websites.",tr_notice:"This page hasn't been translated yet. The text below is in Russian — a translation is coming soon."}
+};
+let LANG="ru";
+try{const s=localStorage.getItem("afa_lang");if(s&&UI[s])LANG=s;else{const n=(navigator.language||"ru").slice(0,2);if(UI[n])LANG=n;}}catch(e){}
+
 // ============ HOMEPAGE CARDS ============
 const SITUATIONS=[
- {title:"Есть подозрение, но диагноза нет",desc:"Вы замечаете задержку речи, сложности с поведением, сенсорные особенности или подозреваете аутизм, но не знаете, куда обращаться.",btn:"С чего начать",slug:"s-chego-nachat-v-estonii"},
- {title:"Ждём очередь к специалисту",desc:"Вы уже записались, но приём через несколько месяцев. Разбираем, что можно подготовить и сделать уже сейчас.",btn:"Что делать пока ждёте",slug:"ochered-k-specialistu"},
- {title:"Диагноз уже есть",desc:"Помогаем понять, какие шаги могут быть дальше: документы, поддержка, инвалидность, услуги, садик или школа.",btn:"Следующие шаги",slug:"diagnoz-uzhe-est"},
- {title:"Хотим оформить инвалидность",desc:"Объясняем, где искать информацию, какие документы обычно нужны и какие вопросы стоит уточнить.",btn:"Разобраться",slug:"invalidnost-i-posobiya"},
- {title:"Ищем садик или школу",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе.",btn:"Посмотреть маршрут",slug:"sadik-i-shkola"},
- {title:"Только приехали в Эстонию",desc:"С чего начать семье мигрантов или беженцев, если ребёнок нуждается в поддержке.",btn:"Первый шаг",slug:"tolko-priehali-v-estoniyu"}
+ {slug:"s-chego-nachat-v-estonii",
+  ru:{title:"Есть подозрение, но диагноза нет",desc:"Вы замечаете задержку речи, сложности с поведением, сенсорные особенности или подозреваете аутизм, но не знаете, куда обращаться.",btn:"С чего начать"},
+  uk:{title:"Є підозра, але діагнозу немає",desc:"Ви помічаєте затримку мовлення, складнощі з поведінкою, сенсорні особливості або підозрюєте аутизм, але не знаєте, куди звертатися.",btn:"З чого почати"},
+  en:{title:"We suspect something, but no diagnosis yet",desc:"You notice a speech delay, behavioural difficulties, sensory differences, or suspect autism, but don't know where to turn.",btn:"Where to start"}},
+ {slug:"ochered-k-specialistu",
+  ru:{title:"Ждём очередь к специалисту",desc:"Вы уже записались, но приём через несколько месяцев. Разбираем, что можно подготовить и сделать уже сейчас.",btn:"Что делать пока ждёте"},
+  uk:{title:"Чекаємо в черзі до фахівця",desc:"Ви вже записалися, але прийом за кілька місяців. Розбираємо, що можна підготувати і зробити вже зараз.",btn:"Що робити, поки чекаєте"},
+  en:{title:"Waiting for a specialist appointment",desc:"You're booked in, but the appointment is months away. Here's what you can prepare and do right now.",btn:"What to do while you wait"}},
+ {slug:"diagnoz-uzhe-est",
+  ru:{title:"Диагноз уже есть",desc:"Помогаем понять, какие шаги могут быть дальше: документы, поддержка, инвалидность, услуги, садик или школа.",btn:"Следующие шаги"},
+  uk:{title:"Діагноз уже є",desc:"Допомагаємо зрозуміти, які кроки можуть бути далі: документи, підтримка, інвалідність, послуги, садок чи школа.",btn:"Наступні кроки"},
+  en:{title:"We already have a diagnosis",desc:"We help you understand what may come next: documents, support, disability status, services, kindergarten or school.",btn:"Next steps"}},
+ {slug:"invalidnost-i-posobiya",
+  ru:{title:"Хотим оформить инвалидность",desc:"Объясняем, где искать информацию, какие документы обычно нужны и какие вопросы стоит уточнить.",btn:"Разобраться"},
+  uk:{title:"Хочемо оформити інвалідність",desc:"Пояснюємо, де шукати інформацію, які документи зазвичай потрібні та які питання варто уточнити.",btn:"Розібратися"},
+  en:{title:"We want to apply for disability status",desc:"We explain where to look for information, which documents are usually needed and what to clarify.",btn:"Figure it out"}},
+ {slug:"sadik-i-shkola",
+  ru:{title:"Ищем садик или школу",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе.",btn:"Посмотреть маршрут"},
+  uk:{title:"Шукаємо садок або школу",desc:"Що робити, якщо дитині потрібна підтримка в дитячому садку або школі.",btn:"Переглянути маршрут"},
+  en:{title:"Looking for kindergarten or school",desc:"What to do when your child needs support in kindergarten or school.",btn:"See the route"}},
+ {slug:"tolko-priehali-v-estoniyu",
+  ru:{title:"Только приехали в Эстонию",desc:"С чего начать семье мигрантов или беженцев, если ребёнок нуждается в поддержке.",btn:"Первый шаг"},
+  uk:{title:"Щойно приїхали до Естонії",desc:"З чого почати родині мігрантів чи біженців, якщо дитина потребує підтримки.",btn:"Перший крок"},
+  en:{title:"Just arrived in Estonia",desc:"Where a migrant or refugee family should start when their child needs support.",btn:"First step"}}
 ];
 const GUIDE=[
- {title:"С чего начать в Эстонии",desc:"Первый маршрут для родителей, которые видят трудности у ребёнка, но ещё не знают, куда обращаться.",slug:"s-chego-nachat-v-estonii"},
- {title:"Как подготовиться к семейному врачу",desc:"Что записать заранее, какие наблюдения собрать и какие вопросы задать врачу.",slug:"podgotovka-k-semeinomu-vrachu"},
- {title:"Что делать, если очередь длинная",desc:"Как не потерять время, пока семья ждёт приёма специалиста.",slug:"ochered-k-specialistu"},
- {title:"Государственный, смешанный и частный путь",desc:"Какие варианты помощи могут быть у семьи и чем они отличаются.",slug:"gosudarstvennyy-smeshannyy-chastnyy-put"},
- {title:"Диагностика и специалисты",desc:"Какие специалисты могут участвовать в оценке развития ребёнка и что важно уточнить.",slug:"diagnostika-i-specialisty"},
- {title:"Инвалидность и пособия",desc:"Где искать информацию о правах, пособиях, услугах и документах.",slug:"invalidnost-i-posobiya"},
- {title:"Садик и школа",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе.",slug:"sadik-i-shkola"},
- {title:"Документы и чек-листы",desc:"Списки документов, вопросов и наблюдений, которые помогают подготовиться к обращениям.",slug:"dokumenty-i-cheklisty"},
- {title:"Частые вопросы родителей",desc:"Короткие ответы на вопросы, с которыми семьи сталкиваются чаще всего.",slug:"faq"}
+ {slug:"s-chego-nachat-v-estonii",
+  ru:{title:"С чего начать в Эстонии",desc:"Первый маршрут для родителей, которые видят трудности у ребёнка, но ещё не знают, куда обращаться."},
+  uk:{title:"З чого почати в Естонії",desc:"Перший маршрут для батьків, які бачать труднощі в дитини, але ще не знають, куди звертатися."},
+  en:{title:"Where to start in Estonia",desc:"The first route for parents who see their child struggling but don't yet know where to turn."}},
+ {slug:"podgotovka-k-semeinomu-vrachu",
+  ru:{title:"Как подготовиться к семейному врачу",desc:"Что записать заранее, какие наблюдения собрать и какие вопросы задать врачу."},
+  uk:{title:"Як підготуватися до сімейного лікаря",desc:"Що записати заздалегідь, які спостереження зібрати та які питання поставити лікарю."},
+  en:{title:"Preparing for the family doctor",desc:"What to write down in advance, which observations to collect and what to ask the doctor."}},
+ {slug:"ochered-k-specialistu",
+  ru:{title:"Что делать, если очередь длинная",desc:"Как не потерять время, пока семья ждёт приёма специалиста."},
+  uk:{title:"Що робити, якщо черга довга",desc:"Як не втратити час, поки родина чекає на прийом фахівця."},
+  en:{title:"What to do if the waiting list is long",desc:"How not to lose time while your family waits for a specialist appointment."}},
+ {slug:"gosudarstvennyy-smeshannyy-chastnyy-put",
+  ru:{title:"Государственный, смешанный и частный путь",desc:"Какие варианты помощи могут быть у семьи и чем они отличаются."},
+  uk:{title:"Державний, змішаний і приватний шлях",desc:"Які варіанти допомоги може мати родина і чим вони відрізняються."},
+  en:{title:"Public, mixed and private paths",desc:"What options a family may have and how they differ."}},
+ {slug:"diagnostika-i-specialisty",
+  ru:{title:"Диагностика и специалисты",desc:"Какие специалисты могут участвовать в оценке развития ребёнка и что важно уточнить."},
+  uk:{title:"Діагностика та фахівці",desc:"Які фахівці можуть брати участь в оцінці розвитку дитини і що важливо уточнити."},
+  en:{title:"Diagnostics and specialists",desc:"Which specialists may take part in assessing a child's development and what to clarify."}},
+ {slug:"invalidnost-i-posobiya",
+  ru:{title:"Инвалидность и пособия",desc:"Где искать информацию о правах, пособиях, услугах и документах."},
+  uk:{title:"Інвалідність і виплати",desc:"Де шукати інформацію про права, виплати, послуги та документи."},
+  en:{title:"Disability and benefits",desc:"Where to find information about rights, benefits, services and documents."}},
+ {slug:"sadik-i-shkola",
+  ru:{title:"Садик и школа",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе."},
+  uk:{title:"Садок і школа",desc:"Що робити, якщо дитині потрібна підтримка в дитячому садку або школі."},
+  en:{title:"Kindergarten and school",desc:"What to do when your child needs support in kindergarten or school."}},
+ {slug:"dokumenty-i-cheklisty",
+  ru:{title:"Документы и чек-листы",desc:"Списки документов, вопросов и наблюдений, которые помогают подготовиться к обращениям."},
+  uk:{title:"Документи та чек-листи",desc:"Списки документів, питань і спостережень, які допомагають підготуватися до звернень."},
+  en:{title:"Documents and checklists",desc:"Lists of documents, questions and observations that help you prepare."}},
+ {slug:"faq",
+  ru:{title:"Частые вопросы родителей",desc:"Короткие ответы на вопросы, с которыми семьи сталкиваются чаще всего."},
+  uk:{title:"Часті запитання батьків",desc:"Короткі відповіді на запитання, з якими родини стикаються найчастіше."},
+  en:{title:"Parents' frequently asked questions",desc:"Short answers to the questions families face most often."}}
 ];
 
 // ============ ARTICLES ============
@@ -244,6 +336,94 @@ const ARTICLES=[
   who:"Родителям в Эстонии (включая мигрантов и беженцев), которые замечают особенности развития и не знают, куда идти.",
   question:"«С чего начать, если я подозреваю аутизм или задержку развития?»",
   next:"Дальше — тема «Как подготовиться к семейному врачу», чтобы получить максимум от первого приёма.",
+  tr:{
+  uk:{title:"З чого почати в Естонії, якщо є підозра на аутизм або затримку розвитку",
+   who:"Батькам в Естонії (зокрема мігрантам і біженцям), які помічають особливості розвитку і не знають, куди йти.",
+   question:"«З чого почати, якщо я підозрюю аутизм або затримку розвитку?»",
+   next:"Далі — тема «Як підготуватися до сімейного лікаря», щоб отримати максимум від першого прийому.",
+   body:`<p class="lead">Якщо ви помічаєте, що дитина розвивається інакше, найважче часто не сама підозра, а нерозуміння, куди йти і що робити. Ця сторінка допоможе спокійно розкласти перші кроки.</p>
+  <h3>Перший крок</h3>
+  <p>Зазвичай шлях починається зі звернення до <strong>сімейного лікаря (perekonnaarst)</strong>: він обговорить ваші спостереження, може призначити обстеження і за потреби дає <strong>направлення (saatekiri)</strong> до фахівця. Направлення за замовчуванням діє 6 місяців; лікар також може заздалегідь порадитися з фахівцем онлайн (е-консультація).</p>
+  <p><strong>Важливо:</strong> до деяких фахівців в Естонії можна записатися <strong>без направлення</strong> — це <strong>психіатрія</strong> (зокрема дитячий психіатр), офтальмологія, гінекологія та дерматологія. За підозри на аутизм, РДУГ чи затримку це часто важливо: до дитячого психіатра можна звернутися напряму. <a href="https://tervisekassa.ee/en/primary-health-care" target="_blank" rel="noopener">Джерело: Tervisekassa</a></p>
+  <p>Якщо питання більше про розвиток, мовлення і навчання, можна безкоштовно звернутися в <a href="https://rajaleidja.ee/" target="_blank" rel="noopener">Rajaleidja</a> — державну службу консультування, ще до встановлення діагнозу.</p>
+  <h3>Що підготувати перед зверненням</h3>
+  <ul><li>що саме вас турбує;</li><li>коли це почалося;</li><li>як дитина говорить або не говорить;</li><li>як дитина спілкується з людьми;</li><li>як поводиться вдома;</li><li>як поводиться в садку чи школі;</li><li>чи є складнощі зі сном;</li><li>чи є складнощі з харчуванням;</li><li>чи є сенсорні реакції;</li><li>чи є істерики або сильні реакції;</li><li>короткі відео поведінки, якщо це доречно;</li><li>нотатки вихователя, логопеда чи фахівця, якщо є;</li><li>старі медичні документи, якщо є;</li><li>список запитань до лікаря.</li></ul>
+  <h3>Якщо черга довга</h3>
+  <p>Очікування фахівця не повинно бути втраченим часом. Поки родина чекає на прийом, можна підготуватися і зібрати важливу інформацію.</p>
+  <ul><li>вести щоденник спостережень;</li><li>зібрати документи;</li><li>підготувати запитання лікарю;</li><li>уточнити муніципальні послуги;</li><li>розглянути державний, змішаний або приватний шлях;</li><li>шукати підтримку НУО чи батьківських груп;</li><li>підготувати інформацію з дитячого садка або школи.</li></ul>
+  <h3>Три можливі шляхи</h3>
+  <div class="mt-3 grid gap-4 sm:grid-cols-3">
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Державний шлях</div><div class="mt-1 text-sm text-muted">Через державну систему, сімейного лікаря, направлення та офіційні послуги.</div></div>
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Змішаний шлях</div><div class="mt-1 text-sm text-muted">Частина кроків через державну систему, частина — через приватних фахівців.</div></div>
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Приватний шлях</div><div class="mt-1 text-sm text-muted">Може бути швидшим у деяких ситуаціях, але потребує бюджету.</div></div>
+  </div>
+  <p class="mt-3 text-sm"><strong>Важливо:</strong> один шлях не завжди кращий за інший. Родина обирає за ситуацією, строками, можливостями та бюджетом.</p>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-6">
+    <div class="text-sm font-semibold text-teal-700">Що Family Navigator робитиме далі</div>
+    <ul class="mt-2 space-y-1.5 text-[15px] text-muted" style="list-style:none;padding-left:0"><li>• допоможе визначити поточний етап родини;</li><li>• покаже наступний крок;</li><li>• пояснить, що підготувати;</li><li>• підкаже, що робити, поки родина чекає в черзі;</li><li>• нагадає про строки;</li><li>• покаже варіанти: державний, змішаний і приватний шлях;</li><li>• повідомить, якщо правила чи послуги зміняться.</li></ul>
+  </div>
+  <h3>Часті запитання</h3>
+  <p><strong>Дитині ще не поставили діагноз. Чи можна вже щось робити?</strong><br/>Так. Можна почати зі спостережень, звернення до сімейного лікаря та звернення в Rajaleidja. Багато кроків підготовки не потребують діагнозу.</p>
+  <p><strong>Що робити, якщо сімейний лікар не бачить проблеми?</strong><br/>Ви можете спокійно попросити направлення або другу думку, а також звернутися до іншого фахівця. Конкретні приклади, щоденник спостережень і короткі відео допомагають пояснити ситуацію.</p>
+  <p><strong>Чи можна йти до приватного фахівця?</strong><br/>Так, це можливо. Іноді так швидше. Заздалегідь варто уточнити, чи прийматиметься приватний висновок у державній системі.</p>
+  <p><strong>Що робити, якщо я погано говорю естонською?</strong><br/>У багатьох місцях можна спілкуватися російською чи англійською або з перекладачем. Ви можете попросити, щоб вам пояснили зрозуміло, і заздалегідь записати запитання.</p>
+  <p><strong>Які документи краще почати збирати заздалегідь?</strong><br/>Особистий код і дані дитини, медстраховку, медичні висновки та переклади, нотатки вихователя і щоденник спостережень.</p>
+  <p><strong>Що робити, якщо черга кілька місяців?</strong><br/>Таке, на жаль, буває. Можна стати в чергу і паралельно уточнювати раніші варіанти, готувати документи та починати доступну підтримку, поки триває очікування.</p>
+  <div class="mt-6 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900"><span>ⓘ</span><span>Ми не ставимо діагнози, не призначаємо лікування і не замінюємо лікаря, юриста чи соціального працівника. Ми допомагаємо родині орієнтуватися в системі, розуміти можливі кроки та готуватися до звернень до фахівців.</span></div>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-6">
+    <div class="text-sm font-semibold text-ink">Офіційні джерела</div>
+    <ul class="mt-3 space-y-2 text-[14px] text-muted">
+      <li>• Сімейний лікар, направлення, е-консультація — <a href="https://tervisekassa.ee/en/primary-health-care" target="_blank" rel="noopener">Tervisekassa</a></li>
+      <li>• Консультації з розвитку та навчання — <a href="https://rajaleidja.ee/" target="_blank" rel="noopener">Rajaleidja</a></li>
+      <li>• Ступінь тяжкості (puue) та виплати — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/determination-disabilities" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li>
+      <li>• Соціальна реабілітація дитини — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/social-rehabilitation/social-rehabilitation-children" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li>
+      <li>• Держпослуги онлайн — <a href="https://www.eesti.ee/en" target="_blank" rel="noopener">eesti.ee</a></li>
+    </ul>
+  </div>`},
+  en:{title:"Where to start in Estonia if you suspect autism or a developmental delay",
+   who:"Parents in Estonia (including migrants and refugees) who notice developmental differences and don't know where to go.",
+   question:"\"Where do I start if I suspect autism or a developmental delay?\"",
+   next:"Next: \"Preparing for the family doctor\" — how to get the most out of the first appointment.",
+   body:`<p class="lead">If you notice your child developing differently, the hardest part is often not the suspicion itself, but not knowing where to go and what to do. This page will help you calmly lay out the first steps.</p>
+  <h3>The first step</h3>
+  <p>The route usually starts with your <strong>family doctor (perekonnaarst)</strong>: they will discuss your observations, may order tests, and can issue a <strong>referral (saatekiri)</strong> to a specialist. A referral is valid for 6 months by default; the doctor can also consult a specialist online first (e-consultation).</p>
+  <p><strong>Important:</strong> in Estonia some specialists can be booked <strong>without a referral</strong> — <strong>psychiatry</strong> (including child psychiatrists), ophthalmology, gynaecology and dermatology. When autism, ADHD or a delay is suspected this often matters: you can contact a child psychiatrist directly. <a href="https://tervisekassa.ee/en/primary-health-care" target="_blank" rel="noopener">Source: Tervisekassa</a></p>
+  <p>If your question is more about development, speech and learning, you can contact <a href="https://rajaleidja.ee/" target="_blank" rel="noopener">Rajaleidja</a> — the state counselling service — free of charge, even before any diagnosis.</p>
+  <h3>What to prepare before the appointment</h3>
+  <ul><li>what exactly worries you;</li><li>when it started;</li><li>how your child speaks or doesn't speak;</li><li>how your child interacts with people;</li><li>how they behave at home;</li><li>how they behave at kindergarten or school;</li><li>any sleep difficulties;</li><li>any eating difficulties;</li><li>any sensory reactions;</li><li>any meltdowns or strong reactions;</li><li>short videos of behaviour, if appropriate;</li><li>notes from a teacher, speech therapist or specialist, if any;</li><li>old medical documents, if any;</li><li>a list of questions for the doctor.</li></ul>
+  <h3>If the waiting list is long</h3>
+  <p>Waiting for a specialist shouldn't be lost time. While the family waits, you can prepare and collect important information.</p>
+  <ul><li>keep an observation diary;</li><li>gather documents;</li><li>prepare questions for the doctor;</li><li>check municipal services;</li><li>consider the public, mixed or private path;</li><li>look for support from NGOs or parent groups;</li><li>collect information from kindergarten or school.</li></ul>
+  <h3>Three possible paths</h3>
+  <div class="mt-3 grid gap-4 sm:grid-cols-3">
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Public path</div><div class="mt-1 text-sm text-muted">Through the state system, your family doctor, referrals and official services.</div></div>
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Mixed path</div><div class="mt-1 text-sm text-muted">Some steps through the state system, some through private specialists.</div></div>
+    <div class="rounded-2xl border border-teal-100 bg-teal-50 p-5"><div class="font-semibold text-ink">Private path</div><div class="mt-1 text-sm text-muted">Can be faster in some situations, but requires a budget.</div></div>
+  </div>
+  <p class="mt-3 text-sm"><strong>Important:</strong> no path is always better than another. Each family chooses based on their situation, timelines, options and budget.</p>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-6">
+    <div class="text-sm font-semibold text-teal-700">What Family Navigator will do next</div>
+    <ul class="mt-2 space-y-1.5 text-[15px] text-muted" style="list-style:none;padding-left:0"><li>• help identify your family's current stage;</li><li>• show the next step;</li><li>• explain what to prepare;</li><li>• suggest what to do while you wait;</li><li>• remind you about deadlines;</li><li>• show the options: public, mixed and private paths;</li><li>• tell you if rules or services change.</li></ul>
+  </div>
+  <h3>Frequently asked questions</h3>
+  <p><strong>My child has no diagnosis yet. Can we already do something?</strong><br/>Yes. You can start with observations, seeing your family doctor and contacting Rajaleidja. Many preparation steps don't require a diagnosis.</p>
+  <p><strong>What if the family doctor doesn't see a problem?</strong><br/>You can calmly ask for a referral or a second opinion, or see another specialist. Concrete examples, an observation diary and short videos help explain the situation.</p>
+  <p><strong>Can we go to a private specialist?</strong><br/>Yes. It's sometimes faster. Check in advance whether a private assessment will be accepted by the state system.</p>
+  <p><strong>What if I don't speak Estonian well?</strong><br/>In many places you can communicate in Russian or English, or with an interpreter. You can ask to have things explained clearly, and write your questions down in advance.</p>
+  <p><strong>Which documents should we start collecting early?</strong><br/>Your child's ID and personal code, health insurance details, medical assessments and translations, teacher's notes and your observation diary.</p>
+  <p><strong>What if the waiting list is several months?</strong><br/>Unfortunately, it happens. Join the queue and, in parallel, look for earlier slots, prepare documents and start whatever support is already available.</p>
+  <div class="mt-6 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900"><span>ⓘ</span><span>We don't diagnose, prescribe treatment, or replace a doctor, lawyer or social worker. We help families navigate the system, understand possible steps and prepare for appointments with specialists.</span></div>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-teal-50 p-6">
+    <div class="text-sm font-semibold text-ink">Official sources</div>
+    <ul class="mt-3 space-y-2 text-[14px] text-muted">
+      <li>• Family doctor, referrals, e-consultation — <a href="https://tervisekassa.ee/en/primary-health-care" target="_blank" rel="noopener">Tervisekassa</a></li>
+      <li>• Development and learning counselling — <a href="https://rajaleidja.ee/" target="_blank" rel="noopener">Rajaleidja</a></li>
+      <li>• Degree of disability (puue) and benefits — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/determination-disabilities" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li>
+      <li>• Children's social rehabilitation — <a href="https://sotsiaalkindlustusamet.ee/en/disability-and-welfare-services/social-rehabilitation/social-rehabilitation-children" target="_blank" rel="noopener">Sotsiaalkindlustusamet</a></li>
+      <li>• State e-services — <a href="https://www.eesti.ee/en" target="_blank" rel="noopener">eesti.ee</a></li>
+    </ul>
+  </div>`}
+  },
   body:`<p class="lead">Если вы замечаете, что ребёнок развивается иначе, самое трудное часто не само подозрение, а непонимание, куда идти и что делать. Эта страница поможет спокойно разложить первые шаги.</p>
   <button onclick="var e=document.getElementById('first-step');if(e)e.scrollIntoView({behavior:'smooth'});" class="mt-5 rounded-full bg-coral-500 px-6 py-3 text-sm font-semibold text-white hover:bg-coral-600">Показать первый шаг</button>
 
@@ -443,34 +623,61 @@ const ARTICLES=[
   <p>Два простых действия: записаться к семейному врачу и завести одну папку для документов. Остальное — по шагам.</p>`}
 ];
 
-// ============ RENDER HOMEPAGE CARDS ============
-(function(){
+// ============ LANGUAGE + RENDER ============
+function cardLoc(c){return c[LANG]||c.ru;}
+function artField(a,f){
+  if(LANG!=="ru"&&a.tr&&a.tr[LANG]&&a.tr[LANG][f])return a.tr[LANG][f];
+  return a[f];
+}
+function artTranslated(a){return LANG==="ru"||(a.tr&&a.tr[LANG]);}
+function renderCards(){
   document.getElementById("situationsGrid").innerHTML=SITUATIONS.map(function(c){
+    var L=cardLoc(c);
     return '<div class="flex flex-col rounded-3xl border border-teal-100 bg-white p-6">'
-      +'<h3 class="text-lg font-semibold leading-snug">'+c.title+'</h3>'
-      +'<p class="mt-2 flex-1 text-[15px] leading-relaxed text-muted">'+c.desc+'</p>'
-      +'<a href="#/spravochnik/'+c.slug+'" class="mt-4 inline-flex items-center gap-1.5 self-start rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600">'+c.btn+' →</a>'
+      +'<h3 class="text-lg font-semibold leading-snug">'+L.title+'</h3>'
+      +'<p class="mt-2 flex-1 text-[15px] leading-relaxed text-muted">'+L.desc+'</p>'
+      +'<a href="#/spravochnik/'+c.slug+'" class="mt-4 inline-flex items-center gap-1.5 self-start rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600">'+L.btn+' →</a>'
       +'</div>';
   }).join("");
   document.getElementById("guideGrid").innerHTML=GUIDE.map(function(c){
+    var L=cardLoc(c);
     return '<div class="flex flex-col rounded-3xl border border-teal-100 bg-white p-6">'
-      +'<h3 class="text-lg font-semibold leading-snug">'+c.title+'</h3>'
-      +'<p class="mt-2 flex-1 text-[15px] leading-relaxed text-muted">'+c.desc+'</p>'
-      +'<a href="#/spravochnik/'+c.slug+'" class="mt-4 inline-block self-start rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-700">Открыть</a>'
+      +'<h3 class="text-lg font-semibold leading-snug">'+L.title+'</h3>'
+      +'<p class="mt-2 flex-1 text-[15px] leading-relaxed text-muted">'+L.desc+'</p>'
+      +'<a href="#/spravochnik/'+c.slug+'" class="mt-4 inline-block self-start rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-teal-700">'+UI[LANG].btn_open+'</a>'
       +'</div>';
   }).join("");
-})();
+}
+function applyLang(lang){
+  if(!UI[lang])lang="ru";
+  LANG=lang;
+  try{localStorage.setItem("afa_lang",lang);}catch(e){}
+  document.documentElement.lang=lang;
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    var k=el.getAttribute("data-i18n");
+    if(UI[lang][k]!=null)el.innerHTML=UI[lang][k];
+  });
+  document.querySelectorAll(".langBtn").forEach(function(b){
+    var on=b.getAttribute("data-lang")===lang;
+    b.className=(b.className.replace(/ bg-teal-700 text-white| text-teal-700/g,""))+(on?" bg-teal-700 text-white":" text-teal-700");
+  });
+  renderCards();
+  route();
+}
 
 // ============ ROUTER ============
 const home=document.getElementById("view-home");
 const artView=document.getElementById("view-article");
 function showArticle(a){
-  document.getElementById("articleTitle").textContent=a.title;
-  document.getElementById("articleWho").textContent=a.who;
-  document.getElementById("articleQuestion").textContent=a.question;
-  document.getElementById("articleBody").innerHTML=a.body;
-  document.getElementById("articleNext").textContent=a.next;
-  document.title=a.title+" · Autism Families Abroad";
+  document.getElementById("articleTitle").textContent=artField(a,"title");
+  document.getElementById("articleWho").textContent=artField(a,"who");
+  document.getElementById("articleQuestion").textContent=artField(a,"question");
+  document.getElementById("articleBody").innerHTML=artField(a,"body");
+  document.getElementById("articleNext").textContent=artField(a,"next");
+  var n=document.getElementById("translationNotice");
+  if(!artTranslated(a)){n.textContent=UI[LANG].tr_notice;n.classList.remove("hidden");}
+  else{n.classList.add("hidden");}
+  document.title=artField(a,"title")+" · Autism Families Abroad";
   home.classList.add("hidden");
   artView.classList.remove("hidden");
   window.scrollTo(0,0);
@@ -478,7 +685,7 @@ function showArticle(a){
 function showHome(){
   artView.classList.add("hidden");
   home.classList.remove("hidden");
-  document.title="Autism Families Abroad — понятный маршрут для семей в Эстонии";
+  document.title=UI[LANG].doc_title;
 }
 function route(){
   const m=(location.hash||"").match(/^#\/spravochnik\/(.+)$/);
@@ -495,7 +702,10 @@ function route(){
   }
 }
 window.addEventListener("hashchange",route);
-route();
+document.querySelectorAll(".langBtn").forEach(function(b){
+  b.addEventListener("click",function(){applyLang(b.getAttribute("data-lang"));});
+});
+applyLang(LANG);
 
 // ============ MOBILE MENU ============
 const menuBtn=document.getElementById("menuBtn"),mobileNav=document.getElementById("mobileNav");
