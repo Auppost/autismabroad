@@ -266,6 +266,20 @@ art_back:"← Back to the guide",art_back2:"← All guide topics",art_who:"Who i
 let LANG="ru";
 try{const s=localStorage.getItem("afa_lang");if(s&&UI[s])LANG=s;else{const n=(navigator.language||"ru").slice(0,2);if(UI[n])LANG=n;}}catch(e){}
 
+// strip tracking params (fbclid, utm_*) from the address bar
+try{
+  if(location.search){
+    const p=new URLSearchParams(location.search);
+    let dirty=false;
+    ["fbclid","gclid","yclid","mc_eid"].forEach(k=>{if(p.has(k)){p.delete(k);dirty=true;}});
+    [...p.keys()].forEach(k=>{if(k.indexOf("utm_")===0){p.delete(k);dirty=true;}});
+    if(dirty){
+      const q=p.toString();
+      history.replaceState(null,"",location.pathname+(q?"?"+q:"")+location.hash);
+    }
+  }
+}catch(e){}
+
 // ============ HOMEPAGE CARDS ============
 const SITUATIONS=[
  {slug:"s-chego-nachat-v-estonii",
