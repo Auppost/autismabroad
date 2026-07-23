@@ -143,6 +143,22 @@ tailwind.config={theme:{extend:{colors:{
     </div>
   </section>
 
+  <!-- MY ROUTE CTA -->
+  <section class="pb-4">
+    <div class="mx-auto max-w-5xl px-5 sm:px-8">
+      <div class="overflow-hidden rounded-4xl bg-teal-700 p-8 text-white sm:p-11">
+        <div class="grid items-center gap-6 sm:grid-cols-[1fr_auto]">
+          <div>
+            <span class="inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-semibold" data-i18n="route_kicker">Бесплатный инструмент</span>
+            <h2 class="mt-4 text-2xl font-bold sm:text-3xl" data-i18n="route_cta_h2">Соберите свой маршрут и отмечайте шаги</h2>
+            <p class="mt-3 max-w-xl leading-relaxed text-teal-100" data-i18n="route_cta_sub">Пошаговый чек-лист: от семейного врача до садика и пособий. Отмечайте, что уже сделано — прогресс сохранится в вашем браузере. Ничего не нужно регистрировать.</p>
+          </div>
+          <a href="#/moy-marshrut" class="inline-block whitespace-nowrap rounded-full bg-coral-500 px-8 py-4 text-center font-semibold text-white hover:bg-coral-600" data-i18n="route_cta_btn">Открыть «Мой маршрут» →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- BLOCK 2: SPRAVOCHNIK -->
   <section id="guide" class="scroll-mt-20 bg-teal-50 py-20">
     <div class="mx-auto max-w-6xl px-5 sm:px-8">
@@ -151,7 +167,12 @@ tailwind.config={theme:{extend:{colors:{
         <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="guide_h2">Справочник для семей в Эстонии</h2>
         <p class="mt-3 text-lg text-muted" data-i18n="guide_sub">Понятные материалы о первых шагах, диагностике, документах, очередях, поддержке, садике, школе и услугах.</p>
       </div>
-      <div id="guideGrid" class="mt-11 grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+      <div class="mx-auto mt-8 flex max-w-md items-center gap-2 rounded-full border border-teal-200 bg-white px-4 py-1 focus-within:border-teal-500">
+        <span class="text-teal-600">🔍</span>
+        <input id="guideSearch" type="search" autocomplete="off" class="w-full bg-transparent py-2.5 text-[15px] outline-none placeholder:text-muted" data-i18n-ph="guide_search_ph" placeholder="Поиск по справочнику…" />
+      </div>
+      <div id="guideGrid" class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+      <p id="guideEmpty" class="mt-8 hidden text-center text-muted" data-i18n="guide_empty">Ничего не найдено. Попробуйте другое слово.</p>
     </div>
   </section>
 
@@ -265,6 +286,31 @@ tailwind.config={theme:{extend:{colors:{
   </div>
 </main>
 
+<!-- ============ MY ROUTE VIEW ============ -->
+<main id="view-route" class="hidden">
+  <div class="mx-auto max-w-3xl px-5 py-12 sm:px-8">
+    <nav class="flex flex-wrap items-center gap-2 text-sm text-muted">
+      <a href="#top" class="hover:text-teal-700" data-i18n="crumb_home">Главная</a>
+      <span class="text-teal-300">›</span>
+      <span class="font-medium text-ink" data-i18n="route_title">Мой маршрут</span>
+    </nav>
+    <h1 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl" data-i18n="route_h1">Мой маршрут</h1>
+    <p class="mt-4 text-lg leading-relaxed text-muted" data-i18n="route_intro">Отмечайте шаги, которые уже сделали. Галочки сохраняются только в вашем браузере на этом устройстве — это личный список, его никто не видит.</p>
+    <div class="mt-6 flex items-center gap-4">
+      <div class="h-2.5 flex-1 overflow-hidden rounded-full bg-teal-100"><div id="routeBar" class="h-full rounded-full bg-teal-600 transition-all" style="width:0%"></div></div>
+      <span id="routeCount" class="whitespace-nowrap text-sm font-semibold text-teal-700">0 / 0</span>
+    </div>
+    <div id="routeSteps" class="mt-8 space-y-8"></div>
+    <div class="mt-10 flex flex-wrap items-center gap-4 border-t border-teal-100 pt-6">
+      <button id="routeReset" class="text-sm font-medium text-muted hover:text-coral-600" data-i18n="route_reset">Сбросить отметки</button>
+      <a href="#top" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800" data-i18n="crumb_home">← Главная</a>
+    </div>
+    <div class="mt-8 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900">
+      <span>ⓘ</span><span data-i18n="art_discl">Информация носит справочный характер и не заменяет консультацию врача, юриста или социального работника. Проверяйте актуальные условия на официальных сайтах.</span>
+    </div>
+  </div>
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer class="bg-ink py-12 text-white">
   <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center sm:px-8">
@@ -288,7 +334,8 @@ howto_h2:"Как пользоваться сайтом",howto_sub:"Три про
 hero_badge:"Новая инициатива · семьи с детьми с аутизмом за рубежом",hero_h1:"Наконец-то понятно, куда двигаться.",hero_sub:"Открытая база знаний для семей в Эстонии, которые подозревают у ребёнка аутизм, задержку развития, СДВГ или трудности с речью — и не знают, с чего начать. Спокойно, по шагам, на понятном языке.",hero_btn1:"Начать здесь →",hero_btn2:"Выбрать свою ситуацию",hero_trust:"Бесплатно · конфиденциально",
 manifesto:"Мы не просто собираем информацию.<br class=\"hidden sm:block\" /> Мы превращаем хаос в понятный маршрут.",
 sit_h2:"Что происходит сейчас?",sit_sub:"Выберите ситуацию, которая ближе всего к вашей. Мы постепенно собираем понятные маршруты для каждой из них.",
-guide_kicker:"Справочник",guide_h2:"Справочник для семей в Эстонии",guide_sub:"Понятные материалы о первых шагах, диагностике, документах, очередях, поддержке, садике, школе и услугах.",btn_open:"Открыть",
+guide_kicker:"Справочник",guide_h2:"Справочник для семей в Эстонии",guide_sub:"Понятные материалы о первых шагах, диагностике, документах, очередях, поддержке, садике, школе и услугах.",btn_open:"Открыть",guide_search_ph:"Поиск по справочнику…",guide_empty:"Ничего не найдено. Попробуйте другое слово.",
+route_kicker:"Бесплатный инструмент",route_cta_h2:"Соберите свой маршрут и отмечайте шаги",route_cta_sub:"Пошаговый чек-лист: от семейного врача до садика и пособий. Отмечайте, что уже сделано — прогресс сохранится в вашем браузере. Ничего не нужно регистрировать.",route_cta_btn:"Открыть «Мой маршрут» →",route_title:"Мой маршрут",route_h1:"Мой маршрут",route_intro:"Отмечайте шаги, которые уже сделали. Галочки сохраняются только в вашем браузере на этом устройстве — это личный список, его никто не видит.",route_reset:"Сбросить отметки",route_more:"подробнее →",
 app_soon:"Скоро",app_h2:"Что будет делать приложение",app_text:"Сайт помогает разобраться в системе. Приложение <strong class=\"text-ink\">Family Navigator</strong> будет строить персональный маршрут семьи: показывать следующий шаг, напоминать о сроках, учитывать очередь, хранить статус задач и сообщать, если изменились правила или услуги.",app_btn:"Узнать о запуске",
 app_li1:"персональный маршрут семьи",app_li2:"следующий шаг",app_li3:"календарь и дедлайны",app_li4:"напоминания",app_li5:"государственный, смешанный, частный путь",app_li6:"обновления при изменении правил",app_li7:"подготовка к визиту к специалисту",app_li8:"«Что делать, пока вы ждёте»",app_li9:"статус: что сделано, что осталось, где семья сейчас",
 imp_h2:"Важно",imp_text:"Мы не ставим диагнозы, не назначаем лечение и не заменяем врача, юриста или социального работника. Мы помогаем семье ориентироваться в системе, понимать возможные шаги и готовиться к обращениям к специалистам.",
@@ -302,7 +349,8 @@ howto_h2:"Як користуватися сайтом",howto_sub:"Три про
 hero_badge:"Нова ініціатива · родини з дітьми з аутизмом за кордоном",hero_h1:"Нарешті зрозуміло, куди рухатися.",hero_sub:"Відкрита база знань для родин в Естонії, які підозрюють у дитини аутизм, затримку розвитку, РДУГ або труднощі з мовленням — і не знають, з чого почати. Спокійно, крок за кроком, зрозумілою мовою.",hero_btn1:"Почати тут →",hero_btn2:"Обрати свою ситуацію",hero_trust:"Безкоштовно · конфіденційно",
 manifesto:"Ми не просто збираємо інформацію.<br class=\"hidden sm:block\" /> Ми перетворюємо хаос на зрозумілий маршрут.",
 sit_h2:"Що відбувається зараз?",sit_sub:"Оберіть ситуацію, яка найближча до вашої. Ми поступово збираємо зрозумілі маршрути для кожної з них.",
-guide_kicker:"Довідник",guide_h2:"Довідник для родин в Естонії",guide_sub:"Зрозумілі матеріали про перші кроки, діагностику, документи, черги, підтримку, садок, школу та послуги.",btn_open:"Відкрити",
+guide_kicker:"Довідник",guide_h2:"Довідник для родин в Естонії",guide_sub:"Зрозумілі матеріали про перші кроки, діагностику, документи, черги, підтримку, садок, школу та послуги.",btn_open:"Відкрити",guide_search_ph:"Пошук у довіднику…",guide_empty:"Нічого не знайдено. Спробуйте інше слово.",
+route_kicker:"Безкоштовний інструмент",route_cta_h2:"Складіть свій маршрут і відмічайте кроки",route_cta_sub:"Покроковий чек-лист: від сімейного лікаря до садка і виплат. Відмічайте, що вже зроблено — прогрес збережеться у вашому браузері. Нічого не треба реєструвати.",route_cta_btn:"Відкрити «Мій маршрут» →",route_title:"Мій маршрут",route_h1:"Мій маршрут",route_intro:"Відмічайте кроки, які вже зробили. Галочки зберігаються лише у вашому браузері на цьому пристрої — це особистий список, його ніхто не бачить.",route_reset:"Скинути позначки",route_more:"докладніше →",
 app_soon:"Скоро",app_h2:"Що робитиме застосунок",app_text:"Сайт допомагає розібратися в системі. Застосунок <strong class=\"text-ink\">Family Navigator</strong> будуватиме персональний маршрут родини: показуватиме наступний крок, нагадуватиме про строки, враховуватиме чергу, зберігатиме статус завдань і повідомлятиме, якщо змінилися правила чи послуги.",app_btn:"Дізнатися про запуск",
 app_li1:"персональний маршрут родини",app_li2:"наступний крок",app_li3:"календар і дедлайни",app_li4:"нагадування",app_li5:"державний, змішаний, приватний шлях",app_li6:"оновлення при зміні правил",app_li7:"підготовка до візиту до фахівця",app_li8:"«Що робити, поки ви чекаєте»",app_li9:"статус: що зроблено, що залишилося, де родина зараз",
 imp_h2:"Важливо",imp_text:"Ми не ставимо діагнози, не призначаємо лікування і не замінюємо лікаря, юриста чи соціального працівника. Ми допомагаємо родині орієнтуватися в системі, розуміти можливі кроки та готуватися до звернень до фахівців.",
@@ -316,7 +364,8 @@ howto_h2:"How to use this site",howto_sub:"Three simple steps — no rush, at yo
 hero_badge:"New initiative · families raising autistic children abroad",hero_h1:"Finally, it's clear where to go.",hero_sub:"An open knowledge base for families in Estonia who suspect autism, a developmental delay, ADHD or speech difficulties in their child — and don't know where to start. Calm, step by step, in plain language.",hero_btn1:"Start here →",hero_btn2:"Choose your situation",hero_trust:"Free · confidential",
 manifesto:"We don't just collect information.<br class=\"hidden sm:block\" /> We turn chaos into a clear route.",
 sit_h2:"What's happening now?",sit_sub:"Choose the situation closest to yours. We're gradually building clear routes for each of them.",
-guide_kicker:"Guide",guide_h2:"A guide for families in Estonia",guide_sub:"Plain-language materials on first steps, diagnostics, documents, waiting lists, support, kindergarten, school and services.",btn_open:"Open",
+guide_kicker:"Guide",guide_h2:"A guide for families in Estonia",guide_sub:"Plain-language materials on first steps, diagnostics, documents, waiting lists, support, kindergarten, school and services.",btn_open:"Open",guide_search_ph:"Search the guide…",guide_empty:"Nothing found. Try another word.",
+route_kicker:"Free tool",route_cta_h2:"Build your route and tick off the steps",route_cta_sub:"A step-by-step checklist: from the family doctor to kindergarten and benefits. Tick what's done — your progress is saved in your browser. Nothing to sign up for.",route_cta_btn:"Open \"My route\" →",route_title:"My route",route_h1:"My route",route_intro:"Tick the steps you've already done. Checkboxes are saved only in your browser on this device — it's a private list nobody else can see.",route_reset:"Reset checkmarks",route_more:"details →",
 app_soon:"Coming soon",app_h2:"What the app will do",app_text:"The website helps you understand the system. The <strong class=\"text-ink\">Family Navigator</strong> app will build your family's personal route: show the next step, remind you about deadlines, track waiting lists, keep task status and tell you when rules or services change.",app_btn:"Get launch updates",
 app_li1:"your family's personal route",app_li2:"the next step",app_li3:"calendar and deadlines",app_li4:"reminders",app_li5:"public, mixed and private paths",app_li6:"updates when rules change",app_li7:"preparing for a doctor's visit",app_li8:"\"What to do while you wait\"",app_li9:"status: what's done, what's left, where your family is now",
 imp_h2:"Important",imp_text:"We don't diagnose, prescribe treatment, or replace a doctor, lawyer or social worker. We help families navigate the system, understand possible steps and prepare for appointments with specialists.",
@@ -1053,6 +1102,7 @@ function artField(a,f){
 function artTranslated(a){return LANG==="ru"||(a.tr&&a.tr[LANG]);}
 var ICONS={"s-chego-nachat-v-estonii":"🧭","ochered-k-specialistu":"⏳","diagnoz-uzhe-est":"✅","invalidnost-i-posobiya":"📄","sadik-i-shkola":"🏫","tolko-priehali-v-estoniyu":"✈️","podgotovka-k-semeinomu-vrachu":"🩺","gosudarstvennyy-smeshannyy-chastnyy-put":"🛤️","diagnostika-i-specialisty":"🔍","dokumenty-i-cheklisty":"📋","faq":"💬"};
 function iconFor(slug){return ICONS[slug]||"•";}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 function renderCards(){
   document.getElementById("situationsGrid").innerHTML=SITUATIONS.map(function(c){
     var L=cardLoc(c);
@@ -1065,13 +1115,69 @@ function renderCards(){
   }).join("");
   document.getElementById("guideGrid").innerHTML=GUIDE.map(function(c){
     var L=cardLoc(c);
-    return '<a href="#/spravochnik/'+c.slug+'" class="card group flex flex-col rounded-3xl border border-teal-100 bg-white p-6 no-underline">'
+    return '<a href="#/spravochnik/'+c.slug+'" data-guide="'+esc((L.title+" "+L.desc).toLowerCase())+'" class="card group flex flex-col rounded-3xl border border-teal-100 bg-white p-6 no-underline">'
       +'<div class="grid h-12 w-12 place-items-center rounded-2xl bg-teal-50 text-2xl">'+iconFor(c.slug)+'</div>'
       +'<h3 class="mt-4 text-lg font-semibold leading-snug text-ink">'+L.title+'</h3>'
       +'<p class="mt-2 flex-1 text-[15px] leading-relaxed text-muted">'+L.desc+'</p>'
       +'<span class="mt-4 inline-flex items-center gap-1.5 self-start rounded-full bg-teal-600 px-5 py-2.5 text-sm font-semibold text-white group-hover:bg-teal-700">'+UI[LANG].btn_open+' →</span>'
       +'</a>';
   }).join("");
+  filterGuide();
+}
+// ---- guide search ----
+function filterGuide(){
+  var inp=document.getElementById("guideSearch");
+  var q=(inp&&inp.value?inp.value:"").trim().toLowerCase();
+  var any=false;
+  document.querySelectorAll("#guideGrid [data-guide]").forEach(function(el){
+    var show=!q||el.getAttribute("data-guide").indexOf(q)>=0;
+    el.classList.toggle("hidden",!show);
+    if(show)any=true;
+  });
+  var em=document.getElementById("guideEmpty");
+  if(em)em.classList.toggle("hidden",any||!q);
+}
+// ---- my route (checklist) ----
+var ROUTE_STEPS=[
+ {g:{ru:"1. Разобраться и подготовиться",uk:"1. Розібратися і підготуватися",en:"1. Understand and prepare"},items:[
+   {id:"obs",slug:"s-chego-nachat-v-estonii",ru:"Записать наблюдения о ребёнке (что, когда началось)",uk:"Записати спостереження про дитину (що, коли почалося)",en:"Write down observations about your child (what, when it started)"},
+   {id:"gp",slug:"podgotovka-k-semeinomu-vrachu",ru:"Записаться к семейному врачу (perearst)",uk:"Записатися до сімейного лікаря (perearst)",en:"Book an appointment with the family doctor (perearst)"},
+   {id:"visit",slug:"podgotovka-k-semeinomu-vrachu",ru:"Сходить на приём: направление (saatekiri) или э-консультация",uk:"Піти на прийом: направлення (saatekiri) або е-консультація",en:"Attend the visit: referral (saatekiri) or e-consultation"}]},
+ {g:{ru:"2. Диагностика",uk:"2. Діагностика",en:"2. Diagnostics"},items:[
+   {id:"psy",slug:"diagnostika-i-specialisty",ru:"Обратиться к детскому психиатру / специалисту",uk:"Звернутися до дитячого психіатра / фахівця",en:"Contact a child psychiatrist / specialist"},
+   {id:"raja",slug:"s-chego-nachat-v-estonii",ru:"При вопросах развития и речи — обратиться в Rajaleidja",uk:"За питаннями розвитку і мовлення — звернутися в Rajaleidja",en:"For development and speech — contact Rajaleidja"},
+   {id:"rep",slug:"dokumenty-i-cheklisty",ru:"Собрать заключения и переводы",uk:"Зібрати висновки та переклади",en:"Collect reports and translations"}]},
+ {g:{ru:"3. Статус и поддержка",uk:"3. Статус і підтримка",en:"3. Status and support"},items:[
+   {id:"puue",slug:"invalidnost-i-posobiya",ru:"Подать заявление на степень тяжести (puue) в Sotsiaalkindlustusamet",uk:"Подати заяву на ступінь тяжкості (puue) в Sotsiaalkindlustusamet",en:"Apply for the degree of severity (puue) at Sotsiaalkindlustusamet"},
+   {id:"toetus",slug:"invalidnost-i-posobiya",ru:"Узнать про пособие (puudega lapse toetus)",uk:"Дізнатися про виплату (puudega lapse toetus)",en:"Ask about the allowance (puudega lapse toetus)"},
+   {id:"rehab",slug:"invalidnost-i-posobiya",ru:"Узнать про социальную реабилитацию",uk:"Дізнатися про соціальну реабілітацію",en:"Ask about social rehabilitation"}]},
+ {g:{ru:"4. Садик и школа",uk:"4. Садок і школа",en:"4. Kindergarten and school"},items:[
+   {id:"kvm",slug:"sadik-i-shkola",ru:"Получить рекомендацию Rajaleidja для сада/школы",uk:"Отримати рекомендацію Rajaleidja для садка/школи",en:"Get the Rajaleidja recommendation for kindergarten/school"},
+   {id:"tugi",slug:"sadik-i-shkola",ru:"Обсудить поддержку в саду/школе (tugiisik)",uk:"Обговорити підтримку в садку/школі (tugiisik)",en:"Discuss support at kindergarten/school (tugiisik)"},
+   {id:"folder",slug:"dokumenty-i-cheklisty",ru:"Собрать папку документов",uk:"Зібрати теку документів",en:"Assemble a documents folder"}]}
+];
+var ROUTE_KEY="afa_route";
+function routeState(){try{return JSON.parse(localStorage.getItem(ROUTE_KEY)||"{}")||{};}catch(e){return {};}}
+function routeSave(s){try{localStorage.setItem(ROUTE_KEY,JSON.stringify(s));}catch(e){}}
+function renderRoute(){
+  var st=routeState(),total=0,done=0;
+  var html=ROUTE_STEPS.map(function(grp){
+    var items=grp.items.map(function(it){
+      total++;var on=!!st[it.id];if(on)done++;
+      var label=it[LANG]||it.ru;
+      var more=it.slug?'<a href="#/spravochnik/'+it.slug+'" class="shrink-0 self-center whitespace-nowrap text-[13px] font-semibold text-teal-700 hover:text-teal-800">'+UI[LANG].route_more+'</a>':'';
+      return '<div class="flex items-start gap-3 rounded-2xl border border-teal-100 bg-white p-4 hover:border-teal-300">'
+        +'<label class="flex flex-1 cursor-pointer items-start gap-3">'
+        +'<input type="checkbox" data-step="'+it.id+'" class="mt-0.5 h-5 w-5 shrink-0" style="accent-color:#43625A"'+(on?" checked":"")+'>'
+        +'<span class="text-[15px] leading-snug '+(on?"text-muted line-through":"text-ink")+'">'+label+'</span>'
+        +'</label>'+more+'</div>';
+    }).join("");
+    return '<div><h2 class="text-lg font-bold text-ink">'+(grp.g[LANG]||grp.g.ru)+'</h2><div class="mt-3 space-y-3">'+items+'</div></div>';
+  }).join("");
+  document.getElementById("routeSteps").innerHTML=html;
+  var pct=total?Math.round(done/total*100):0;
+  document.getElementById("routeBar").style.width=pct+"%";
+  document.getElementById("routeCount").textContent=done+" / "+total;
 }
 function applyLang(lang){
   if(!UI[lang])lang="ru";
@@ -1081,6 +1187,10 @@ function applyLang(lang){
   document.querySelectorAll("[data-i18n]").forEach(function(el){
     var k=el.getAttribute("data-i18n");
     if(UI[lang][k]!=null)el.innerHTML=UI[lang][k];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+    var k=el.getAttribute("data-i18n-ph");
+    if(UI[lang][k]!=null)el.setAttribute("placeholder",UI[lang][k]);
   });
   document.querySelectorAll(".langBtn").forEach(function(b){
     var on=b.getAttribute("data-lang")===lang;
@@ -1093,6 +1203,15 @@ function applyLang(lang){
 // ============ ROUTER ============
 const home=document.getElementById("view-home");
 const artView=document.getElementById("view-article");
+const routeView=document.getElementById("view-route");
+function hideAllViews(){home.classList.add("hidden");artView.classList.add("hidden");routeView.classList.add("hidden");}
+function showRoute(){
+  hideAllViews();
+  routeView.classList.remove("hidden");
+  renderRoute();
+  document.title=UI[LANG].route_h1+" · Autism Families Abroad";
+  window.scrollTo(0,0);
+}
 function showArticle(a){
   document.getElementById("articleTitle").textContent=artField(a,"title");
   var who=artField(a,"who")||"",q=artField(a,"question")||"",nx=artField(a,"next")||"";
@@ -1107,16 +1226,18 @@ function showArticle(a){
   if(!artTranslated(a)){n.textContent=UI[LANG].tr_notice;n.classList.remove("hidden");}
   else{n.classList.add("hidden");}
   document.title=artField(a,"title")+" · Autism Families Abroad";
-  home.classList.add("hidden");
+  hideAllViews();
   artView.classList.remove("hidden");
   window.scrollTo(0,0);
 }
 function showHome(){
   artView.classList.add("hidden");
+  routeView.classList.add("hidden");
   home.classList.remove("hidden");
   document.title=UI[LANG].doc_title;
 }
 function route(){
+  if((location.hash||"")==="#/moy-marshrut"){showRoute();return;}
   const m=(location.hash||"").match(/^#\/(?:spravochnik\/)?([a-z-]+)$/);
   if(m){
     const a=ARTICLES.find(function(x){return x.slug===m[1];});
@@ -1134,6 +1255,19 @@ window.addEventListener("hashchange",route);
 document.querySelectorAll(".langBtn").forEach(function(b){
   b.addEventListener("click",function(){applyLang(b.getAttribute("data-lang"));});
 });
+// route checklist interactions
+document.getElementById("routeSteps").addEventListener("change",function(e){
+  var cb=e.target;
+  if(cb&&cb.getAttribute&&cb.getAttribute("data-step")){
+    var st=routeState();
+    if(cb.checked)st[cb.getAttribute("data-step")]=1;else delete st[cb.getAttribute("data-step")];
+    routeSave(st);renderRoute();
+  }
+});
+document.getElementById("routeReset").addEventListener("click",function(){routeSave({});renderRoute();});
+// guide search
+var gs=document.getElementById("guideSearch");
+if(gs)gs.addEventListener("input",filterGuide);
 applyLang(LANG);
 
 // ============ MOBILE MENU ============
