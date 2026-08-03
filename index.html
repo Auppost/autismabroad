@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="et">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -83,7 +83,8 @@ tailwind.config={theme:{extend:{colors:{
     </nav>
     <div class="flex shrink-0 items-center gap-3">
       <div class="flex shrink-0 overflow-hidden rounded-full border border-teal-200 text-xs font-semibold">
-        <button class="langBtn px-2.5 py-1.5" data-lang="ru">RU</button>
+        <button class="langBtn px-2.5 py-1.5" data-lang="et">ET</button>
+        <button class="langBtn border-l border-teal-200 px-2.5 py-1.5" data-lang="ru">RU</button>
         <button class="langBtn border-l border-teal-200 px-2.5 py-1.5" data-lang="uk">UK</button>
         <button class="langBtn border-l border-teal-200 px-2.5 py-1.5" data-lang="en">EN</button>
       </div>
@@ -354,6 +355,21 @@ tailwind.config={theme:{extend:{colors:{
 <script>
 // ============ I18N ============
 const UI={
+et:{doc_title:"Autism Families Abroad — selge tee peredele Eestis",nav_situations:"Olukorrad",nav_guide:"Teatmik",nav_app:"Rakendus",nav_about:"Projektist",nav_support:"Toeta",nav_involved:"Osale",btn_help:"Küsi abi",crumb_home:"Avaleht",
+sup_kicker:"Me alles alustame",sup_h2:"Muudame kaose selgeks teekonnaks — koos",sup_text:"Praegu püsib projekt oma jõul ja oma vahenditega. Iga toetus aitab teatmikku kiiremini täiendada, tuua Family Navigatori rakenduse käivitamist lähemale — ja tasapisi laieneda teistesse riikidesse, kus autismiga laste peredel on vaja sama tuge.",sup_recipient_l:"Saaja",sup_ref_l:"Makse selgitus",sup_ref_v:"Vabatahtlik annetus",sup_note:"Oleme mittetulundusühing päris alguses — ilma personali ja suurte annetajateta. Räägime ausalt, kuhu raha läheb, niipea kui on millestki rääkida.",
+howto_h2:"Kuidas saiti kasutada",howto_sub:"Kolm lihtsat sammu — ilma kiirustamata, teile sobivas tempos.",howto_1t:"Leidke oma olukord",howto_1d:"Kuus elulist olukorda — valige see, mis on teile praegu kõige lähedasem.",howto_2t:"Avage samm-sammuline teekond",howto_2d:"Rahulik selgitus: mida teha, kuhu pöörduda ja millises järjekorras.",howto_3t:"Salvestage või küsige",howto_3d:"Lisage leht järjehoidjatesse või kirjutage meile — ütleme, kust alustada.",
+hero_badge:"Uus algatus · autismiga laste pered välismaal",hero_h1:"Lõpuks on selge, kuhu edasi liikuda.",hero_sub:"Avatud teadmusbaas Eestis elavatele peredele, kes kahtlustavad lapsel autismi, arenguhilistust, ATH-d või kõneraskusi — ega tea, kust alustada. Rahulikult, samm-sammult, arusaadavas keeles.",hero_btn1:"Alusta siit →",hero_btn2:"Vali oma olukord",hero_trust:"Tasuta · konfidentsiaalne",
+manifesto:"Me ei kogu lihtsalt infot.<br class=\"hidden sm:block\" /> Me muudame kaose selgeks teekonnaks.",
+sit_h2:"Mis toimub praegu?",sit_sub:"Valige olukord, mis on teie omale kõige lähedasem. Kogume tasapisi selgeid teekondi igaühe jaoks.",
+guide_kicker:"Teatmik",guide_h2:"Teatmik Eestis elavatele peredele",guide_sub:"Arusaadavad materjalid esimestest sammudest, diagnostikast, dokumentidest, järjekordadest, toetustest, lasteaiast, koolist ja teenustest.",btn_open:"Ava",guide_search_ph:"Otsi teatmikust…",guide_empty:"Midagi ei leitud. Proovige teist sõna.",
+route_kicker:"Tasuta tööriist",route_cta_h2:"Koostage oma teekond ja märkige sammud",route_cta_sub:"Samm-sammuline kontrollnimekiri: perearstist lasteaia ja toetusteni. Märkige, mis on juba tehtud — edenemine salvestub teie brauserisse. Registreeruda pole vaja.",route_cta_btn:"Ava „Minu teekond” →",route_title:"Minu teekond",route_h1:"Minu teekond",route_intro:"Märkige sammud, mille olete juba teinud. Linnukesed salvestuvad ainult teie brauserisse selles seadmes — see on isiklik nimekiri, mida keegi teine ei näe.",route_reset:"Lähtesta märked",route_more:"loe lähemalt →",
+app_soon:"Peagi",app_h2:"Mida rakendus tegema hakkab",app_text:"Sait aitab süsteemis orienteeruda. Rakendus <strong class=\"text-ink\">Family Navigator</strong> koostab pere isikliku teekonna: näitab järgmist sammu, tuletab meelde tähtaegu, arvestab järjekorda, hoiab ülesannete seisu ja teavitab, kui reeglid või teenused muutuvad.",app_btn:"Saa teada käivitamisest",
+app_li1:"pere isiklik teekond",app_li2:"järgmine samm",app_li3:"kalender ja tähtajad",app_li4:"meeldetuletused",app_li5:"riiklik, segatud, erasektori tee",app_li6:"uuendused reeglite muutumisel",app_li7:"ettevalmistus visiidiks spetsialisti juurde",app_li8:"„Mida teha, kuni ootate”",app_li9:"seis: mis on tehtud, mis on jäänud, kus pere praegu on",
+imp_h2:"Oluline",imp_text:"Me ei pane diagnoose, ei määra ravi ega asenda arsti, juristi ega sotsiaaltöötajat. Aitame perel süsteemis orienteeruda, mõista võimalikke samme ja valmistuda spetsialistide poole pöördumiseks.",
+inv_kicker:"Me alles alustame",inv_h2:"Aidake meil see üles ehitada",inv_text:"Projekti alustas lapsevanem, kes läbis kolimise autismiga lapsega. Otsime inimesi ja organisatsioone, et teatmikku täiendada ja rakendus käivitada.",inv_c1t:"Partnerorganisatsioonid",inv_c1d:"MTÜd, kliinikud ja fondid, kes on valmis peresid koos aitama.",inv_c2t:"Spetsialistid",inv_c2d:"Arstid, juristid, psühholoogid ja tõlkijad, kes on valmis materjale üle vaatama ja täiendama.",inv_c3t:"Vabatahtlikud",inv_c3d:"Koordinaatorid, tõlkijad ja lapsevanemad, kes on valmis oma kogemust jagama.",inv_btn:"Hakka partneriks või vabatahtlikuks",
+help_h2:"Kas vajate abi just teie?",help_sub:"Kirjutage meile oma olukorrast — lühidalt, nii nagu on. Vastame ja ütleme, kust alustada.",help_btn2:"Kirjutage meile",
+foot_tagline:"Aitame autismiga lapsi kasvatavatel peredel süsteemis orienteeruda — ja oma teekond läbida.",foot_copy:"mittetulunduslik algatus",foot_privacy:"Privaatsus ja küpsised",
+art_back:"← Tagasi teatmikku",art_back2:"← Kõik teatmiku teemad",art_who:"Kellele see aitab",art_q:"Millisele küsimusele vastab",art_next:"Järgmine samm",art_discl:"Teave on üksnes informatiivne ega asenda arsti, juristi ega sotsiaaltöötaja konsultatsiooni. Kontrollige ajakohaseid tingimusi ametlikelt veebilehtedelt.",tr_notice:"Seda lehte alles tõlgitakse. Praegu on tekst vene keeles — tõlge ilmub peagi."},
 ru:{doc_title:"Autism Families Abroad — понятный маршрут для семей в Эстонии",nav_situations:"Ситуации",nav_guide:"Справочник",nav_app:"Приложение",nav_about:"О проекте",nav_support:"Поддержать",nav_involved:"Участвовать",btn_help:"Получить помощь",crumb_home:"Главная",
 sup_kicker:"Мы только начинаем",sup_h2:"Превращаем хаос в понятный маршрут — вместе",sup_text:"Сейчас проект держится на своих силах и своих средствах. Любая поддержка помогает быстрее наполнять справочник, приблизить запуск приложения Family Navigator — и постепенно расширяться на другие страны, где семьям с детьми с аутизмом нужна такая же поддержка.",sup_recipient_l:"Получатель",sup_ref_l:"Назначение платежа",sup_ref_v:"Добровольное пожертвование",sup_note:"Мы некоммерческая организация на самом старте — без штата и без крупных доноров. Мы честно расскажем, на что идут средства, как только появится, о чём рассказывать.",
 howto_h2:"Как пользоваться сайтом",howto_sub:"Три простых шага — без спешки и в удобном для вас темпе.",howto_1t:"Найдите свою ситуацию",howto_1d:"Шесть жизненных ситуаций — выберите ту, что ближе всего к вам прямо сейчас.",howto_2t:"Откройте пошаговый маршрут",howto_2d:"Спокойное объяснение: что делать, куда обращаться и в каком порядке.",howto_3t:"Сохраните или спросите",howto_3d:"Добавьте страницу в закладки или напишите нам — подскажем, с чего начать.",
@@ -400,8 +416,8 @@ help_h2:"Do you need help?",help_sub:"Write to us about your situation — brief
 foot_tagline:"We help families raising autistic children understand the system — and walk their own route.",foot_copy:"a non-profit initiative",foot_privacy:"Privacy & cookies",
 art_back:"← Back to the guide",art_back2:"← All guide topics",art_who:"Who it helps",art_q:"Question it answers",art_next:"Next step",art_discl:"This information is for reference only and does not replace advice from a doctor, lawyer or social worker. Always check current conditions on official websites.",tr_notice:"This page hasn't been translated yet. The text below is in Russian — a translation is coming soon."}
 };
-let LANG="ru";
-try{const s=localStorage.getItem("afa_lang");if(s&&UI[s])LANG=s;else{const n=(navigator.language||"ru").slice(0,2);if(UI[n])LANG=n;}}catch(e){}
+let LANG="et"; // Estonia-first default; a stored choice or the visitor's browser language (ru/uk/en) wins
+try{const s=localStorage.getItem("afa_lang");if(s&&UI[s])LANG=s;else{const n=(navigator.language||"et").slice(0,2);if(UI[n])LANG=n;}}catch(e){}
 
 // strip tracking params (fbclid, utm_*) from the address bar
 try{
@@ -422,69 +438,69 @@ const SITUATIONS=[
  {slug:"s-chego-nachat-v-estonii",
   ru:{title:"Есть подозрение, но диагноза нет",desc:"Вы замечаете задержку речи, сложности с поведением, сенсорные особенности или подозреваете аутизм, но не знаете, куда обращаться.",btn:"С чего начать"},
   uk:{title:"Є підозра, але діагнозу немає",desc:"Ви помічаєте затримку мовлення, складнощі з поведінкою, сенсорні особливості або підозрюєте аутизм, але не знаєте, куди звертатися.",btn:"З чого почати"},
-  en:{title:"We suspect something, but no diagnosis yet",desc:"You notice a speech delay, behavioural difficulties, sensory differences, or suspect autism, but don't know where to turn.",btn:"Where to start"}},
+  en:{title:"We suspect something, but no diagnosis yet",desc:"You notice a speech delay, behavioural difficulties, sensory differences, or suspect autism, but don't know where to turn.",btn:"Where to start"},et:{title:"On kahtlus, aga diagnoosi pole",desc:"Märkate kõne hilistumist, käitumisraskusi, sensoorseid iseärasusi või kahtlustate autismi, aga ei tea, kuhu pöörduda.",btn:"Kust alustada"}},
  {slug:"ochered-k-specialistu",
   ru:{title:"Ждём очередь к специалисту",desc:"Вы уже записались, но приём через несколько месяцев. Разбираем, что можно подготовить и сделать уже сейчас.",btn:"Что делать пока ждёте"},
   uk:{title:"Чекаємо в черзі до фахівця",desc:"Ви вже записалися, але прийом за кілька місяців. Розбираємо, що можна підготувати і зробити вже зараз.",btn:"Що робити, поки чекаєте"},
-  en:{title:"Waiting for a specialist appointment",desc:"You're booked in, but the appointment is months away. Here's what you can prepare and do right now.",btn:"What to do while you wait"}},
+  en:{title:"Waiting for a specialist appointment",desc:"You're booked in, but the appointment is months away. Here's what you can prepare and do right now.",btn:"What to do while you wait"},et:{title:"Ootame järjekorras spetsialisti juurde",desc:"Olete juba kirja pannud, aga vastuvõtt on mõne kuu pärast. Vaatame, mida saab ette valmistada ja juba praegu teha.",btn:"Mida teha ootamise ajal"}},
  {slug:"diagnoz-uzhe-est",
   ru:{title:"Диагноз уже есть",desc:"Помогаем понять, какие шаги могут быть дальше: документы, поддержка, инвалидность, услуги, садик или школа.",btn:"Следующие шаги"},
   uk:{title:"Діагноз уже є",desc:"Допомагаємо зрозуміти, які кроки можуть бути далі: документи, підтримка, інвалідність, послуги, садок чи школа.",btn:"Наступні кроки"},
-  en:{title:"We already have a diagnosis",desc:"We help you understand what may come next: documents, support, disability status, services, kindergarten or school.",btn:"Next steps"}},
+  en:{title:"We already have a diagnosis",desc:"We help you understand what may come next: documents, support, disability status, services, kindergarten or school.",btn:"Next steps"},et:{title:"Diagnoos on juba olemas",desc:"Aitame mõista, millised sammud võivad edasi tulla: dokumendid, tugi, puue, teenused, lasteaed või kool.",btn:"Järgmised sammud"}},
  {slug:"invalidnost-i-posobiya",
   ru:{title:"Хотим оформить инвалидность",desc:"Объясняем, где искать информацию, какие документы обычно нужны и какие вопросы стоит уточнить.",btn:"Разобраться"},
   uk:{title:"Хочемо оформити інвалідність",desc:"Пояснюємо, де шукати інформацію, які документи зазвичай потрібні та які питання варто уточнити.",btn:"Розібратися"},
-  en:{title:"We want to apply for disability status",desc:"We explain where to look for information, which documents are usually needed and what to clarify.",btn:"Figure it out"}},
+  en:{title:"We want to apply for disability status",desc:"We explain where to look for information, which documents are usually needed and what to clarify.",btn:"Figure it out"},et:{title:"Soovime vormistada puude",desc:"Selgitame, kust infot otsida, millised dokumendid tavaliselt vaja on ja milliseid küsimusi tasub täpsustada.",btn:"Selgita välja"}},
  {slug:"sadik-i-shkola",
   ru:{title:"Ищем садик или школу",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе.",btn:"Посмотреть маршрут"},
   uk:{title:"Шукаємо садок або школу",desc:"Що робити, якщо дитині потрібна підтримка в дитячому садку або школі.",btn:"Переглянути маршрут"},
-  en:{title:"Looking for kindergarten or school",desc:"What to do when your child needs support in kindergarten or school.",btn:"See the route"}},
+  en:{title:"Looking for kindergarten or school",desc:"What to do when your child needs support in kindergarten or school.",btn:"See the route"},et:{title:"Otsime lasteaeda või kooli",desc:"Mida teha, kui laps vajab tuge lasteaias või koolis.",btn:"Vaata teekonda"}},
  {slug:"tolko-priehali-v-estoniyu",
   ru:{title:"Только приехали в Эстонию",desc:"С чего начать семье мигрантов или беженцев, если ребёнок нуждается в поддержке.",btn:"Первый шаг"},
   uk:{title:"Щойно приїхали до Естонії",desc:"З чого почати родині мігрантів чи біженців, якщо дитина потребує підтримки.",btn:"Перший крок"},
-  en:{title:"Just arrived in Estonia",desc:"Where a migrant or refugee family should start when their child needs support.",btn:"First step"}}
+  en:{title:"Just arrived in Estonia",desc:"Where a migrant or refugee family should start when their child needs support.",btn:"First step"},et:{title:"Just saabusite Eestisse",desc:"Kust alustada rände- või pagulasperel, kui laps vajab tuge.",btn:"Esimene samm"}}
 ];
 const GUIDE=[
  {slug:"s-chego-nachat-v-estonii",
   ru:{title:"С чего начать в Эстонии",desc:"Первый маршрут для родителей, которые видят трудности у ребёнка, но ещё не знают, куда обращаться."},
   uk:{title:"З чого почати в Естонії",desc:"Перший маршрут для батьків, які бачать труднощі в дитини, але ще не знають, куди звертатися."},
-  en:{title:"Where to start in Estonia",desc:"The first route for parents who see their child struggling but don't yet know where to turn."}},
+  en:{title:"Where to start in Estonia",desc:"The first route for parents who see their child struggling but don't yet know where to turn."},et:{title:"Kust Eestis alustada",desc:"Esimene teekond vanematele, kes näevad lapsel raskusi, aga ei tea veel, kuhu pöörduda."}},
  {slug:"podgotovka-k-semeinomu-vrachu",
   ru:{title:"Как подготовиться к семейному врачу",desc:"Что записать заранее, какие наблюдения собрать и какие вопросы задать врачу."},
   uk:{title:"Як підготуватися до сімейного лікаря",desc:"Що записати заздалегідь, які спостереження зібрати та які питання поставити лікарю."},
-  en:{title:"Preparing for the family doctor",desc:"What to write down in advance, which observations to collect and what to ask the doctor."}},
+  en:{title:"Preparing for the family doctor",desc:"What to write down in advance, which observations to collect and what to ask the doctor."},et:{title:"Kuidas valmistuda perearsti visiidiks",desc:"Mida eelnevalt üles kirjutada, millised tähelepanekud koguda ja milliseid küsimusi arstile esitada."}},
  {slug:"ochered-k-specialistu",
   ru:{title:"Что делать, если очередь длинная",desc:"Как не потерять время, пока семья ждёт приёма специалиста."},
   uk:{title:"Що робити, якщо черга довга",desc:"Як не втратити час, поки родина чекає на прийом фахівця."},
-  en:{title:"What to do if the waiting list is long",desc:"How not to lose time while your family waits for a specialist appointment."}},
+  en:{title:"What to do if the waiting list is long",desc:"How not to lose time while your family waits for a specialist appointment."},et:{title:"Mida teha, kui järjekord on pikk",desc:"Kuidas mitte aega kaotada, kui pere ootab spetsialisti vastuvõttu."}},
  {slug:"gosudarstvennyy-smeshannyy-chastnyy-put",
   ru:{title:"Государственный, смешанный и частный путь",desc:"Какие варианты помощи могут быть у семьи и чем они отличаются."},
   uk:{title:"Державний, змішаний і приватний шлях",desc:"Які варіанти допомоги може мати родина і чим вони відрізняються."},
-  en:{title:"Public, mixed and private paths",desc:"What options a family may have and how they differ."}},
+  en:{title:"Public, mixed and private paths",desc:"What options a family may have and how they differ."},et:{title:"Riiklik, segatud ja erasektori tee",desc:"Millised abivõimalused perel võivad olla ja kuidas need erinevad."}},
  {slug:"diagnostika-i-specialisty",
   ru:{title:"Диагностика и специалисты",desc:"Какие специалисты могут участвовать в оценке развития ребёнка и что важно уточнить."},
   uk:{title:"Діагностика та фахівці",desc:"Які фахівці можуть брати участь в оцінці розвитку дитини і що важливо уточнити."},
-  en:{title:"Diagnostics and specialists",desc:"Which specialists may take part in assessing a child's development and what to clarify."}},
+  en:{title:"Diagnostics and specialists",desc:"Which specialists may take part in assessing a child's development and what to clarify."},et:{title:"Diagnostika ja spetsialistid",desc:"Millised spetsialistid võivad lapse arengu hindamises osaleda ja mida on oluline täpsustada."}},
  {slug:"invalidnost-i-posobiya",
   ru:{title:"Инвалидность и пособия",desc:"Где искать информацию о правах, пособиях, услугах и документах."},
   uk:{title:"Інвалідність і виплати",desc:"Де шукати інформацію про права, виплати, послуги та документи."},
-  en:{title:"Disability and benefits",desc:"Where to find information about rights, benefits, services and documents."}},
+  en:{title:"Disability and benefits",desc:"Where to find information about rights, benefits, services and documents."},et:{title:"Puue ja toetused",desc:"Kust leida infot õiguste, toetuste, teenuste ja dokumentide kohta."}},
  {slug:"sadik-i-shkola",
   ru:{title:"Садик и школа",desc:"Что делать, если ребёнку нужна поддержка в детском саду или школе."},
   uk:{title:"Садок і школа",desc:"Що робити, якщо дитині потрібна підтримка в дитячому садку або школі."},
-  en:{title:"Kindergarten and school",desc:"What to do when your child needs support in kindergarten or school."}},
+  en:{title:"Kindergarten and school",desc:"What to do when your child needs support in kindergarten or school."},et:{title:"Lasteaed ja kool",desc:"Mida teha, kui laps vajab tuge lasteaias või koolis."}},
  {slug:"dokumenty-i-cheklisty",
   ru:{title:"Документы и чек-листы",desc:"Списки документов, вопросов и наблюдений, которые помогают подготовиться к обращениям."},
   uk:{title:"Документи та чек-листи",desc:"Списки документів, питань і спостережень, які допомагають підготуватися до звернень."},
-  en:{title:"Documents and checklists",desc:"Lists of documents, questions and observations that help you prepare."}},
+  en:{title:"Documents and checklists",desc:"Lists of documents, questions and observations that help you prepare."},et:{title:"Dokumendid ja kontrollnimekirjad",desc:"Dokumentide, küsimuste ja tähelepanekute nimekirjad, mis aitavad ette valmistuda."}},
  {slug:"faq",
   ru:{title:"Частые вопросы родителей",desc:"Короткие ответы на вопросы, с которыми семьи сталкиваются чаще всего."},
   uk:{title:"Часті запитання батьків",desc:"Короткі відповіді на запитання, з якими родини стикаються найчастіше."},
-  en:{title:"Parents' frequently asked questions",desc:"Short answers to the questions families face most often."}},
+  en:{title:"Parents' frequently asked questions",desc:"Short answers to the questions families face most often."},et:{title:"Vanemate korduma kippuvad küsimused",desc:"Lühikesed vastused küsimustele, millega pered kõige sagedamini kokku puutuvad."}},
  {slug:"kontakty",
   ru:{title:"Полезные контакты и телефоны",desc:"Официальные службы и организации Эстонии: куда позвонить и написать, в том числе по-русски."},
   uk:{title:"Корисні контакти й телефони",desc:"Офіційні служби та організації Естонії: куди зателефонувати і написати, зокрема російською."},
-  en:{title:"Useful contacts and helplines",desc:"Official Estonian services and organizations: where to call and write, including in Russian."}}
+  en:{title:"Useful contacts and helplines",desc:"Official Estonian services and organizations: where to call and write, including in Russian."},et:{title:"Kasulikud kontaktid ja telefoninumbrid",desc:"Eesti ametlikud teenistused ja organisatsioonid: kuhu helistada ja kirjutada, sealhulgas vene keeles."}}
 ];
 
 // ============ ARTICLES ============
