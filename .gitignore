@@ -1,0 +1,6 @@
+# Закрытая папка с материалами — отдельный приватный репо Auppost/autismabroad-private, не попадает на сайт
+_private/
+
+# системный мусор
+.DS_Store
+Thumbs.db
