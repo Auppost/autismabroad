@@ -68,14 +68,15 @@ tailwind.config={theme:{extend:{colors:{
 
 <!-- ============ HEADER ============ -->
 <header class="sticky top-0 z-50 border-b border-teal-100 bg-white/90 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-4 sm:px-8">
     <a href="#top" class="flex shrink-0 items-center gap-2.5 whitespace-nowrap text-lg font-bold">
       <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-teal-700 text-white">∞</span>
-      Autism Families Abroad
+      <span class="sm:hidden">AFA</span><span class="hidden sm:inline">Autism Families Abroad</span>
     </a>
-    <nav class="hidden items-center gap-5 whitespace-nowrap text-[15px] font-medium xl:flex">
+    <nav class="hidden items-center gap-4 whitespace-nowrap text-[15px] font-medium xl:flex">
       <a href="#situations" class="hover:text-teal-700" data-i18n="nav_situations">Ситуации</a>
       <a href="#guide" class="hover:text-teal-700" data-i18n="nav_guide">Справочник</a>
+      <a href="#/specialisty" class="hover:text-teal-700" data-i18n="nav_spec">Специалисты</a>
       <a href="#app" class="hover:text-teal-700" data-i18n="nav_app">Приложение</a>
       <a href="#/o-proekte" class="hover:text-teal-700" data-i18n="nav_about">О проекте</a>
       <a href="#support" class="hover:text-teal-700" data-i18n="nav_support">Поддержать</a>
@@ -88,7 +89,7 @@ tailwind.config={theme:{extend:{colors:{
         <button class="langBtn border-l border-teal-200 px-2.5 py-1.5" data-lang="uk">UK</button>
         <button class="langBtn border-l border-teal-200 px-2.5 py-1.5" data-lang="en">EN</button>
       </div>
-      <a href="#help" class="hidden whitespace-nowrap rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600 sm:inline-block" data-i18n="btn_help">Получить помощь</a>
+      <a href="#help" class="hidden whitespace-nowrap rounded-full bg-coral-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-coral-600 sm:inline-block xl:hidden 2xl:inline-block" data-i18n="btn_help">Получить помощь</a>
       <button id="menuBtn" class="xl:hidden" aria-label="Menu">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2B2420" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -97,6 +98,7 @@ tailwind.config={theme:{extend:{colors:{
   <div id="mobileNav" class="hidden border-t border-teal-100 bg-white px-5 py-3 xl:hidden">
     <a href="#situations" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_situations">Ситуации</a>
     <a href="#guide" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_guide">Справочник</a>
+    <a href="#/specialisty" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_spec">Специалисты</a>
     <a href="#app" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_app">Приложение</a>
     <a href="#/o-proekte" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_about">О проекте</a>
     <a href="#support" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_support">Поддержать</a>
@@ -199,6 +201,23 @@ tailwind.config={theme:{extend:{colors:{
       </div>
       <div id="guideGrid" class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
       <p id="guideEmpty" class="mt-8 hidden text-center text-muted" data-i18n="guide_empty">Ничего не найдено. Попробуйте другое слово.</p>
+    </div>
+  </section>
+
+  <!-- SPECIALISTS CTA -->
+  <section id="specialists" class="scroll-mt-20 py-16">
+    <div class="mx-auto max-w-5xl px-5 sm:px-8">
+      <div class="rounded-4xl border border-teal-100 bg-white p-8 sm:p-11">
+        <div class="grid items-center gap-6 sm:grid-cols-[1fr_auto]">
+          <div>
+            <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="spec_cta_kicker">Новый раздел</span>
+            <h2 class="mt-4 text-2xl font-bold sm:text-3xl" data-i18n="spec_cta_h2">Специалисты и организации</h2>
+            <p class="mt-3 max-w-xl leading-relaxed text-muted" data-i18n="spec_cta_sub">Список центров и специалистов в Эстонии, которые работают с детьми с аутизмом — с фильтром по направлению, городу и языку.</p>
+            <p class="mt-3 flex max-w-xl items-start gap-2 text-[13px] text-amber-900"><span>ⓘ</span><span data-i18n="spec_cta_note">Только для информации: это не рекомендация, мы не проверяем качество услуг и не сотрудничаем с перечисленными организациями.</span></p>
+          </div>
+          <a href="#/specialisty" class="inline-block whitespace-nowrap rounded-full bg-teal-700 px-8 py-4 text-center font-semibold text-white hover:bg-teal-800" data-i18n="spec_cta_btn">Открыть список →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -337,6 +356,62 @@ tailwind.config={theme:{extend:{colors:{
   </div>
 </main>
 
+<!-- ============ SPECIALISTS VIEW ============ -->
+<main id="view-spec" class="hidden">
+  <div class="mx-auto max-w-5xl px-5 py-12 sm:px-8">
+    <nav class="flex flex-wrap items-center gap-2 text-sm text-muted">
+      <a href="#top" class="hover:text-teal-700" data-i18n="crumb_home">Главная</a>
+      <span class="text-teal-300">›</span>
+      <span class="font-medium text-ink" data-i18n="spec_title">Специалисты</span>
+    </nav>
+    <span class="mt-5 inline-block rounded-full bg-amber-100 px-3.5 py-2 text-sm font-medium text-amber-900" data-i18n="spec_kicker">Только для информации</span>
+    <h1 class="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl" data-i18n="spec_h2">Специалисты и организации</h1>
+    <p class="mt-4 max-w-3xl text-lg leading-relaxed text-muted" data-i18n="spec_sub">Центры, врачи и организации в Эстонии, которые работают с детьми с аутизмом и особенностями развития.</p>
+
+    <div class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-[14px] leading-relaxed text-amber-900">
+      <div class="flex items-center gap-2 font-bold"><span>ⓘ</span><span data-i18n="spec_discl_h">Это не рекомендация</span></div>
+      <p class="mt-2" data-i18n="spec_discl">Раздел носит исключительно информационный характер.</p>
+      <a href="https://medre.tehik.ee/" target="_blank" rel="noopener" class="mt-2 inline-block font-semibold underline decoration-amber-300 underline-offset-2 hover:text-amber-950" data-i18n="spec_discl_link">Проверить лицензию в регистре Terviseamet →</a>
+    </div>
+
+    <div class="mt-8 space-y-4">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="mr-1 text-xs font-semibold uppercase tracking-wide text-teal-600" data-i18n="spec_f_cat">Направление</span>
+        <div id="specCats" class="flex flex-wrap gap-2"></div>
+      </div>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="mr-1 text-xs font-semibold uppercase tracking-wide text-teal-600" data-i18n="spec_f_city">Город</span>
+          <div id="specCities" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="mr-1 text-xs font-semibold uppercase tracking-wide text-teal-600" data-i18n="spec_f_lang">Язык</span>
+          <div id="specLangs" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="specGrid" class="mt-8 grid gap-6 md:grid-cols-2"></div>
+    <div id="specEmpty" class="mt-8 hidden text-center text-muted">
+      <p data-i18n="spec_empty">По этим фильтрам ничего не найдено.</p>
+      <button id="specReset" class="mt-3 text-sm font-semibold text-teal-700 hover:text-teal-800" data-i18n="spec_reset">Сбросить фильтры</button>
+    </div>
+
+    <div class="mt-12 rounded-3xl border border-teal-100 bg-teal-50 p-7 sm:p-9">
+      <h2 class="text-xl font-bold" data-i18n="spec_sug_h">Знаете специалиста или центр?</h2>
+      <p class="mt-2 max-w-2xl text-[15px] leading-relaxed text-muted" data-i18n="spec_sug_p">Напишите нам: название, город, языки и ссылка на сайт. Мы добавим запись с той же оговоркой.</p>
+      <a href="mailto:hello@autismabroad.org?subject=Specialists directory" class="mt-5 inline-block rounded-full bg-teal-700 px-7 py-3.5 font-semibold text-white hover:bg-teal-800" data-i18n="spec_sug_btn">Предложить запись</a>
+    </div>
+
+    <div class="mt-8 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900">
+      <span>ⓘ</span><span data-i18n="spec_discl_short">Список только для информации. Присутствие в нём не является рекомендацией; мы не проверяем квалификацию и качество услуг и не несём ответственности за результат обращения.</span>
+    </div>
+    <div class="mt-6">
+      <a href="#top" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800" data-i18n="crumb_home">← Главная</a>
+    </div>
+  </div>
+</main>
+
 <!-- ============ FOOTER ============ -->
 <footer class="bg-ink py-12 text-white">
   <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 sm:flex-row sm:items-center sm:px-8">
@@ -416,6 +491,35 @@ help_h2:"Do you need help?",help_sub:"Write to us about your situation — brief
 foot_tagline:"We help families raising autistic children understand the system — and walk their own route.",foot_copy:"a non-profit initiative",foot_privacy:"Privacy & cookies",
 art_back:"← Back to the guide",art_back2:"← All guide topics",art_who:"Who it helps",art_q:"Question it answers",art_next:"Next step",art_discl:"This information is for reference only and does not replace advice from a doctor, lawyer or social worker. Always check current conditions on official websites.",tr_notice:"This page hasn't been translated yet. The text below is in Russian — a translation is coming soon."}
 };
+// ---- Specialists directory: UI strings (merged into UI) ----
+const SPEC_UI={
+et:{nav_spec:"Spetsialistid",spec_title:"Spetsialistid",spec_kicker:"Ainult teadmiseks",spec_h2:"Spetsialistid ja organisatsioonid",spec_sub:"Keskused, arstid ja organisatsioonid Eestis, kes töötavad autismi ja arengu iseärasustega lastega. Saab filtreerida suuna, linna ja keele järgi.",
+ spec_discl_h:"See ei ole soovitus",spec_discl:"See jaotis on üksnes informatiivne. Me ei kontrolli loetletud spetsialistide kvalifikatsiooni, litsentse ega teenuste kvaliteeti, ei tee nendega koostööd ega saa nimekirja kandmise eest tasu. Nimekirjas olemine ei tähenda meie soovitust. Spetsialisti valiku otsustate teie; me ei vastuta pöördumise tulemuse eest. Andmed pärinevad organisatsioonide veebilehtedelt ja võivad aeguda — täpsustage tingimusi ja hindu otse. Tervishoiutöötajate litsentse saab kontrollida Terviseameti registrist.",
+ spec_discl_link:"Kontrolli litsentsi Terviseameti registrist →",spec_discl_short:"Nimekiri on ainult teadmiseks. Selles olemine ei ole soovitus; me ei kontrolli kvalifikatsiooni ega teenuste kvaliteeti ega vastuta pöördumise tulemuse eest.",
+ spec_f_cat:"Suund",spec_f_city:"Linn",spec_f_lang:"Keel",spec_all:"Kõik",spec_langs_l:"Keeled",spec_how_private:"Erakeskus",spec_how_public:"Riiklik / Tervisekassa",spec_site:"Veebileht",spec_call:"Helista",spec_mail:"Kirjuta",spec_src:"Andmed organisatsiooni veebilehelt, kontrollitud",
+ spec_empty:"Nende filtritega ei leitud midagi.",spec_reset:"Lähtesta filtrid",spec_sug_h:"Teate spetsialisti või keskust?",spec_sug_p:"Kirjutage meile: nimi, linn, keeled ja veebilehe link. Lisame kirje sama märkusega.",spec_sug_btn:"Paku kirjet",
+ spec_cta_kicker:"Uus jaotis",spec_cta_h2:"Spetsialistid ja organisatsioonid",spec_cta_sub:"Nimekiri Eesti keskustest ja spetsialistidest, kes töötavad autismiga lastega — filtriga suuna, linna ja keele järgi.",spec_cta_note:"Ainult teadmiseks: see ei ole soovitus, me ei kontrolli teenuste kvaliteeti ega tee loetletud organisatsioonidega koostööd.",spec_cta_btn:"Ava nimekiri →"},
+ru:{nav_spec:"Специалисты",spec_title:"Специалисты",spec_kicker:"Только для информации",spec_h2:"Специалисты и организации",spec_sub:"Центры, врачи и организации в Эстонии, которые работают с детьми с аутизмом и особенностями развития. Можно отфильтровать по направлению, городу и языку.",
+ spec_discl_h:"Это не рекомендация",spec_discl:"Раздел носит исключительно информационный характер. Мы не проверяем квалификацию, лицензии и качество услуг перечисленных специалистов, не сотрудничаем с ними и не получаем вознаграждения за размещение. Присутствие в списке не означает нашу рекомендацию. Решение о выборе специалиста принимаете вы; мы не несём ответственности за результат обращения. Данные взяты с сайтов организаций и могут устареть — уточняйте условия и цены напрямую. Лицензии медицинских работников можно проверить в регистре Terviseamet.",
+ spec_discl_link:"Проверить лицензию в регистре Terviseamet →",spec_discl_short:"Список только для информации. Присутствие в нём не является рекомендацией; мы не проверяем квалификацию и качество услуг и не несём ответственности за результат обращения.",
+ spec_f_cat:"Направление",spec_f_city:"Город",spec_f_lang:"Язык",spec_all:"Все",spec_langs_l:"Языки",spec_how_private:"Частный центр",spec_how_public:"Государственный / Tervisekassa",spec_site:"Сайт",spec_call:"Позвонить",spec_mail:"Написать",spec_src:"Данные с сайта организации, проверено",
+ spec_empty:"По этим фильтрам ничего не найдено.",spec_reset:"Сбросить фильтры",spec_sug_h:"Знаете специалиста или центр?",spec_sug_p:"Напишите нам: название, город, языки и ссылка на сайт. Мы добавим запись с той же оговоркой.",spec_sug_btn:"Предложить запись",
+ spec_cta_kicker:"Новый раздел",spec_cta_h2:"Специалисты и организации",spec_cta_sub:"Список центров и специалистов в Эстонии, которые работают с детьми с аутизмом — с фильтром по направлению, городу и языку.",spec_cta_note:"Только для информации: это не рекомендация, мы не проверяем качество услуг и не сотрудничаем с перечисленными организациями.",spec_cta_btn:"Открыть список →"},
+uk:{nav_spec:"Фахівці",spec_title:"Фахівці",spec_kicker:"Лише для інформації",spec_h2:"Фахівці та організації",spec_sub:"Центри, лікарі та організації в Естонії, які працюють з дітьми з аутизмом і особливостями розвитку. Можна відфільтрувати за напрямом, містом і мовою.",
+ spec_discl_h:"Це не рекомендація",spec_discl:"Розділ має виключно інформаційний характер. Ми не перевіряємо кваліфікацію, ліцензії та якість послуг перелічених фахівців, не співпрацюємо з ними і не отримуємо винагороди за розміщення. Присутність у списку не означає нашу рекомендацію. Рішення про вибір фахівця ухвалюєте ви; ми не несемо відповідальності за результат звернення. Дані взяті з сайтів організацій і можуть застаріти — уточнюйте умови та ціни напряму. Ліцензії медичних працівників можна перевірити в реєстрі Terviseamet.",
+ spec_discl_link:"Перевірити ліцензію в реєстрі Terviseamet →",spec_discl_short:"Список лише для інформації. Присутність у ньому не є рекомендацією; ми не перевіряємо кваліфікацію та якість послуг і не несемо відповідальності за результат звернення.",
+ spec_f_cat:"Напрям",spec_f_city:"Місто",spec_f_lang:"Мова",spec_all:"Усі",spec_langs_l:"Мови",spec_how_private:"Приватний центр",spec_how_public:"Державний / Tervisekassa",spec_site:"Сайт",spec_call:"Зателефонувати",spec_mail:"Написати",spec_src:"Дані з сайту організації, перевірено",
+ spec_empty:"За цими фільтрами нічого не знайдено.",spec_reset:"Скинути фільтри",spec_sug_h:"Знаєте фахівця або центр?",spec_sug_p:"Напишіть нам: назва, місто, мови та посилання на сайт. Ми додамо запис із тим самим застереженням.",spec_sug_btn:"Запропонувати запис",
+ spec_cta_kicker:"Новий розділ",spec_cta_h2:"Фахівці та організації",spec_cta_sub:"Список центрів і фахівців в Естонії, які працюють з дітьми з аутизмом — з фільтром за напрямом, містом і мовою.",spec_cta_note:"Лише для інформації: це не рекомендація, ми не перевіряємо якість послуг і не співпрацюємо з переліченими організаціями.",spec_cta_btn:"Відкрити список →"},
+en:{nav_spec:"Specialists",spec_title:"Specialists",spec_kicker:"For information only",spec_h2:"Specialists and organisations",spec_sub:"Centres, doctors and organisations in Estonia that work with autistic children and children with developmental differences. Filter by area, city and language.",
+ spec_discl_h:"This is not a recommendation",spec_discl:"This section is provided for information only. We do not verify the qualifications, licences or quality of services of the listed specialists, we do not partner with them and we receive no payment for listing. Being listed does not mean we recommend them. The choice of a specialist is yours; we are not responsible for the outcome. Details come from the organisations' own websites and may be out of date — check conditions and prices directly. Licences of healthcare workers can be checked in the Terviseamet register.",
+ spec_discl_link:"Check a licence in the Terviseamet register →",spec_discl_short:"This list is for information only. Being listed is not a recommendation; we do not verify qualifications or quality of services and are not responsible for the outcome.",
+ spec_f_cat:"Area",spec_f_city:"City",spec_f_lang:"Language",spec_all:"All",spec_langs_l:"Languages",spec_how_private:"Private centre",spec_how_public:"Public / Tervisekassa",spec_site:"Website",spec_call:"Call",spec_mail:"Email",spec_src:"Details from the organisation's website, checked",
+ spec_empty:"Nothing matches these filters.",spec_reset:"Reset filters",spec_sug_h:"Know a specialist or a centre?",spec_sug_p:"Write to us: name, city, languages and a link to the website. We'll add the entry with the same disclaimer.",spec_sug_btn:"Suggest an entry",
+ spec_cta_kicker:"New section",spec_cta_h2:"Specialists and organisations",spec_cta_sub:"A list of centres and specialists in Estonia working with autistic children — filter by area, city and language.",spec_cta_note:"For information only: this is not a recommendation, we don't verify service quality and don't partner with the listed organisations.",spec_cta_btn:"Open the list →"}
+};
+Object.keys(SPEC_UI).forEach(function(l){Object.assign(UI[l],SPEC_UI[l]);});
+
 let LANG="et"; // Estonia-first default; a stored choice or the visitor's browser language (ru/uk/en) wins
 try{const s=localStorage.getItem("afa_lang");if(s&&UI[s])LANG=s;else{const n=(navigator.language||"et").slice(0,2);if(UI[n])LANG=n;}}catch(e){}
 
@@ -1596,11 +1700,112 @@ function applyLang(lang){
   route();
 }
 
+// ============ SPECIALISTS DIRECTORY ============
+// Information only — not a recommendation. Add entries here; keep facts to what the
+// organisation publishes itself and set "checked" to the month you last verified them.
+var SPEC_CATS={
+ aba:{ru:"ABA-терапия",uk:"ABA-терапія",en:"ABA therapy",et:"ABA-teraapia"},
+ early:{ru:"Раннее вмешательство",uk:"Раннє втручання",en:"Early intervention",et:"Varajane sekkumine"},
+ behavior:{ru:"Проблемное поведение",uk:"Проблемна поведінка",en:"Challenging behaviour",et:"Probleemne käitumine"},
+ groups:{ru:"Группы для подростков",uk:"Групи для підлітків",en:"Teen & young adult groups",et:"Noorte rühmad"},
+ psychiatry:{ru:"Детский психиатр",uk:"Дитячий психіатр",en:"Child psychiatry",et:"Lastepsühhiaatria"},
+ speech:{ru:"Логопед",uk:"Логопед",en:"Speech therapy",et:"Logopeed"},
+ psych:{ru:"Психолог",uk:"Психолог",en:"Psychologist",et:"Psühholoog"},
+ ot:{ru:"Эрготерапевт",uk:"Ерготерапевт",en:"Occupational therapy",et:"Tegevusterapeut"},
+ legal:{ru:"Юрист",uk:"Юрист",en:"Legal help",et:"Õigusabi"},
+ org:{ru:"Организации и НКО",uk:"Організації та НГО",en:"Organisations & NGOs",et:"Organisatsioonid ja MTÜ-d"}
+};
+var SPEC_LANG_NAMES={ru:{ru:"Русский",uk:"Русская",en:"Russian",et:"Vene"},et:{ru:"Эстонский",uk:"Естонська",en:"Estonian",et:"Eesti"},en:{ru:"Английский",uk:"Англійська",en:"English",et:"Inglise"},uk:{ru:"Украинский",uk:"Українська",en:"Ukrainian",et:"Ukraina"}};
+var SPECIALISTS=[
+ {id:"abapro",name:"ABA Pro",cats:["aba","early","behavior","groups"],city:"Tallinn",langs:["ru","et","en","uk"],how:"private",
+  site:"https://www.abapro.ee/ru",phone:"+372 5554 3973",email:"info@abapro.ee",checked:"09.2026",
+  desc:{ru:"Центр прикладного анализа поведения (ABA) в Таллинне. Работают на русском, эстонском, английском и украинском языках.",
+        uk:"Центр прикладного аналізу поведінки (ABA) у Таллінні. Працюють російською, естонською, англійською та українською мовами.",
+        en:"Applied behaviour analysis (ABA) centre in Tallinn. Working languages: Russian, Estonian, English and Ukrainian.",
+        et:"Rakendusliku käitumisanalüüsi (ABA) keskus Tallinnas. Töökeeled: vene, eesti, inglise ja ukraina."},
+  services:{
+   ru:["<strong>ABA-терапия</strong> — прикладной анализ поведения: развитие игровых и социальных навыков, речи и академических навыков, альтернативная коммуникация.",
+       "<strong>Раннее вмешательство</strong> для малышей 12–36 месяцев: обучение через совместную игру по принципам ABA и сопровождение родителей.",
+       "<strong>Тренинг с опорой на навыки (ПФА/ТОН)</strong>: работа с проблемным поведением (агрессия, самоагрессия, разрушительное поведение) и установление сотрудничества.",
+       "<strong>Vaba elu</strong> — коммуникативные группы для подростков и молодых взрослых 12–20 лет с РАС и интеллектуальной недостаточностью. Дневная программа обучения жизненным навыкам: 9:00–14:00 дневная программа, 14:30–16:30 вечерняя группа."],
+   uk:["<strong>ABA-терапія</strong> — прикладний аналіз поведінки: розвиток ігрових і соціальних навичок, мовлення та академічних навичок, альтернативна комунікація.",
+       "<strong>Раннє втручання</strong> для малюків 12–36 місяців: навчання через спільну гру за принципами ABA та супровід батьків.",
+       "<strong>Тренінг з опорою на навички (PFA/SBT)</strong>: робота з проблемною поведінкою (агресія, самоагресія, руйнівна поведінка) та налагодження співпраці.",
+       "<strong>Vaba elu</strong> — комунікативні групи для підлітків і молодих дорослих 12–20 років з РАС та інтелектуальною недостатністю. Денна програма навчання життєвим навичкам: 9:00–14:00 денна програма, 14:30–16:30 вечірня група."],
+   en:["<strong>ABA therapy</strong> — applied behaviour analysis: play and social skills, speech and academic skills, alternative communication.",
+       "<strong>Early intervention</strong> for toddlers aged 12–36 months: naturalistic learning through shared play based on ABA principles, plus parent coaching.",
+       "<strong>Skills-based treatment (PFA/SBT)</strong>: working with challenging behaviour (aggression, self-injury, destructive behaviour) and building cooperation.",
+       "<strong>Vaba elu</strong> — communication groups for teenagers and young adults aged 12–20 with autism and intellectual disability. Daily life-skills programme: 9:00–14:00 day programme, 14:30–16:30 evening group."],
+   et:["<strong>ABA-teraapia</strong> — rakenduslik käitumisanalüüs: mängu- ja sotsiaalsete oskuste, kõne ja akadeemiliste oskuste arendamine, alternatiivne kommunikatsioon.",
+       "<strong>Varajane sekkumine</strong> 12–36 kuu vanustele lastele: õppimine ühise mängu kaudu ABA põhimõtete järgi ja vanemate toetamine.",
+       "<strong>Oskustepõhine treening (PFA/SBT)</strong>: töö probleemse käitumisega (agressioon, enesevigastamine, hävitav käitumine) ja koostöö loomine.",
+       "<strong>Vaba elu</strong> — suhtlusrühmad 12–20-aastastele autismi ja intellektipuudega noorukitele ja noortele täiskasvanutele. Eluoskuste päevaprogramm: 9.00–14.00 päevaprogramm, 14.30–16.30 õhtune rühm."]}
+ }
+];
+var specF={cat:"",city:"",lang:""};
+function specLoc(o){return o[LANG]||o.ru;}
+function specChip(label,on,attrs){
+  return '<button '+attrs+' class="rounded-full border px-3.5 py-1.5 text-[13px] font-medium '+(on?'border-teal-700 bg-teal-700 text-white':'border-teal-200 bg-white text-teal-700 hover:border-teal-400')+'">'+label+'</button>';
+}
+function renderSpec(){
+  var cats=[],cities=[],langs=[];
+  SPECIALISTS.forEach(function(s){
+    s.cats.forEach(function(c){if(cats.indexOf(c)<0)cats.push(c);});
+    if(cities.indexOf(s.city)<0)cities.push(s.city);
+    s.langs.forEach(function(l){if(langs.indexOf(l)<0)langs.push(l);});
+  });
+  if(cats.indexOf(specF.cat)<0)specF.cat="";
+  if(cities.indexOf(specF.city)<0)specF.city="";
+  if(langs.indexOf(specF.lang)<0)specF.lang="";
+  document.getElementById("specCats").innerHTML=specChip(UI[LANG].spec_all,!specF.cat,'data-f="cat" data-v=""')
+    +cats.map(function(c){return specChip(specLoc(SPEC_CATS[c]),specF.cat===c,'data-f="cat" data-v="'+c+'"');}).join("");
+  document.getElementById("specCities").innerHTML=specChip(UI[LANG].spec_all,!specF.city,'data-f="city" data-v=""')
+    +cities.map(function(c){return specChip(esc(c),specF.city===c,'data-f="city" data-v="'+esc(c)+'"');}).join("");
+  document.getElementById("specLangs").innerHTML=specChip(UI[LANG].spec_all,!specF.lang,'data-f="lang" data-v=""')
+    +langs.map(function(l){return specChip(specLoc(SPEC_LANG_NAMES[l]),specF.lang===l,'data-f="lang" data-v="'+l+'"');}).join("");
+  var list=SPECIALISTS.filter(function(s){
+    return (!specF.cat||s.cats.indexOf(specF.cat)>=0)&&(!specF.city||s.city===specF.city)&&(!specF.lang||s.langs.indexOf(specF.lang)>=0);
+  });
+  document.getElementById("specGrid").innerHTML=list.map(function(s){
+    var how=s.how==="private"?UI[LANG].spec_how_private:UI[LANG].spec_how_public;
+    var tags=s.cats.map(function(c){return '<span class="rounded-full bg-teal-50 px-2.5 py-1 text-[12px] font-medium text-teal-700">'+specLoc(SPEC_CATS[c])+'</span>';}).join("");
+    var items=(specLoc(s.services)||[]).map(function(t){return '<li class="flex gap-2"><span class="text-teal-600">•</span><span>'+t+'</span></li>';}).join("");
+    var contacts=(s.site?'<a href="'+esc(s.site)+'" target="_blank" rel="noopener nofollow" class="rounded-full bg-teal-700 px-4 py-2 text-[13px] font-semibold text-white hover:bg-teal-800">'+UI[LANG].spec_site+' ↗</a>':'')
+      +(s.phone?'<a href="tel:'+esc(s.phone.replace(/\s+/g,""))+'" class="rounded-full border border-teal-200 px-4 py-2 text-[13px] font-semibold text-teal-700 hover:border-teal-400">'+UI[LANG].spec_call+' · '+esc(s.phone)+'</a>':'')
+      +(s.email?'<a href="mailto:'+esc(s.email)+'" class="rounded-full border border-teal-200 px-4 py-2 text-[13px] font-semibold text-teal-700 hover:border-teal-400">'+UI[LANG].spec_mail+'</a>':'');
+    return '<div class="flex flex-col rounded-3xl border border-teal-100 bg-white p-6 sm:p-7">'
+      +'<div class="flex flex-wrap items-start justify-between gap-2">'
+      +'<h3 class="text-xl font-bold leading-snug text-ink">'+esc(s.name)+'</h3>'
+      +'<span class="rounded-full border border-teal-200 px-2.5 py-1 text-[12px] font-medium text-muted">'+how+'</span></div>'
+      +'<div class="mt-2 text-[14px] text-muted">📍 '+esc(s.city)+' · '+UI[LANG].spec_langs_l+': '+s.langs.map(function(l){return l.toUpperCase();}).join(" · ")+'</div>'
+      +'<div class="mt-3 flex flex-wrap gap-1.5">'+tags+'</div>'
+      +'<p class="mt-4 text-[15px] leading-relaxed text-ink">'+specLoc(s.desc)+'</p>'
+      +(items?'<ul class="mt-3 space-y-2 text-[14px] leading-relaxed text-muted">'+items+'</ul>':'')
+      +'<div class="mt-5 flex flex-wrap gap-2">'+contacts+'</div>'
+      +'<div class="mt-4 border-t border-teal-100 pt-3 text-[12px] text-muted">'+UI[LANG].spec_src+' '+esc(s.checked)+'</div>'
+      +'</div>';
+  }).join("");
+  document.getElementById("specEmpty").classList.toggle("hidden",list.length>0);
+}
+document.getElementById("view-spec").addEventListener("click",function(e){
+  var b=e.target.closest&&e.target.closest("[data-f]");
+  if(b){specF[b.getAttribute("data-f")]=b.getAttribute("data-v");renderSpec();}
+});
+document.getElementById("specReset").addEventListener("click",function(){specF={cat:"",city:"",lang:""};renderSpec();});
+
 // ============ ROUTER ============
 const home=document.getElementById("view-home");
 const artView=document.getElementById("view-article");
 const routeView=document.getElementById("view-route");
-function hideAllViews(){home.classList.add("hidden");artView.classList.add("hidden");routeView.classList.add("hidden");}
+const specView=document.getElementById("view-spec");
+function hideAllViews(){home.classList.add("hidden");artView.classList.add("hidden");routeView.classList.add("hidden");specView.classList.add("hidden");}
+function showSpec(){
+  hideAllViews();
+  specView.classList.remove("hidden");
+  renderSpec();
+  document.title=UI[LANG].spec_h2+" · Autism Families Abroad";
+  window.scrollTo(0,0);
+}
 function showRoute(){
   hideAllViews();
   routeView.classList.remove("hidden");
@@ -1629,11 +1834,13 @@ function showArticle(a){
 function showHome(){
   artView.classList.add("hidden");
   routeView.classList.add("hidden");
+  specView.classList.add("hidden");
   home.classList.remove("hidden");
   document.title=UI[LANG].doc_title;
 }
 function route(){
   if((location.hash||"")==="#/moy-marshrut"){showRoute();return;}
+  if((location.hash||"")==="#/specialisty"){showSpec();return;}
   const m=(location.hash||"").match(/^#\/(?:spravochnik\/)?([a-z-]+)$/);
   if(m){
     const a=ARTICLES.find(function(x){return x.slug===m[1];});
