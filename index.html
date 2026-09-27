@@ -1760,6 +1760,7 @@ var SPEC_CATS={
  speech:{ru:"Логопед",uk:"Логопед",en:"Speech therapy",et:"Logopeed"},
  psych:{ru:"Психолог",uk:"Психолог",en:"Psychologist",et:"Psühholoog"},
  ot:{ru:"Эрготерапевт",uk:"Ерготерапевт",en:"Occupational therapy",et:"Tegevusterapeut"},
+ education:{ru:"Школа и образование",uk:"Школа та освіта",en:"School & education",et:"Kool ja haridus"},
  legal:{ru:"Юрист",uk:"Юрист",en:"Legal help",et:"Õigusabi"},
  org:{ru:"Организации и НКО",uk:"Організації та НГО",en:"Organisations & NGOs",et:"Organisatsioonid ja MTÜ-d"}
 };
@@ -1788,6 +1789,13 @@ var SPECIALISTS=[
        "<strong>Varajane sekkumine</strong> 12–36 kuu vanustele lastele: õppimine ühise mängu kaudu ABA põhimõtete järgi ja vanemate toetamine.",
        "<strong>Oskustepõhine treening (PFA/SBT)</strong>: töö probleemse käitumisega (agressioon, enesevigastamine, hävitav käitumine) ja koostöö loomine.",
        "<strong>Vaba elu</strong> — suhtlusrühmad 12–20-aastastele autismi ja intellektipuudega noorukitele ja noortele täiskasvanutele. Eluoskuste päevaprogramm: 9.00–14.00 päevaprogramm, 14.30–16.30 õhtune rühm."]}
+ },
+ {id:"viverekool",name:"Vivere Kool",cats:["education"],city:"Tallinn",langs:["et","ru"],how:"private",
+  site:"https://viverekool.ee/ru/",checked:"09.2026",
+  desc:{ru:"Инклюзивная частная школа в Таллинне (MTÜ Vivere Kool). Дети с особыми образовательными потребностями и без них учатся вместе в поддерживающей среде; возраст примерно 7–16 лет. Школа открылась в 2019 году и развивает инклюзивные методики и обучение педагогов. Сайт доступен на русском и эстонском.",
+        uk:"Інклюзивна приватна школа в Таллінні (MTÜ Vivere Kool). Діти з особливими освітніми потребами й без них навчаються разом у підтримувальному середовищі; вік приблизно 7–16 років. Школа відкрилася 2019 року та розвиває інклюзивні методики й навчання педагогів. Сайт доступний російською та естонською.",
+        en:"Inclusive private school in Tallinn (MTÜ Vivere Kool). Children with and without special educational needs learn together in a supportive environment; roughly ages 7–16. The school opened in 2019 and develops inclusive methods and teacher training. Website available in Russian and Estonian.",
+        et:"Kaasav erakool Tallinnas (MTÜ Vivere Kool). Erivajadustega ja ilma nendeta lapsed õpivad koos toetavas keskkonnas; vanus umbes 7–16 aastat. Kool avati 2019. aastal ning arendab kaasavaid metoodikaid ja õpetajate koolitust. Veebisait on saadaval vene ja eesti keeles."}
  }
 ];
 var specF={cat:"",city:"",lang:""};
@@ -1817,7 +1825,7 @@ function renderSpec(){
   document.getElementById("specGrid").innerHTML=list.map(function(s){
     var how=s.how==="private"?UI[LANG].spec_how_private:UI[LANG].spec_how_public;
     var tags=s.cats.map(function(c){return '<span class="rounded-full bg-teal-50 px-2.5 py-1 text-[12px] font-medium text-teal-700">'+specLoc(SPEC_CATS[c])+'</span>';}).join("");
-    var items=(specLoc(s.services)||[]).map(function(t){return '<li class="flex gap-2"><span class="text-teal-600">•</span><span>'+t+'</span></li>';}).join("");
+    var items=(s.services?specLoc(s.services):[]).map(function(t){return '<li class="flex gap-2"><span class="text-teal-600">•</span><span>'+t+'</span></li>';}).join("");
     var contacts=(s.site?'<a href="'+esc(s.site)+'" target="_blank" rel="noopener nofollow" class="rounded-full bg-teal-700 px-4 py-2 text-[13px] font-semibold text-white hover:bg-teal-800">'+UI[LANG].spec_site+' ↗</a>':'')
       +(s.phone?'<a href="tel:'+esc(s.phone.replace(/\s+/g,""))+'" class="rounded-full border border-teal-200 px-4 py-2 text-[13px] font-semibold text-teal-700 hover:border-teal-400">'+UI[LANG].spec_call+' · '+esc(s.phone)+'</a>':'')
       +(s.email?'<a href="mailto:'+esc(s.email)+'" class="rounded-full border border-teal-200 px-4 py-2 text-[13px] font-semibold text-teal-700 hover:border-teal-400">'+UI[LANG].spec_mail+'</a>':'');
