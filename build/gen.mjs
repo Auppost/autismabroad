@@ -83,7 +83,15 @@ function page(a) {
   </nav>
   <h1 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl">${esc(title)}</h1>${metaBox}${discl}
   <article class="article mt-6">${body}</article>${nextBox}
-  <div class="mt-8 rounded-2xl border border-teal-100 bg-white p-5 text-[14px] text-muted">See lehekülg on saadaval ka vene, ukraina ja inglise keeles — <a class="font-semibold text-teal-700" href="/#/spravochnik/${a.slug}">ava interaktiivses teatmikus</a>.</div>
+  <div class="mt-10 rounded-3xl bg-teal-700 p-7 text-white sm:p-8">
+    <div class="text-xl font-bold">Vajate abi oma olukorras?</div>
+    <p class="mt-2 max-w-xl text-[15px] leading-relaxed text-teal-50">Kirjutage meile — aitame mõista järgmist sammu, tasuta ja konfidentsiaalselt. Teatmikku saab lugeda ka vene, ukraina ja inglise keeles.</p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <a href="mailto:hello@autismabroad.org" class="inline-block rounded-full bg-white px-6 py-3 text-sm font-semibold text-teal-700 no-underline hover:bg-teal-50">Kirjuta meile</a>
+      <a href="/#guide" class="inline-block rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white no-underline hover:bg-white/10">Ava teatmik</a>
+    </div>
+  </div>
+  <div class="mt-6 rounded-2xl border border-teal-100 bg-white p-5 text-[14px] text-muted">See lehekülg on saadaval ka vene, ukraina ja inglise keeles — <a class="font-semibold text-teal-700" href="/#/spravochnik/${a.slug}">ava interaktiivses teatmikus</a>.</div>
 </main>
 <footer class="bg-ink py-10 text-white">
   <div class="mx-auto max-w-3xl px-5 text-[13px] leading-relaxed text-teal-300/80 sm:px-8">
