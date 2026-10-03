@@ -69,6 +69,7 @@
       <a href="#situations" class="hover:text-teal-700" data-i18n="nav_situations">Ситуации</a>
       <a href="#guide" class="hover:text-teal-700" data-i18n="nav_guide">Справочник</a>
       <a href="#/specialisty" class="hover:text-teal-700" data-i18n="nav_spec">Специалисты</a>
+      <a href="#/mify" class="hover:text-teal-700" data-i18n="nav_myths">Мифы и правда</a>
       <a href="#app" class="hover:text-teal-700" data-i18n="nav_app">Приложение</a>
       <a href="#/o-proekte" class="hover:text-teal-700" data-i18n="nav_about">О проекте</a>
       <a href="#support" class="hover:text-teal-700" data-i18n="nav_support">Поддержать</a>
@@ -91,6 +92,7 @@
     <a href="#situations" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_situations">Ситуации</a>
     <a href="#guide" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_guide">Справочник</a>
     <a href="#/specialisty" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_spec">Специалисты</a>
+    <a href="#/mify" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_myths">Мифы и правда</a>
     <a href="#app" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_app">Приложение</a>
     <a href="#/o-proekte" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_about">О проекте</a>
     <a href="#support" class="block rounded-lg px-2 py-2.5 font-medium hover:bg-teal-50" data-i18n="nav_support">Поддержать</a>
@@ -402,6 +404,35 @@
 
     <div class="mt-8 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900">
       <span>ⓘ</span><span data-i18n="spec_discl_short">Список только для информации. Присутствие в нём не является рекомендацией; мы не проверяем квалификацию и качество услуг и не несём ответственности за результат обращения.</span>
+    </div>
+    <div class="mt-6">
+      <a href="#top" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800" data-i18n="crumb_home">← Главная</a>
+    </div>
+  </div>
+</main>
+
+<!-- ============ MYTHS VIEW ============ -->
+<main id="view-myths" class="hidden">
+  <div class="mx-auto max-w-4xl px-5 py-12 sm:px-8">
+    <nav class="flex flex-wrap items-center gap-2 text-sm text-muted">
+      <a href="#top" class="hover:text-teal-700" data-i18n="crumb_home">Главная</a>
+      <span class="text-teal-300">›</span>
+      <span class="font-medium text-ink" data-i18n="myth_title">Мифы и правда</span>
+    </nav>
+    <span class="mt-5 inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="myth_kicker">Опыт семьи</span>
+    <h1 class="mt-4 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl" data-i18n="myth_h1">Мифы и правда</h1>
+    <p class="mt-4 max-w-3xl text-lg leading-relaxed text-muted" data-i18n="myth_sub">Что часто говорят родителям детей с аутизмом — и как это выглядит на самом деле, из нашего опыта.</p>
+
+    <div class="mt-6 flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 p-4 text-[13px] text-amber-900">
+      <span>ⓘ</span><span data-i18n="myth_discl">Это опыт семьи, а не медицинский совет. Каждый ребёнок разный — при серьёзных трудностях обращайтесь к специалисту.</span>
+    </div>
+
+    <div id="mythsGrid" class="mt-8 grid gap-6"></div>
+
+    <div class="mt-12 rounded-3xl border border-teal-100 bg-teal-50 p-7 sm:p-9">
+      <h2 class="text-xl font-bold" data-i18n="myth_sug_h">Хотите поделиться своим опытом или мифом?</h2>
+      <p class="mt-2 max-w-2xl text-[15px] leading-relaxed text-muted" data-i18n="myth_sug_p">Напишите нам — что вам говорили и как было на самом деле. Мы добавим с вашего согласия.</p>
+      <a href="mailto:hello@autismabroad.org?subject=Myths and facts" class="mt-5 inline-block rounded-full bg-teal-700 px-7 py-3.5 font-semibold text-white hover:bg-teal-800" data-i18n="myth_sug_btn">Написать нам</a>
     </div>
     <div class="mt-6">
       <a href="#top" class="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 hover:text-teal-800" data-i18n="crumb_home">← Главная</a>
@@ -1843,17 +1874,77 @@ document.getElementById("view-spec").addEventListener("click",function(e){
 });
 document.getElementById("specReset").addEventListener("click",function(){specF={cat:"",city:"",lang:""};renderSpec();});
 
+// ============ MYTHS & FACTS ============
+// Parent experience, not medical advice. Each card: what people say -> how it
+// really is. Attach a video by adding video:{href:"https://…"} to an entry.
+var MYTH_UI={
+ et:{nav_myths:"Müüdid ja tõde",myth_title:"Müüdid ja tõde",myth_kicker:"Pere kogemus",myth_h1:"Müüdid ja tõde",
+  myth_sub:"Mida räägitakse sageli autismiga laste vanematele — ja kuidas see tegelikult on, meie kogemusest.",
+  myth_said:"Mida räägitakse",myth_real:"Kuidas on tegelikult",myth_watch:"Vaata videot →",
+  myth_discl:"See on pere kogemus, mitte meditsiiniline nõuanne. Iga laps on erinev — tõsiste raskuste korral pöörduge spetsialisti poole.",
+  myth_sug_h:"Soovite jagada oma kogemust või müüti?",myth_sug_p:"Kirjutage meile — mida teile räägiti ja kuidas tegelikult oli. Lisame teie nõusolekul.",myth_sug_btn:"Kirjuta meile"},
+ ru:{nav_myths:"Мифы и правда",myth_title:"Мифы и правда",myth_kicker:"Опыт семьи",myth_h1:"Мифы и правда",
+  myth_sub:"Что часто говорят родителям детей с аутизмом — и как это выглядит на самом деле, из нашего опыта.",
+  myth_said:"Что говорят",myth_real:"Как на самом деле",myth_watch:"Смотреть видео →",
+  myth_discl:"Это опыт семьи, а не медицинский совет. Каждый ребёнок разный — при серьёзных трудностях обращайтесь к специалисту.",
+  myth_sug_h:"Хотите поделиться своим опытом или мифом?",myth_sug_p:"Напишите нам — что вам говорили и как было на самом деле. Мы добавим с вашего согласия.",myth_sug_btn:"Написать нам"},
+ uk:{nav_myths:"Міфи і правда",myth_title:"Міфи і правда",myth_kicker:"Досвід родини",myth_h1:"Міфи і правда",
+  myth_sub:"Що часто кажуть батькам дітей з аутизмом — і як це насправді, з нашого досвіду.",
+  myth_said:"Що кажуть",myth_real:"Як насправді",myth_watch:"Дивитися відео →",
+  myth_discl:"Це досвід родини, а не медична порада. Кожна дитина різна — за серйозних труднощів звертайтеся до фахівця.",
+  myth_sug_h:"Хочете поділитися своїм досвідом або міфом?",myth_sug_p:"Напишіть нам — що вам казали і як було насправді. Додамо за вашою згодою.",myth_sug_btn:"Написати нам"},
+ en:{nav_myths:"Myths & facts",myth_title:"Myths & facts",myth_kicker:"A family's experience",myth_h1:"Myths & facts",
+  myth_sub:"What parents of autistic children are often told — and what it actually looks like, from our experience.",
+  myth_said:"What people say",myth_real:"What it's really like",myth_watch:"Watch the video →",
+  myth_discl:"This is a family's experience, not medical advice. Every child is different — for serious difficulties, see a specialist.",
+  myth_sug_h:"Want to share your experience or a myth?",myth_sug_p:"Write to us — what you were told and how it really was. We'll add it with your consent.",myth_sug_btn:"Write to us"}
+};
+Object.keys(MYTH_UI).forEach(function(l){Object.assign(UI[l],MYTH_UI[l]);});
+
+var MYTHS=[
+ {id:"food",
+  said:{ru:"«Не будешь кормить — проголодается и начнёт есть всё подряд.»",
+        uk:"«Не годуватимеш — зголодніє і почне їсти все підряд.»",
+        en:"\"If you don't feed them, they'll get hungry and start eating everything.\"",
+        et:"«Kui sa ei toida, läheb laps näljaseks ja hakkab kõike sööma.»"},
+  real:{ru:"У многих детей с аутизмом избирательность в еде — это не капризы, а чаще сенсорная особенность: мешают текстура, запах, цвет или температура. «Поголодает — съест» обычно не работает: ребёнок может просто отказываться от еды и терять вес, а стресс только усиливает избирательность. Мы прошли это сами. Что помогало нам: не превращать еду в борьбу, двигаться маленькими шагами, предлагать новое рядом с привычным — и при сильных ограничениях обратиться к специалисту (эрготерапевт, специалист по кормлению, при необходимости — врач).",
+        uk:"У багатьох дітей з аутизмом вибірковість у їжі — це не примхи, а частіше сенсорна особливість: заважають текстура, запах, колір або температура. «Зголодніє — з'їсть» зазвичай не працює: дитина може просто відмовлятися від їжі й втрачати вагу, а стрес лише посилює вибірковість. Ми пройшли це самі. Що допомагало нам: не перетворювати їжу на боротьбу, рухатися маленькими кроками, пропонувати нове поряд зі звичним — і за сильних обмежень звернутися до фахівця (ерготерапевт, фахівець із годування, за потреби — лікар).",
+        en:"For many autistic children, food selectivity isn't fussiness but often a sensory thing: texture, smell, colour or temperature can all get in the way. \"They'll eat when they're hungry\" usually doesn't work — a child may simply refuse food and lose weight, and stress makes selectivity worse. We've been through it ourselves. What helped us: don't turn food into a battle, move in small steps, offer something new next to a familiar food — and for severe limits, see a specialist (occupational therapist, feeding specialist, and a doctor if needed).",
+        et:"Paljudel autistlikel lastel ei ole toiduvalivus mitte jonn, vaid sageli sensoorne eripära: segavad tekstuur, lõhn, värv või temperatuur. «Läheb näljaseks ja sööb» tavaliselt ei toimi — laps võib lihtsalt toidust keelduda ja kaalus langeda, ning stress süvendab valivust veelgi. Oleme selle ise läbi elanud. Mis meid aitas: ära muuda söömist võitluseks, liigu väikeste sammudega, paku uut tuttava toidu kõrval — ja tugeva piiratuse korral pöördu spetsialisti poole (tegevusterapeut, toitmisspetsialist, vajadusel arst)."}}
+];
+function mythLoc(o){return o[LANG]||o.ru;}
+function renderMyths(){
+  document.getElementById("mythsGrid").innerHTML=MYTHS.map(function(mth){
+    var vid=(mth.video&&mth.video.href)?'<a href="'+esc(mth.video.href)+'" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 rounded-full bg-teal-700 px-5 py-2.5 text-[14px] font-semibold text-white hover:bg-teal-800">▶ '+UI[LANG].myth_watch+'</a>':'';
+    return '<div class="rounded-3xl border border-teal-100 bg-white p-6 sm:p-7">'
+      +'<div class="text-xs font-semibold uppercase tracking-wide text-coral-600">'+UI[LANG].myth_said+'</div>'
+      +'<p class="mt-2 text-lg font-semibold leading-snug text-ink">'+mythLoc(mth.said)+'</p>'
+      +'<div class="mt-5 text-xs font-semibold uppercase tracking-wide text-teal-600">'+UI[LANG].myth_real+'</div>'
+      +'<p class="mt-2 text-[15px] leading-relaxed text-muted">'+mythLoc(mth.real)+'</p>'
+      +vid
+      +'</div>';
+  }).join("");
+}
+
 // ============ ROUTER ============
 const home=document.getElementById("view-home");
 const artView=document.getElementById("view-article");
 const routeView=document.getElementById("view-route");
 const specView=document.getElementById("view-spec");
-function hideAllViews(){home.classList.add("hidden");artView.classList.add("hidden");routeView.classList.add("hidden");specView.classList.add("hidden");}
+const mythsView=document.getElementById("view-myths");
+function hideAllViews(){home.classList.add("hidden");artView.classList.add("hidden");routeView.classList.add("hidden");specView.classList.add("hidden");mythsView.classList.add("hidden");}
 function showSpec(){
   hideAllViews();
   specView.classList.remove("hidden");
   renderSpec();
   document.title=UI[LANG].spec_h2+" · Autism Families Abroad";
+  window.scrollTo(0,0);
+}
+function showMyths(){
+  hideAllViews();
+  mythsView.classList.remove("hidden");
+  renderMyths();
+  document.title=UI[LANG].myth_h1+" · Autism Families Abroad";
   window.scrollTo(0,0);
 }
 function showRoute(){
@@ -1885,12 +1976,14 @@ function showHome(){
   artView.classList.add("hidden");
   routeView.classList.add("hidden");
   specView.classList.add("hidden");
+  mythsView.classList.add("hidden");
   home.classList.remove("hidden");
   document.title=UI[LANG].doc_title;
 }
 function route(){
   if((location.hash||"")==="#/moy-marshrut"){showRoute();return;}
   if((location.hash||"")==="#/specialisty"){showSpec();return;}
+  if((location.hash||"")==="#/mify"){showMyths();return;}
   const m=(location.hash||"").match(/^#\/(?:spravochnik\/)?([a-z-]+)$/);
   if(m){
     const a=ARTICLES.find(function(x){return x.slug===m[1];});
