@@ -348,10 +348,10 @@
         <span class="inline-block rounded-full bg-teal-100 px-3.5 py-2 text-sm font-medium text-teal-700" data-i18n="sup_kicker">Мы только начинаем</span>
         <h2 class="mt-4 text-3xl font-bold sm:text-4xl" data-i18n="sup_h2">Превращаем хаос в понятный маршрут — вместе</h2>
         <p class="mt-4 text-lg leading-relaxed text-muted" data-i18n="sup_text">Сейчас проект держится на своих силах и своих средствах. Любая поддержка помогает быстрее наполнять справочник и приблизить запуск приложения Family Navigator.</p>
-        <!-- Card donation (Stripe Payment Link). Hidden until DONATE_URL is set in the script below. -->
+        <!-- Card donation (Chuffed campaign or Stripe Payment Link). Hidden until DONATE_URL is set in the script below. -->
         <div id="donateBox" class="mt-7 hidden">
           <a id="donateBtn" href="#support" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-coral-500 px-8 py-4 text-[17px] font-semibold text-white shadow-lg shadow-coral-500/25 hover:bg-coral-600" data-i18n="sup_pay_btn">Поддержать картой →</a>
-          <p class="mt-3 max-w-xl text-sm leading-relaxed text-muted" data-i18n="sup_pay_sub">Картой, Apple Pay или Google Pay. Оплата проходит на защищённой странице Stripe — мы не видим данных вашей карты.</p>
+          <p class="mt-3 max-w-xl text-sm leading-relaxed text-muted" data-i18n="sup_pay_sub">Картой онлайн — на защищённой странице сбора. Мы не видим данных вашей карты.</p>
           <p class="mt-6 text-sm font-semibold text-teal-700" data-i18n="sup_or_bank">Или банковским переводом — без комиссии:</p>
         </div>
         <div class="mt-7 grid gap-1 rounded-2xl bg-teal-50 p-6 text-[15px] sm:grid-cols-[auto_1fr] sm:gap-x-6 sm:gap-y-2">
@@ -2024,18 +2024,18 @@ var HERO_UI={
 };
 Object.keys(HERO_UI).forEach(function(l){Object.assign(UI[l],HERO_UI[l]);});
 // ============ CARD DONATIONS ============
-// Paste the MTÜ's Stripe Payment Link here (https://donate.stripe.com/... or https://buy.stripe.com/...).
+// Paste the fundraiser link here: Chuffed campaign (https://chuffed.org/project/...) or a Stripe Payment Link.
 // While empty, the card button stays hidden and only the bank details show.
 var DONATE_URL="";
 var SUP_UI={
- et:{sup_pay_btn:"Toeta kaardiga →",sup_pay_sub:"Kaardi, Apple Pay või Google Payga. Makse toimub Stripe'i turvalisel lehel — me ei näe teie kaardiandmeid.",sup_or_bank:"Või pangaülekandega — tasudeta:"},
- ru:{sup_pay_btn:"Поддержать картой →",sup_pay_sub:"Картой, Apple Pay или Google Pay. Оплата проходит на защищённой странице Stripe — мы не видим данных вашей карты.",sup_or_bank:"Или банковским переводом — без комиссии:"},
- uk:{sup_pay_btn:"Підтримати карткою →",sup_pay_sub:"Карткою, Apple Pay або Google Pay. Оплата відбувається на захищеній сторінці Stripe — ми не бачимо даних вашої картки.",sup_or_bank:"Або банківським переказом — без комісії:"},
- en:{sup_pay_btn:"Donate by card →",sup_pay_sub:"By card, Apple Pay or Google Pay. Payment happens on Stripe's secure page — we never see your card details.",sup_or_bank:"Or by bank transfer — no fees:"}
+ et:{sup_pay_btn:"Toeta kaardiga →",sup_pay_sub:"Kaardiga veebis — kogumiskampaania turvalisel lehel. Me ei näe teie kaardiandmeid.",sup_or_bank:"Või pangaülekandega — tasudeta:"},
+ ru:{sup_pay_btn:"Поддержать картой →",sup_pay_sub:"Картой онлайн — на защищённой странице сбора. Мы не видим данных вашей карты.",sup_or_bank:"Или банковским переводом — без комиссии:"},
+ uk:{sup_pay_btn:"Підтримати карткою →",sup_pay_sub:"Карткою онлайн — на захищеній сторінці збору. Ми не бачимо даних вашої картки.",sup_or_bank:"Або банківським переказом — без комісії:"},
+ en:{sup_pay_btn:"Donate by card →",sup_pay_sub:"By card online — on the fundraiser's secure page. We never see your card details.",sup_or_bank:"Or by bank transfer — no fees:"}
 };
 Object.keys(SUP_UI).forEach(function(l){Object.assign(UI[l],SUP_UI[l]);});
 (function(){var box=document.getElementById("donateBox"),btn=document.getElementById("donateBtn");
-  if(box&&btn&&/^https:\/\/(donate|buy)\.stripe\.com\//.test(DONATE_URL)){btn.href=DONATE_URL;box.classList.remove("hidden");}})();
+  if(box&&btn&&/^https:\/\/((donate|buy)\.stripe\.com|(www\.)?chuffed\.org)\//.test(DONATE_URL)){btn.href=DONATE_URL;box.classList.remove("hidden");}})();
 
 var MYTHS=[
  {id:"food",
