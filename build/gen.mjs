@@ -115,7 +115,7 @@ for (const a of ARTICLES) {
 }
 
 // --- sitemap with all static pages ---
-const today = "2026-10-02";
+const today = new Date().toISOString().slice(0,10);
 const sm = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u, i) => `  <url>
